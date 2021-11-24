@@ -1,0 +1,108 @@
+html {
+  font-family: "GFS Didot";
+  font-size: 1.25rem;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.navbarContainer {
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 4px 16px 4px 16px;
+  box-shadow: 0 -10px 25px 0px;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar img {
+  width: 80px;
+}
+
+.navmenu {
+  margin-left: 400px;
+}
+
+.navmenu a {
+  margin-right: 16px;
+  color: black;
+}
+
+.navmenu a:hover {
+  color: #ffc107;
+}
+
+.dropdown {
+  display: none;
+  border: none;
+  background-color: white;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  transition: transform 0.5s, opacity 0.25s;
+}
+
+@media only screen and (max-width: 960px) {
+  .navmenu {
+    margin: 0;
+    width: 85%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .navmenu a {
+    margin: 6px 0;
+  }
+
+  .dropdown {
+    display: block;
+    margin-left: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navmenu {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .navmenu {
+    display: block !important;
+  }
+
+  .navmenu a {
+    margin-right: 16px;
+  }
+}
