@@ -8,12 +8,13 @@ html {
   box-sizing: border-box;
   text-decoration: none;
 }
+
 .navbarContainer {
-  width: 100vw;
   background-color: white;
   position: fixed;
   top: 0;
   right: 0;
+  width: 100vw;
   padding: 4px 16px 4px 16px;
   box-shadow: 0 -10px 25px 0px;
   z-index: 1;
@@ -67,7 +68,7 @@ html {
   transition: transform 0.5s, opacity 0.25s;
 }
 
-@media only screen and (max-width: 960px) {
+@media (max-width: 1220px) {
   .navmenu {
     margin: 0;
     width: 85%;
@@ -91,18 +92,8 @@ html {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .navmenu {
-    width: 90%;
-  }
-}
-
-@media only screen and (min-width: 961px) {
+@media (min-width: 1280px) {
   .navmenu {
     display: block !important;
-  }
-
-  .navmenu a {
-    margin-right: 16px;
   }
 }
