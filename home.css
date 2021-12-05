@@ -29,6 +29,10 @@ a {
   z-index: 1;
 }
 
+.navbar {
+  padding: 20px 0;
+}
+
 .navmenu a {
   margin-right: 24px;
   color: white;
@@ -73,4 +77,24 @@ video {
   left: 0;
   width: 100%;
   font-size: 3rem;
+}
+
+@media (max-width: 1000px) {
+  .navbarContainer {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .overlay {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 650px) {
+  .overlay {
+    transform: scale(0.6);
+    font-size: 2.75rem;
+  }
 }
