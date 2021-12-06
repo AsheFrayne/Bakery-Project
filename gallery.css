@@ -1,0 +1,101 @@
+@import url(./header.css);
+@import url(./footer.css);
+
+html {
+  font-family: "GFS Didot";
+  font-size: 1.25rem;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+
+.headerContainer {
+  margin-top: 90px;
+}
+
+.header {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.header h2 {
+  font-size: 2rem;
+  margin-bottom: 2px;
+}
+
+.header p {
+  font-size: 0.85rem;
+}
+
+.galleryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 60px auto;
+}
+
+.imageContainer {
+  display: grid;
+  gap: 30px;
+}
+
+.imagesDiv {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.imagesDiv img {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+}
+
+.imagesDiv img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 0px) {
+  .header p {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .header p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .header p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .imageContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .imageContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .imagesDiv {
+    width: 300px;
+    height: 300px;
+  }
+}

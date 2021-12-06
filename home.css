@@ -1,38 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url(./footer.css);
+
+html {
+  font-family: "GFS Didot";
+  font-size: 1.25rem;
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
-.navbarContainer {
-  position: absolute;
-}
-.navbar {
-  height: 20vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.navbar a {
-  position: relative;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+a {
   text-decoration: none;
-  color: white;
-  margin-left: 0.5rem;
+  color: black;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: end;
+  background: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  padding: 4px 16px 4px 16px;
   z-index: 1;
 }
-.navbar a:hover {
+
+.navbar {
+  padding: 20px 0;
+}
+
+.navmenu a {
+  margin-right: 24px;
+  color: white;
+}
+
+.navmenu a:hover {
   color: #ffc107;
 }
-.navmenu {
-  margin-right: 5vw;
-}
+
 .dropdown {
   display: none;
   border: none;
-  background-color: white;
 }
+
 video {
   display: block;
   width: 100vw;
@@ -41,44 +55,46 @@ video {
   position: relative;
   z-index: -1;
 }
+
 .video-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.637);
+  background-color: rgba(0, 0, 0, 0.6);
   overflow: hidden;
 }
+
 .overlay-img {
   margin-right: 50px;
 }
+
 .overlay {
-  font-family: "Lobster", cursive;
-  color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  font-family: "Lobster", cursive;
+  color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   font-size: 3rem;
 }
 
-.box {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 30px;
-}
-.box img {
-  width: 500px;
-}
-.box-2 {
-  flex-direction: row-reverse;
+@media (max-width: 1000px) {
+  .navbarContainer {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
-@media only screen and (max-width: 700px) {
-  .navbar {
-    justify-content: center;
+@media (max-width: 700px) {
+  .overlay {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 650px) {
+  .overlay {
+    transform: scale(0.6);
+    font-size: 2.75rem;
   }
 }
