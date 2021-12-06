@@ -4,13 +4,13 @@ window.onload = function() {
     var bar1 = document.querySelector(".bar1");
     var bar2 = document.querySelector(".bar2");
     var bar3 = document.querySelector(".bar3");
-    
+
     dropdown.onmouseover = function() {
         bar1.style.backgroundColor = "#ffc107";
         bar2.style.backgroundColor = "#ffc107";
         bar3.style.backgroundColor = "#ffc107";
     }
-    
+
     dropdown.onmouseleave = function() {
         bar1.style.backgroundColor = "black";
         bar2.style.backgroundColor = "black";
