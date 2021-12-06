@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url(./footer.css);
+@import url(./footer.css); 
 
 html {
   font-family: "GFS Didot";
@@ -18,24 +18,25 @@ a {
 }
 
 .navbarContainer {
+  background: white;
   display: flex;
   justify-content: end;
-  background: none;
   position: fixed;
   top: 0;
   right: 0;
-  width: 100vw;
+  width: 100vw; 
   padding: 4px 16px 4px 16px;
   z-index: 1;
 }
 
 .navbar {
+  display: flex;
+  align-items: center;
   padding: 20px 0;
 }
 
 .navmenu a {
   margin-right: 24px;
-  color: white;
 }
 
 .navmenu a:hover {
@@ -45,6 +46,27 @@ a {
 .dropdown {
   display: none;
   border: none;
+  background-color: white;
+  margin-right: 90px;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  transition: transform 0.5s, opacity 0.25s;
 }
 
 video {
@@ -79,22 +101,55 @@ video {
   font-size: 3rem;
 }
 
-@media (max-width: 1000px) {
-  .navbarContainer {
-    justify-content: center;
-    text-align: center;
+@media (min-width: 769px) {
+  .navmenu {
+    display: block !important;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+  .navmenu {
+    margin: 0;
+    width: 50%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 78px;
+    right: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .navmenu a {
+    margin: 6px 0;
+  }
+
+  .dropdown {
+    display: block;
+    margin-left: 60%;
+  }
+
   .overlay {
-    transform: scale(0.8);
+    font-size: 2rem;
+  }
+
+  .overlay-img {
+    width: 30%;
+    height: auto;
+    margin-right: 20px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 374px) {
   .overlay {
-    transform: scale(0.6);
-    font-size: 2.75rem;
+    font-size: 1.5rem;
+  }
+
+  .overlay-img {
+    width: 30%;
+    height: auto;
+    margin-right: 20px;
   }
 }
