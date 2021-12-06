@@ -65,9 +65,25 @@ html {
 }
 
 /* Responsive columns */
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) {
   .column {
     width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .column {
+    width: 33%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .column {
+    width: 25%;
     display: block;
     margin-bottom: 20px;
   }
