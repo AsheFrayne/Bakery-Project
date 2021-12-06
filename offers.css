@@ -53,7 +53,9 @@ html {
 }
 
 /* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+.row {
+  margin: 0 0;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -63,7 +65,31 @@ html {
 }
 
 /* Responsive columns */
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 768px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .column {
+    width: 33%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .column {
+    width: 25%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .column {
     width: 100%;
     display: block;
