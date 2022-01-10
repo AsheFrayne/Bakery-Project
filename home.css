@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url(./footer.css); 
+@import url(./footer.css);
 
 html {
   font-family: "GFS Didot";
@@ -24,7 +24,7 @@ a {
   position: fixed;
   top: 0;
   right: 0;
-  width: 100vw; 
+  width: 100vw;
   padding: 4px 16px 4px 16px;
   z-index: 1;
 }
@@ -100,7 +100,49 @@ video {
   width: 100%;
   font-size: 3rem;
 }
+/* ABOUT PAGE */
+.about-con {
+  padding: 200px;
+  flex-direction: column;
+  background-image: url(img/Sprinkle.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.about-cc {
+  color: white;
+  margin-bottom: 20px;
+}
+.about-text {
+  color: white;
+  font-size: 4 rem;
+}
 
+.bttm-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 5rem;
+}
+.box {
+  display: flex;
+  max-width: 80vw;
+  background-color: bisque;
+  margin-bottom: 100px;
+}
+.imgbox img {
+  padding: 0;
+  height: 100%;
+  width: 300px;
+}
+.boxtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+}
 @media (min-width: 769px) {
   .navmenu {
     display: block !important;
