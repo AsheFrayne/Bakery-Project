@@ -11,13 +11,29 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-image: url(./img/Sprinkle.svg);
+}
 a {
   text-decoration: none;
-  color: black;
+  color: #313131;
 }
 
 .navbarContainer {
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  padding: 4px 16px 4px 16px;
+  z-index: 1;
+}
+.navbarContainer .navmenu a {
+  color: white;
+}
+.navbar-scroll {
+  transition: background 100ms ease-in-out;
   background: white;
   display: flex;
   justify-content: end;
@@ -27,6 +43,10 @@ a {
   width: 100vw;
   padding: 4px 16px 4px 16px;
   z-index: 1;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.75);
+}
+.navbar-scroll .navmenu a {
+  color: #313131;
 }
 
 .navbar {

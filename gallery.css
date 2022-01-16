@@ -12,6 +12,10 @@ html {
   text-decoration: none;
   color: black;
 }
+body {
+  background-image: url(./img/Sprinkle.svg);
+  
+}
 
 .headerContainer {
   margin-top: 90px;

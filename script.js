@@ -4,6 +4,7 @@ window.onload = function() {
     var bar1 = document.querySelector(".bar1");
     var bar2 = document.querySelector(".bar2");
     var bar3 = document.querySelector(".bar3");
+    
 
     dropdown.onmouseover = function() {
         bar1.style.backgroundColor = "#ffc107";
