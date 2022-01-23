@@ -1,0 +1,58 @@
+@import url(./header.css);
+@import url(./footer.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./img/Sprinkle.svg);
+}
+main {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  max-width: 20vw;
+  max-width: 20vh;
+}
+form {
+  margin-top: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  padding: 70px;
+  font-size: 0.6em;
+}
+h3 {
+  margin-bottom: 10px;
+}
+input {
+  border: none;
+  padding: 10px;
+  resize: none;
+  outline: none;
+}
+.input-field {
+  margin-bottom: 10px;
+  border-bottom: 1px gray solid;
+}
+button {
+  margin-top: 20px;
+  color: #ffc107;
+  padding: 10px;
+  background-color: white;
+  border: 2px #ffc107 solid;
+  border-radius: 25px;
+  font-weight: 900;
+  cursor: pointer;
+  width: 100px;
+}
+button:hover {
+  color: white;
+  background-color: #ffc107;
+}
