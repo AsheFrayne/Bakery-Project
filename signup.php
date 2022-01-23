@@ -68,6 +68,19 @@ include_once 'header.php';
       <button type="submit" name="submit">Sign Up</button>
     </form>
   </main>
+  <footer>
+    <div class="footer-container">
+      <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
+      <div class="socmed-container">
+        <a href="" class="fa fa-facebook"></a>
+        <a href="" class="fa fa-twitter"></a>
+        <a href="" class="fa fa-google"></a>
+        <a href="" class="fa fa-instagram"></a>
+        <a href="" class="fa fa-pinterest"></a>
+      </div>
+    </div>
+  </footer>
+
   <?php
   if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
