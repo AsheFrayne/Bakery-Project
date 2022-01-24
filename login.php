@@ -36,6 +36,9 @@ include 'header.php';
           $a = $_SESSION["uname"];
           echo '<a href="./profile.php">Profile Page</a>';
           echo '<a href="./includes/logout.inc.php">Log out</a>';
+        } else {
+          echo '<a href="./login.php">Log in</a>';
+          echo '<a href="./signup.php">Sign up</a>';
         }
         ?>
 
@@ -43,7 +46,7 @@ include 'header.php';
     </div>
   </div>
   <main>
-
+    <img src="./img/newlogobg.png" alt="logo" class="logo">
     <h1>Log in</h1>
     <form action="includes/login.inc.php" method="post">
       <h3>Email</h3>
