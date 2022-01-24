@@ -84,7 +84,6 @@ include_once 'header.php';
   <?php
   if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
-      // echo '<script>alert("Fill in all fields!")</script>';
       echo '<p>Error: Fill in all fields!<p>';
     } else if ($_GET["error"] == "invalid_uname") {
       echo '<p>Error: Invalid Username!<p>';
