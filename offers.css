@@ -15,6 +15,7 @@ html {
 body {
   background-image: url(./img/Sprinkle.svg);
 }
+
 .headerContainer {
   margin-top: 90px;
 }
@@ -36,67 +37,74 @@ body {
   font-size: 0.85rem;
 }
 
-.card {
-  padding: 0.01em 16px;
+.item-section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1rem 1rem 4rem 1rem;
+  background-color: white;
+  overflow: hidden;
 }
 
-.card img {
-  border-radius: 30px;
-  width: 100%;
-  height: 100%;
-  padding: 10px 0;
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
+.item-title {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
 }
 
-/* Remove extra left and right margins, due to padding */
-.row {
-  margin: 0 0;
+.item-title h1 {
+  font-weight: lighter;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.hover {
+  cursor: pointer;
 }
 
-/* Responsive columns */
-@media screen and (min-width: 768px) {
-  .column {
-    width: 50%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.item-contents {
+  display: flex;
+  gap: 1rem;
+  transition: transform 500ms;
 }
 
-@media screen and (min-width: 1024px) {
-  .column {
-    width: 33%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.item-contents p {
+  font-size: 0.825rem;
 }
 
-@media screen and (min-width: 1440px) {
-  .column {
-    width: 25%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.item {
+  max-width: 264px;
 }
 
-@media screen and (max-width: 767px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.item-img {
+  max-width: 264px;
+  min-height: 300px;
+  margin-bottom: 0.825rem;
+}
+
+.item-img img {
+  max-width: 264px;
+  min-height: 300px;
+  transition: transform 400ms;
+}
+
+.item-img img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.item-name {
+  margin-bottom: 1.5rem;
+}
+
+.item-description p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 0px) {
@@ -115,4 +123,16 @@ body {
   .header p {
     font-size: 0.85rem;
   }
+}
+
+@media screen and (min-width: 760px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media (max-width: 400px) {
+
 }
