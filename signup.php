@@ -1,5 +1,5 @@
 <?php
-include_once 'header.php';
+include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,6 @@ include_once 'header.php';
   <meta name="viewport" content="width=, initial-scale=1.0">
 
   <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
-  <script src="https://kit.fontawesome.com/8e42a01d1f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="signup.css">
   <title>Document</title>
 </head>
@@ -36,9 +35,6 @@ include_once 'header.php';
           $a = $_SESSION["uname"];
           echo '<a href="./profile.php">Profile Page</a>';
           echo '<a href="./includes/logout.inc.php">Log out</a>';
-        } else {
-          echo '<a href="./login.php">Log in</a>';
-          echo '<a href="./signup.php">Sign up</a>';
         }
         ?>
 
