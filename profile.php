@@ -1,9 +1,9 @@
 <?php
-include 'header.php';
-// $usersName = $_SESSION['usersName'];
-// $usersID = $_SESSION["usersID"];
-// $usersPwd = $_SESSION["usersPwd"];
-// $usersEmail = $_SESSION["usersEmail"];
+include 'session.php';
+$usersName = $_SESSION['usersName'];
+$usersID = $_SESSION["usersID"];
+$usersPwd = $_SESSION["usersPwd"];
+$usersEmail = $_SESSION["usersEmail"];
 ?>
 
 <!DOCTYPE html>
@@ -21,35 +21,9 @@ include 'header.php';
 </head>
 
 <body>
-  <div class="navbarContainer">
-    <div class="navbar">
-      <a href="./index.html">
-        <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
-      </a>
-      <button class="dropdown">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </button>
-      <div class="navmenu">
-        <a href="index.php">Home</a>
-        <a href="">About</a>
-        <a href="./offers.html">Offers</a>
-        <a href="./gallery.html">Gallery</a>
-        <?php
-        if (isset($_SESSION["uname"])) {
-          $a = $_SESSION["uname"];
-          echo '<a href="./profile.php">Profile Page</a>';
-          echo '<a href="./includes/logout.inc.php">Log out</a>';
-        } else {
-          echo '<a href="./login.php">Log in</a>';
-          echo '<a href="./signup.php">Sign up</a>';
-        }
-        ?>
-
-      </div>
-    </div>
-  </div>
+  <?php
+  include 'header.php';
+  ?>
   <main>
     <h3>Update Profile</h3>
     <form action="includes/profile.inc.php" method="post" id="form">
@@ -57,7 +31,7 @@ include 'header.php';
         <h3>Username</h3>
         <input type="text" name="uname" value="<?php echo $usersName ?>" id="username">
         <i class="fas fa-exclamation"></i>
-        <i class="far fa-check-circle" ></i>
+        <i class="far fa-check-circle"></i>
         <small>Error Message</small>
       </div>
       <div class="input-field">
@@ -98,4 +72,5 @@ include 'header.php';
 
 </body>
 <script src="./validation.js"></script>
+
 </html>

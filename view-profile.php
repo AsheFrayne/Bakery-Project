@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'session.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,47 +17,11 @@ include 'header.php';
 </head>
 
 <body>
-  <div class="navbarContainer">
-    <div class="navbar">
-      <a href="./index.html">
-        <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
-      </a>
-      <button class="dropdown">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </button>
-      <div class="navmenu">
-        <a href="index.php">Home</a>
-        <a href="">About</a>
-        <a href="./offers.html">Offers</a>
-        <a href="./gallery.html">Gallery</a>
-
-        <?php
-        if (isset($_SESSION["uname"])) {
-          $a = $_SESSION["uname"];
-          echo '<a href="./profile.php">Profile Page</a>';
-          echo '<a href="./includes/logout.inc.php">Log out</a>';
-        } else {
-          echo '<a href="./login.php">Log in</a>';
-          echo '<a href="./signup.php">Sign up</a>';
-        }
-        ?>
-
-      </div>
-    </div>
-  </div>
+  <?php
+  include 'header.php';
+  ?>
   <main>
     <div class="container">
-      <!-- <div class="profile-pic">
-        <span class="overlay">
-          <i class="fas fa-camera"></i>
-          <span class='over-txt'>Change Image</span>
-
-        </span>
-        <input type="file" />
-        <img src="./img/default.png" alt="profile image">
-      </div> -->
       <div class="profile-pic">
         <label class="-label" for="file">
           <i class="fas fa-camera"></i>
@@ -66,9 +30,9 @@ include 'header.php';
         <input id="file" type="file" />
         <img src="./img/default.png" />
       </div>
-      <div class="name">Jessie Kulot</div>
+
       <div class="infobox">
-        <small>Email</small>
+        <div class="name">Jessie Kulot</div>
         <div>example@gmail.com</div>
         <small>Date Joined.</small>
         <div>01/01/01</div>
@@ -77,8 +41,9 @@ include 'header.php';
         <small>Desciption</small>
         <textarea name="description" class="description" cols="30" rows="10">
         </textarea>
-      </div>
+        <a href="./profile.php"><button>Edit</button></a>
 
+      </div>
   </main>
   <footer>
     <div class="footer-container">
