@@ -19,6 +19,10 @@ include 'session.php';
 <body>
   <?php
   include 'header.php';
+  require_once 'includes/dbh.inc.php';
+  $usersID = $_SESSION["usersID"];
+  $result = mysqli_query($conn, "SELECT filename FROM users WHERE usersID = '$usersID'");
+  $pic = mysqli_fetch_array($result);
   ?>
   <main>
     <div class="container">
@@ -27,8 +31,11 @@ include 'session.php';
           <i class="fas fa-camera"></i>
           <span>Change Image</span>
         </label>
-        <input id="file" type="file" />
-        <img src="./img/default.png" />
+        <form action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
+          <input id="file" type="file" name="uploadDP"/>
+          <img src="./img/profilePics/<?php echo $pic['filename']; ?>" /><br/><br/><br/><br/><br/><br/>
+          <button type="submit" name="upload">Upload</button>
+        </form>
       </div>
 
       <div class="infobox">

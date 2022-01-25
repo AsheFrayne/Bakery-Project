@@ -25,9 +25,7 @@ include 'session.php';
             </button>
             <div class="navmenu">
                 <a href="index.php">Home</a>
-                <a href="">About</a>
-                <a href="./offers.html">Offers</a>
-                <a href="./gallery.html">Gallery</a>
+                <a href="./offers.php">Offers</a>
                 <?php
                 if (isset($_SESSION["usersID"])) {
                     echo '<a href="./view-profile.php">Profile Page</a>';

@@ -1,3 +1,7 @@
+<?php
+include 'session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,31 +17,16 @@
 </head>
 
 <body>
-    <div class="navbarContainer">
-        <div class="navbar">
-            <a href="./index.html">
-                <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
-            </a>
-            <button class="dropdown">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </button>
-            <div class="navmenu">
-                <a href="./index.html">Home</a>
-                <a href="">About</a>
-                <a href="./offers.html">Offers</a>
-                <a href="">Blog</a>
-                <a href="">Contact</a>
-            </div>
-        </div>
-    </div>
+  <?php
+  include 'header.php';
+  ?>
     <div class="headerContainer">
         <div class="header">
             <h2>Our Offers</h2>
             <p>Treat yourselves with our delicious offers.</p>
         </div>
     </div>
+                <!-- Start of first line offers -->
     <div class="item-section">
         <div class="item-header">
             <div class="item-title">
@@ -156,6 +145,7 @@
             </div>
         </div>
     </div>
+    <!-- End of first line offers -->
     <div class="item-section">
         <div class="item-header">
             <div class="item-title">
@@ -392,6 +382,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal start -->
     <div class="modal">
         <div class="modal-exit hover">
             <i class="fa fa-times" style="color: white"></i>
@@ -419,6 +411,8 @@
             </div>
         </div>
     </div>
+    <!-- Modal end -->
+
     <div class="footer-container">
         <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
         <div class="socmed-container">

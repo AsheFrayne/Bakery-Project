@@ -1,5 +1,5 @@
 <?php
-
+//sign up
 function emptyInputSignup($uname, $email, $pwd, $conpwd){
   $result;
   if (empty($uname) || empty($email) || empty($pwd) || empty($conpwd)) {
@@ -82,7 +82,7 @@ function createUser($conn, $uname, $email, $pwd){
   header("location: ../login.php?signup=success");
   exit();
 }
-
+//login
 function loginUser($conn, $uname, $pwd){
   $unameEmailExist = unameEmailExist($conn, $uname, $uname);
   if ($unameEmailExist === false) {
