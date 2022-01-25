@@ -98,5 +98,4 @@ include 'header.php';
 
 </body>
 <script src="./validation.js"></script>
-
 </html>
