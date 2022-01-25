@@ -12,9 +12,16 @@ html {
   text-decoration: none;
   color: black;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   background-image: url(./img/Sprinkle.svg);
 }
+
 .headerContainer {
   margin-top: 90px;
 }
@@ -36,66 +43,186 @@ body {
   font-size: 0.85rem;
 }
 
-.card {
-  padding: 0.01em 16px;
+.item-section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1rem 1rem 4rem 1rem;
+  background-color: white;
+  overflow: hidden;
 }
 
-.card img {
-  border-radius: 30px;
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.item-title {
+  font-size: 1.25rem;
+}
+
+.item-title h1 {
+  font-weight: lighter;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.item-contents {
+  display: flex;
+  gap: 1rem;
+  transition: transform 300ms;
+}
+
+.item-contents p {
+  font-size: 0.825rem;
+}
+
+.item-contents > * {
+  position: relative;
+  left: -284px;
+}
+
+.item {
+  width: 264px;
+}
+
+.item-img {
+  width: 264px;
+  height: 300px;
+  margin-bottom: 0.825rem;
+}
+
+.item-img img {
+  width: 264px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.item-img img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.item-name {
+  margin-bottom: 1.5rem;
+}
+
+.item-description p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal {
+  display: none;
+  background-color: rgb(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.modal-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+
+.modal-img-container {
+  aspect-ratio: 3/4;
+  height: 100%;
+  background-color: black;
+}
+
+.modal-img {
   width: 100%;
   height: 100%;
-  padding: 10px 0;
+  margin: auto;
 }
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
+.modal-review {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
-/* Remove extra left and right margins, due to padding */
-.row {
-  margin: 0 0;
+.modal-title-container {
+  border-bottom: 1px solid rgb(214, 214, 214);
+  padding: 1rem;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.modal-comments {
+  padding: 1rem;
+  flex: 1;
 }
 
-/* Responsive columns */
-@media screen and (min-width: 768px) {
-  .column {
-    width: 50%;
-    display: block;
-    margin-bottom: 20px;
+.modal-description-container {
+  border-top: 1px solid rgb(214, 214, 214);
+  padding: 1rem;
+}
+
+.modal-description-container p {
+  font-size: 0.825rem;
+}
+
+.modal-description-container p:nth-of-type(2) {
+  color: rgb(2, 184, 2);
+}
+
+.modal-description-container i {
+  font-size: 1.375rem;
+  margin-right: 0.5rem;
+}
+
+.modal-comment-box {
+  display: flex;
+  width: 100%;
+}
+
+.modal-comment-box input {
+  border: none;
+  outline: none;
+  border-top: 1px solid rgb(214, 214, 214);
+  width: 80%;
+  padding: 0.825rem 0 0.825rem 1.25rem;
+}
+
+.modal-comment-box button {
+  border: none;
+  outline: none;
+  border-top: 1px solid rgb(214, 214, 214);
+  background-color: white;
+  width: 20%;
+  padding: 0.825rem 0 0.825rem 0;
+}
+
+@keyframes like {
+  0% {
+    transform: scale(1);
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .column {
-    width: 33%;
-    display: block;
-    margin-bottom: 20px;
+  50% {
+    transform: scale(1.1);
   }
-}
-
-@media screen and (min-width: 1440px) {
-  .column {
-    width: 25%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -115,4 +242,16 @@ body {
   .header p {
     font-size: 0.85rem;
   }
+}
+
+@media screen and (min-width: 760px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media (max-width: 400px) {
+
 }
