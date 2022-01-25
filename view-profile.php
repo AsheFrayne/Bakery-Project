@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +12,8 @@ include 'header.php';
 
   <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/8e42a01d1f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="login.css">
-  <title>Log in</title>
+  <link rel="stylesheet" href="view-profile.css">
+  <title>View Profile</title>
 </head>
 
 <body>
@@ -31,6 +32,7 @@ include 'header.php';
         <a href="">About</a>
         <a href="./offers.html">Offers</a>
         <a href="./gallery.html">Gallery</a>
+
         <?php
         if (isset($_SESSION["uname"])) {
           $a = $_SESSION["uname"];
@@ -46,22 +48,37 @@ include 'header.php';
     </div>
   </div>
   <main>
-    <h1>Log in</h1>
-    <form action="includes/login.inc.php" method="post">
-      <h3>Email</h3>
-      <div class="input-field">
-        <i class="far fa-user"></i>
-        <input type="text" name="uname" placeholder="Email">
-      </div>
-      <h3>Password</h3>
-      <div class="input-field">
-        <i class="fas fa-lock"></i>
-        <input type="password" name="pwd" placeholder="Input password"><br />
+    <div class="container">
+      <!-- <div class="profile-pic">
+        <span class="overlay">
+          <i class="fas fa-camera"></i>
+          <span class='over-txt'>Change Image</span>
 
+        </span>
+        <input type="file" />
+        <img src="./img/default.png" alt="profile image">
+      </div> -->
+      <div class="profile-pic">
+        <label class="-label" for="file">
+          <i class="fas fa-camera"></i>
+          <span>Change Image</span>
+        </label>
+        <input id="file" type="file" />
+        <img src="./img/default.png" />
       </div>
-      <button type="submit" name="submit">LOGIN</button>
+      <div class="name">Jessie Kulot</div>
+      <div class="infobox">
+        <small>Email</small>
+        <div>example@gmail.com</div>
+        <small>Date Joined.</small>
+        <div>01/01/01</div>
+      </div>
+      <div class="description-box">
+        <small>Desciption</small>
+        <textarea name="description" class="description" cols="30" rows="10">
+        </textarea>
+      </div>
 
-    </form>
   </main>
   <footer>
     <div class="footer-container">
@@ -75,22 +92,6 @@ include 'header.php';
       </div>
     </div>
   </footer>
-
 </body>
 
 </html>
-
-
-<?php
-if (isset($_GET["error"])) {
-  if ($_GET["error"] == "emptyinput") {
-    echo '<p>Error: Fill in all fields!<p>';
-  }
-  if ($_GET["error"] == "wrongpassword") {
-    echo '<p>Error: Incorrect Password!<p>';
-  } else if ($_GET["error"] == "usernotexist") {
-    echo '<p>Error: User not Exist!<p>';
-  }
-}
-
-?>

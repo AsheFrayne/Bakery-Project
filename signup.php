@@ -7,7 +7,7 @@ include_once 'header.php';
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/8e42a01d1f.js" crossorigin="anonymous"></script>
@@ -48,22 +48,34 @@ include_once 'header.php';
   <main>
     <h1>Sign up</h1>
 
-    <form action="includes/signup.inc.php" method="post">
+    <form action="includes/signup.inc.php" method="post" id="form">
       <div class="input-field">
         <h3>Username</h3>
-        <input type="text" name="uname" placeholder="Username">
+        <input type="text" name="uname" placeholder="Username" id="username">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <div class="input-field">
         <h3>Email</h3>
-        <input type="email" name="email" placeholder="example@email.com">
+        <input type="email" name="email" placeholder="example@email.com" id="email">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <div class="input-field">
         <h3>Password</h3>
-        <input type="password" name="pwd" placeholder="Password...">
+        <input type="password" name="pwd" placeholder="Password..." id="password">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <div class="input-field">
         <h3>Confirm Password</h3>
-        <input type="password" name="conpwd" placeholder="Confirm Password..."><br />
+        <input type="password" name="conpwd" placeholder="Confirm Password..." id="confirm-password">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <button type="submit" name="submit">Sign Up</button>
     </form>
@@ -80,21 +92,7 @@ include_once 'header.php';
       </div>
     </div>
   </footer>
-
-  <?php
-  if (isset($_GET["error"])) {
-    if ($_GET["error"] == "emptyinput") {
-      echo '<p>Error: Fill in all fields!<p>';
-    } else if ($_GET["error"] == "invalid_uname") {
-      echo '<p>Error: Invalid Username!<p>';
-    } else if ($_GET["error"] == "pwd_notmatch") {
-      echo '<p>Error: Password not match!<p>';
-    } else if ($_GET["error"] == "username_email_taken") {
-      echo '<p>Error: The username or email is already taken!<p>';
-    }
-  }
-  ?>
-
 </body>
+<script src="./validation.js"></script>
 
 </html>
