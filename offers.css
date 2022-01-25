@@ -12,6 +12,12 @@ html {
   text-decoration: none;
   color: black;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   background-image: url(./img/Sprinkle.svg);
 }
@@ -48,12 +54,11 @@ body {
 .item-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .item-title {
   font-size: 1.25rem;
-  margin-bottom: 3rem;
 }
 
 .item-title h1 {
@@ -67,27 +72,32 @@ body {
 .item-contents {
   display: flex;
   gap: 1rem;
-  transition: transform 500ms;
+  transition: transform 300ms;
 }
 
 .item-contents p {
   font-size: 0.825rem;
 }
 
+.item-contents > * {
+  position: relative;
+  left: -284px;
+}
+
 .item {
-  max-width: 264px;
+  width: 264px;
 }
 
 .item-img {
-  max-width: 264px;
-  min-height: 300px;
+  width: 264px;
+  height: 300px;
   margin-bottom: 0.825rem;
 }
 
 .item-img img {
-  max-width: 264px;
-  min-height: 300px;
-  transition: transform 400ms;
+  width: 264px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .item-img img:hover {
@@ -105,6 +115,115 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.modal {
+  display: none;
+  background-color: rgb(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.modal-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+
+.modal-img-container {
+  aspect-ratio: 3/4;
+  height: 100%;
+  background-color: black;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.modal-review {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.modal-title-container {
+  border-bottom: 1px solid rgb(214, 214, 214);
+  padding: 1rem;
+}
+
+.modal-comments {
+  padding: 1rem;
+  flex: 1;
+}
+
+.modal-description-container {
+  border-top: 1px solid rgb(214, 214, 214);
+  padding: 1rem;
+}
+
+.modal-description-container p {
+  font-size: 0.825rem;
+}
+
+.modal-description-container p:nth-of-type(2) {
+  color: rgb(2, 184, 2);
+}
+
+.modal-description-container i {
+  font-size: 1.375rem;
+  margin-right: 0.5rem;
+}
+
+.modal-comment-box {
+  display: flex;
+  width: 100%;
+}
+
+.modal-comment-box input {
+  border: none;
+  outline: none;
+  border-top: 1px solid rgb(214, 214, 214);
+  width: 80%;
+  padding: 0.825rem 0 0.825rem 1.25rem;
+}
+
+.modal-comment-box button {
+  border: none;
+  outline: none;
+  border-top: 1px solid rgb(214, 214, 214);
+  background-color: white;
+  width: 20%;
+  padding: 0.825rem 0 0.825rem 0;
+}
+
+@keyframes like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 0px) {
