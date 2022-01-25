@@ -93,8 +93,10 @@ function loginUser($conn, $uname, $pwd){
   $getPwd = $unameEmailExist["usersPwd"];
   if ($getPwd === $pwd) {
     session_start();
-    $_SESSION["uname"] = $unameEmailExist["usersName"];
-    $_SESSION["usersid"] = $unameEmailExist["usersID"];
+    $_SESSION["usersName"] = $unameEmailExist["usersName"];
+    $_SESSION["usersID"] = $unameEmailExist["usersID"];
+    $_SESSION["usersPwd"] = $unameEmailExist["usersPwd"];
+    $_SESSION["usersEmail"] = $unameEmailExist["usersEmail"];
     header("location: ../index.php?login=success");
     exit();
   }

@@ -29,8 +29,7 @@ include 'session.php';
                 <a href="./offers.html">Offers</a>
                 <a href="./gallery.html">Gallery</a>
                 <?php
-                if (isset($_SESSION["uname"])) {
-                    $a = $_SESSION["uname"];
+                if (isset($_SESSION["usersID"])) {
                     echo '<a href="./view-profile.php">Profile Page</a>';
                     echo '<a href="./includes/logout.inc.php">Log out</a>';
                 } else {
