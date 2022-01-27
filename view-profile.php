@@ -83,7 +83,7 @@ $usersEmail = $_SESSION["usersEmail"];
 
         <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly></textarea>
         <button class='edit-btn'>Edit</button>
-        <button type="submit" class="done-btn">Done</button>
+        <button type="submit" class="done-btn" name="upload"t> Done</button>
 
       </div>
     </div>

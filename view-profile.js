@@ -54,8 +54,8 @@ function menu(e){
 
 // Validation
 doneButton.onclick = () =>{
-    const passwordValue = password.value.trim();
-    const confirmPassword = cPassword.value.trim();
+    const passwordValue = password.value;
+    const confirmPassword = cPassword.value;
     const unameValue = uname.value;
 
 
