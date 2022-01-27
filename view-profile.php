@@ -1,5 +1,10 @@
 <?php
 include 'session.php';
+
+$usersName = $_SESSION["usersName"];
+$usersID = $_SESSION["usersID"];
+$usersPwd = $_SESSION["usersPwd"];
+$usersEmail = $_SESSION["usersEmail"];
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +29,32 @@ include 'session.php';
   $result = mysqli_query($conn, "SELECT filename FROM users WHERE usersID = '$usersID'");
   $pic = mysqli_fetch_array($result);
   ?>
+  <div class="modal-bg">
+    <div class="modal">
+      <div class="question">
+        Do you want your account deleted?
+      </div>
+      <div class="modal-btn">
+        <!-- Submit button para mag delete ng account -->
+        <button class="yes-btn" type="submit">Yes</button>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="alert hide">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">Warning: This is a warning alert!</span>
+
+  </div>
   <main>
+
     <div class="container">
-      <div class="profile-pic">
+      <div class="menu">
+        <i class="fas fa-ellipsis-v"></i>
+        <div class="del-btn">Delete Account</div>
+      </div>
+
+      <div class=" profile-pic">
         <label class="-label" for="file">
           <i class="fas fa-camera"></i>
           <span>Change Image</span>
@@ -39,18 +67,28 @@ include 'session.php';
       </div>
 
       <div class="infobox">
-        <div class="name">Jessie Kulot</div>
-        <div>example@gmail.com</div>
-        <small>Date Joined.</small>
-        <div>01/01/01</div>
-      </div>
-      <div class="description-box">
-        <small>Desciption</small>
-        <textarea name="description" class="description" cols="30" rows="10">
-        </textarea>
-        <a href="./profile.php"><button>Edit</button></a>
+        <input type="text" name="uname" class="uname txt-box" value="<?php echo $usersName ?>" readonly autocomplete="off">
+        <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
+        <div class="pw-box">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="password">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" name="conf-password" class="conf-password">
+        </div>
+        <div class=" date-joined">
+          <small>Date Joined</small>
+          <div>01/01/01</div>
+        </div>
 
       </div>
+      <div class="description-box">
+
+        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly></textarea>
+        <button class='edit-btn'>Edit</button>
+        <button type="submit" class="done-btn">Done</button>
+
+      </div>
+    </div>
   </main>
   <footer>
     <div class="footer-container">
@@ -65,5 +103,6 @@ include 'session.php';
     </div>
   </footer>
 </body>
+<script src="./view-profile.js"></script>
 
 </html>

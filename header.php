@@ -13,7 +13,7 @@
             <a href="./offers.php">Offers</a>
             <?php
             if (isset($_SESSION["usersID"])) {
-                echo '<a href="./view-profile.php">Profile Page</a>';
+                echo '<a href="./view-profile.php">My Profile</a>';
                 echo '<a href="./includes/logout.inc.php">Log out</a>';
             } else {
                 echo '<a href="./login.php">Log in</a>';

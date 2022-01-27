@@ -25,6 +25,7 @@ include 'session.php';
             </button>
             <div class="navmenu">
                 <a href="index.php">Home</a>
+                <a href="">About</a>
                 <a href="./offers.php">Offers</a>
                 <?php
                 if (isset($_SESSION["usersID"])) {
@@ -82,4 +83,5 @@ include 'session.php';
 </body>
 <script src="script.js" defer></script>
 <script src="animation-home.js" defer></script>
+
 </html>
