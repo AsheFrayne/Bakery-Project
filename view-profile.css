@@ -195,9 +195,11 @@ i {
 .edit-btn {
   display: block;
 }
-.done-btn {
+.done-btn,
+.cancel-btn {
   display: none;
 }
+
 .modal-bg {
   visibility: hidden;
   opacity: 0;

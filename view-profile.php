@@ -38,8 +38,8 @@ $usersEmail = $_SESSION["usersEmail"];
       <div class="modal-btn">
         <!-- Submit button para mag delete ng account -->
         <form class="" action="includes/upload.inc.php" method="post">
-        <button class="yes-btn" type="submit" name="delete">Yes</button>
-        <button class="cancel-btn" type="button">Cancel</button>
+          <button class="yes-btn" type="submit" name="delete">Yes</button>
+          <button class="cancel-btn" type="button">Cancel</button>
         </form>
       </div>
     </div>
@@ -64,30 +64,33 @@ $usersEmail = $_SESSION["usersEmail"];
         </label>
         <!-- Form start .........................................................................-->
         <form class="" action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
-        <input id="file" type="file" name="uploadDP" />
-        <img src="./img/profilePics/<?php echo $user['filename']; ?>">
+          <input id="file" type="file" name="uploadDP" />
+          <img src="./img/profilePics/<?php echo $user['filename']; ?>">
       </div>
 
       <div class="infobox">
-        <input type="text" name="uname" class="uname txt-box" value="<?php echo $usersName ?>" readonly autocomplete="off">
+        <input type="text" name="uname" class="uname txt-box" value="<?php echo $user['usersName'] ?>" readonly autocomplete="off">
         <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
         <div class="pw-box">
           <label for="password">Password</label>
-          <input type="password" name="password" class="password">
+          <input type="password" name="password" class="password" value="<?php echo $usersPwd ?>">
           <label for="confirmPassword">Confirm Password</label>
-          <input type="password" name="conf-password" class="conf-password">
+          <input type="password" name="conf-password" class="conf-password" value="<?php echo $usersPwd ?>">
         </div>
         <div class=" date-joined">
           <small>Date Joined</small>
-          <div><?php echo $_SESSION["dateJoined"];?></div>
+          <div><?php echo $_SESSION["dateJoined"]; ?></div>
         </div>
 
       </div>
       <div class="description-box">
 
         <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $_SESSION["description"]; ?></textarea>
-        <button class='edit-btn' type="button">Edit</button>
-        <button type="submit" class="done-btn" name="upload"> Done</button>
+        <div class="buttons"><button class='edit-btn' type="button">Edit</button>
+          <button class="cancel-btn">Cancel</button>
+          <button type="submit" class="done-btn" name="upload"> Done</button>
+        </div>
+
         </form>
         <!-- form end ................................................... -->
       </div>

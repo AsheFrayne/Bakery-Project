@@ -1,5 +1,5 @@
 <?php
-  include 'session.php';
+include 'session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,21 +18,39 @@
 <body>
   <?php
   include 'header.php';
+
   ?>
   <main>
     <h1>Log in</h1>
     <form action="includes/login.inc.php" method="post">
       <h3>Email</h3>
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'emptyinput' || $_GET['error'] == 'usernotexist') {
+                                echo 'err-pass';
+                              } ?>">
         <i class="far fa-user"></i>
         <input type="text" name="uname" placeholder="Email">
       </div>
       <h3>Password</h3>
-      <div class="input-field">
+      <div class="<?php if (isset($_GET['error'])) if ($_GET['error'] == 'wrongpassword' || $_GET['error'] == 'emptyinput' || $_GET['error'] == 'usernotexist') {
+                    echo 'err-pass';
+                  } ?> input-field">
         <i class="fas fa-lock"></i>
-        <input type="password" name="pwd" placeholder="Input password"><br />
+        <input class="" type="password" name="pwd" placeholder="Input password"><br />
 
       </div>
+
+      <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+          echo '<p >Error: Fill in all fields!<p>';
+        }
+        if ($_GET["error"] == "wrongpassword") {
+          echo '<p>Error: Incorrect Password!<p>';
+        } else if ($_GET["error"] == "usernotexist") {
+          echo '<p>Error: User not Exist!<p>';
+        }
+      }
+      ?>
       <button type="submit" name="submit">LOGIN</button>
 
     </form>
@@ -53,18 +71,3 @@
 </body>
 
 </html>
-
-
-<?php
-if (isset($_GET["error"])) {
-  if ($_GET["error"] == "emptyinput") {
-    echo '<p>Error: Fill in all fields!<p>';
-  }
-  if ($_GET["error"] == "wrongpassword") {
-    echo '<p>Error: Incorrect Password!<p>';
-  } else if ($_GET["error"] == "usernotexist") {
-    echo '<p>Error: User not Exist!<p>';
-  }
-}
-
-?>

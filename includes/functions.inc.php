@@ -90,6 +90,7 @@ function loginUser($conn, $uname, $pwd){
   $unameEmailExist = unameEmailExist($conn, $uname, $uname);
   if ($unameEmailExist === false) {
     header("location: ../login.php?error=usernotexist");
+
     exit();
   }
 
