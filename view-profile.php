@@ -26,8 +26,8 @@ $usersEmail = $_SESSION["usersEmail"];
   include 'header.php';
   require_once 'includes/dbh.inc.php';
   $usersID = $_SESSION["usersID"];
-  $result = mysqli_query($conn, "SELECT filename FROM users WHERE usersID = '$usersID'");
-  $pic = mysqli_fetch_array($result);
+  $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID'");
+  $user = mysqli_fetch_array($result);
   ?>
   ?>
   <div class="modal-bg">
@@ -37,8 +37,10 @@ $usersEmail = $_SESSION["usersEmail"];
       </div>
       <div class="modal-btn">
         <!-- Submit button para mag delete ng account -->
-        <button class="yes-btn" type="submit">Yes</button>
-        <button class="cancel-btn">Cancel</button>
+        <form class="" action="includes/upload.inc.php" method="post">
+        <button class="yes-btn" type="submit" name="delete">Yes</button>
+        <button class="cancel-btn" type="button">Cancel</button>
+        </form>
       </div>
     </div>
   </div>
@@ -60,8 +62,10 @@ $usersEmail = $_SESSION["usersEmail"];
           <i class="fas fa-camera"></i>
           <span>Change Image</span>
         </label>
-        <input id="file" type="file" />
-        <img src="./img/profilePics/<?php echo $pic['filename']; ?>">
+        <!-- Form start .........................................................................-->
+        <form class="" action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
+        <input id="file" type="file" name="uploadDP" />
+        <img src="./img/profilePics/<?php echo $user['filename']; ?>">
       </div>
 
       <div class="infobox">
@@ -75,16 +79,17 @@ $usersEmail = $_SESSION["usersEmail"];
         </div>
         <div class=" date-joined">
           <small>Date Joined</small>
-          <div>01/01/01</div>
+          <div><?php echo $_SESSION["dateJoined"];?></div>
         </div>
 
       </div>
       <div class="description-box">
 
-        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly></textarea>
-        <button class='edit-btn'>Edit</button>
-        <button type="submit" class="done-btn" name="upload"t> Done</button>
-
+        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $_SESSION["description"]; ?></textarea>
+        <button class='edit-btn' type="button">Edit</button>
+        <button type="submit" class="done-btn" name="upload"> Done</button>
+        </form>
+        <!-- form end ................................................... -->
       </div>
     </div>
   </main>

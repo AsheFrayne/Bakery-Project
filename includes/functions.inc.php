@@ -69,14 +69,17 @@ function unameEmailExist($conn, $uname, $email){
 }
 
 function createUser($conn, $uname, $email, $pwd){
-  $sql = "INSERT INTO users (usersName, usersEmail, usersPwd) VALUES (?, ?, ?);";
+  $date = date("m/d/Y");
+  $filename = "default.png";
+  $description = "Describe yourself!";
+  $sql = "INSERT INTO users (usersName, usersEmail, usersPwd, dateJoined, filename, description) VALUES (?, ?, ?, ?, ?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../signup.php?error=username/stmt_failed");
     exit();
   }
 
-  mysqli_stmt_bind_param($stmt, "sss", $uname, $email, $pwd);
+  mysqli_stmt_bind_param($stmt, "ssssss", $uname, $email, $pwd, $date, $filename, $description);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   header("location: ../login.php?signup=success");
@@ -97,6 +100,9 @@ function loginUser($conn, $uname, $pwd){
     $_SESSION["usersID"] = $unameEmailExist["usersID"];
     $_SESSION["usersPwd"] = $unameEmailExist["usersPwd"];
     $_SESSION["usersEmail"] = $unameEmailExist["usersEmail"];
+    $_SESSION["dateJoined"] = $unameEmailExist["dateJoined"];
+    $_SESSION["filename"] = $unameEmailExist["filename"];
+    $_SESSION["description"] = $unameEmailExist["description"];
     header("location: ../index.php?login=success");
     exit();
   }
@@ -104,5 +110,13 @@ function loginUser($conn, $uname, $pwd){
     header("location: ../login.php?error=wrongpassword");
     exit();
   }
+}
 
+function compareThis($var, $_var){
+  if ($var !== $_var) {
+    return true;
+  }
+  else{
+    return false;
+  }
 }
