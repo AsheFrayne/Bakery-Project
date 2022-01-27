@@ -29,6 +29,7 @@ $usersEmail = $_SESSION["usersEmail"];
   $result = mysqli_query($conn, "SELECT filename FROM users WHERE usersID = '$usersID'");
   $pic = mysqli_fetch_array($result);
   ?>
+  ?>
   <div class="modal-bg">
     <div class="modal">
       <div class="question">
@@ -59,11 +60,8 @@ $usersEmail = $_SESSION["usersEmail"];
           <i class="fas fa-camera"></i>
           <span>Change Image</span>
         </label>
-        <form action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
-          <input id="file" type="file" name="uploadDP"/>
-          <img src="./img/profilePics/<?php echo $pic['filename']; ?>" /><br/><br/><br/><br/><br/><br/>
-          <button type="submit" name="upload">Upload</button>
-        </form>
+        <input id="file" type="file" />
+        <img src="./img/profilePics/<?php echo $pic['filename']; ?>">
       </div>
 
       <div class="infobox">
