@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'session.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +26,10 @@ include 'header.php';
             <div class="navmenu">
                 <a href="index.php">Home</a>
                 <a href="">About</a>
-                <a href="./offers.html">Offers</a>
-                <a href="./gallery.html">Gallery</a>
+                <a href="./offers.php">Offers</a>
                 <?php
-                if (isset($_SESSION["uname"])) {
-                    $a = $_SESSION["uname"];
-                    echo '<a href="./profile.php">Profile Page</a>';
+                if (isset($_SESSION["usersID"])) {
+                    echo '<a href="./view-profile.php">Profile Page</a>';
                     echo '<a href="./includes/logout.inc.php">Log out</a>';
                 } else {
                     echo '<a href="./login.php">Log in</a>';
@@ -83,7 +81,6 @@ include 'header.php';
         </div>
     </div>
 </body>
-
 <script src="script.js" defer></script>
 <script src="animation-home.js" defer></script>
 

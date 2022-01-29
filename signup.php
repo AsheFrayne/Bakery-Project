@@ -1,5 +1,5 @@
 <?php
-include_once 'header.php';
+include_once 'session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@ include_once 'header.php';
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/8e42a01d1f.js" crossorigin="anonymous"></script>
@@ -16,54 +16,48 @@ include_once 'header.php';
 </head>
 
 <body>
-  <div class="navbarContainer">
-    <div class="navbar">
-      <a href="./index.html">
-        <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
-      </a>
-      <button class="dropdown">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </button>
-      <div class="navmenu">
-        <a href="index.php">Home</a>
-        <a href="">About</a>
-        <a href="./offers.html">Offers</a>
-        <a href="./gallery.html">Gallery</a>
-        <?php
-        if (isset($_SESSION["uname"])) {
-          $a = $_SESSION["uname"];
-          echo '<a href="./profile.php">Profile Page</a>';
-          echo '<a href="./includes/logout.inc.php">Log out</a>';
-        } else {
-          echo '<a href="./login.php">Log in</a>';
-          echo '<a href="./signup.php">Sign up</a>';
-        }
-        ?>
-
-      </div>
-    </div>
-  </div>
+  <?php
+  include 'header.php';
+  ?>
   <main>
     <h1>Sign up</h1>
 
-    <form action="includes/signup.inc.php" method="post">
-      <div class="input-field">
+    <form action="includes/signup.inc.php" method="post" id="form">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'username_taken') {
+                                echo 'error';
+                              } ?>">
         <h3>Username</h3>
-        <input type="text" name="uname" placeholder="Username">
+        <input type="text" name="uname" placeholder="Username" id="username">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small class=" <?php if (isset($_GET['error'])) if ($_GET['error'] == 'username_taken') {
+                          echo 'exist-err';
+                        } ?>">.</small>
       </div>
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'email_taken') {
+                                echo 'error';
+                              } ?>">
         <h3>Email</h3>
-        <input type="email" name="email" placeholder="example@email.com">
+        <input type="email" name="email" placeholder="example@email.com" id="email">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small class="<?php if (isset($_GET['error'])) if ($_GET['error'] == 'email_taken') {
+                        echo 'email-err';
+                      } ?>">.</small>
       </div>
       <div class="input-field">
         <h3>Password</h3>
-        <input type="password" name="pwd" placeholder="Password...">
+        <input type="password" name="pwd" placeholder="Password..." id="password">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <div class="input-field">
         <h3>Confirm Password</h3>
-        <input type="password" name="conpwd" placeholder="Confirm Password..."><br />
+        <input type="password" name="conpwd" placeholder="Confirm Password..." id="confirm-password">
+        <i class="fas fa-exclamation"></i>
+        <i class="far fa-check-circle"></i>
+        <small></small>
       </div>
       <button type="submit" name="submit">Sign Up</button>
     </form>
@@ -80,21 +74,8 @@ include_once 'header.php';
       </div>
     </div>
   </footer>
-
-  <?php
-  if (isset($_GET["error"])) {
-    if ($_GET["error"] == "emptyinput") {
-      echo '<p>Error: Fill in all fields!<p>';
-    } else if ($_GET["error"] == "invalid_uname") {
-      echo '<p>Error: Invalid Username!<p>';
-    } else if ($_GET["error"] == "pwd_notmatch") {
-      echo '<p>Error: Password not match!<p>';
-    } else if ($_GET["error"] == "username_email_taken") {
-      echo '<p>Error: The username or email is already taken!<p>';
-    }
-  }
-  ?>
-
 </body>
+<script src="./validation.js"></script>
+*
 
 </html>
