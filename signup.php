@@ -23,19 +23,27 @@ include_once 'session.php';
     <h1>Sign up</h1>
 
     <form action="includes/signup.inc.php" method="post" id="form">
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'username_taken') {
+                                echo 'error';
+                              } ?>">
         <h3>Username</h3>
         <input type="text" name="uname" placeholder="Username" id="username">
         <i class="fas fa-exclamation"></i>
         <i class="far fa-check-circle"></i>
-        <small></small>
+        <small class=" <?php if (isset($_GET['error'])) if ($_GET['error'] == 'username_taken') {
+                          echo 'exist-err';
+                        } ?>">.</small>
       </div>
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'email_taken') {
+                                echo 'error';
+                              } ?>">
         <h3>Email</h3>
         <input type="email" name="email" placeholder="example@email.com" id="email">
         <i class="fas fa-exclamation"></i>
         <i class="far fa-check-circle"></i>
-        <small></small>
+        <small class="<?php if (isset($_GET['error'])) if ($_GET['error'] == 'email_taken') {
+                        echo 'email-err';
+                      } ?>">.</small>
       </div>
       <div class="input-field">
         <h3>Password</h3>
@@ -68,5 +76,6 @@ include_once 'session.php';
   </footer>
 </body>
 <script src="./validation.js"></script>
+*
 
 </html>

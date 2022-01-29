@@ -1,50 +1,51 @@
 <?php
 //sign up
-function emptyInputSignup($uname, $email, $pwd, $conpwd){
+function emptyInputSignup($uname, $email, $pwd, $conpwd)
+{
   $result;
   if (empty($uname) || empty($email) || empty($pwd) || empty($conpwd)) {
     $result = true;
-  }
-  else{
+  } else {
     $result = false;
   }
   return $result;
 }
 
-function emptyInputLogin($uname, $pwd){
+function emptyInputLogin($uname, $pwd)
+{
   $result;
   if (empty($uname) || empty($pwd)) {
     $result = true;
-  }
-  else{
+  } else {
     $result = false;
   }
   return $result;
 }
 
-function invalidUid($uname){
+function invalidUid($uname)
+{
   $result;
   if (!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
     $result = true;
-  }
-  else{
+  } else {
     $result = false;
   }
   return $result;
 }
 
-function pwdMatch($pwd, $conpwd){
+function pwdMatch($pwd, $conpwd)
+{
   $result;
   if ($pwd !== $conpwd) {
     $result = true;
-  }
-  else{
+  } else {
     $result = false;
   }
   return $result;
 }
 
-function unameEmailExist($conn, $uname, $email){
+function unameEmailExist($conn, $uname, $email)
+{
   $sql = "SELECT * FROM users WHERE usersName = ? OR usersEmail = ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -59,8 +60,7 @@ function unameEmailExist($conn, $uname, $email){
 
   if ($row = mysqli_fetch_assoc($resultData)) {
     return $row;
-  }
-  else{
+  } else {
     $result = false;
     return $result;
   }
@@ -68,7 +68,8 @@ function unameEmailExist($conn, $uname, $email){
   mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $uname, $email, $pwd){
+function createUser($conn, $uname, $email, $pwd)
+{
   $date = date("m/d/Y");
   $filename = "default.png";
   $description = "Describe yourself!";
@@ -86,7 +87,8 @@ function createUser($conn, $uname, $email, $pwd){
   exit();
 }
 //login
-function loginUser($conn, $uname, $pwd){
+function loginUser($conn, $uname, $pwd)
+{
   $unameEmailExist = unameEmailExist($conn, $uname, $uname);
   if ($unameEmailExist === false) {
     header("location: ../login.php?error=usernotexist");
@@ -106,23 +108,23 @@ function loginUser($conn, $uname, $pwd){
     $_SESSION["description"] = $unameEmailExist["description"];
     header("location: ../index.php?login=success");
     exit();
-  }
-  else{
+  } else {
     header("location: ../login.php?error=wrongpassword");
     exit();
   }
 }
 
-function compareThis($var, $_var){
+function compareThis($var, $_var)
+{
   if ($var !== $_var) {
     return true;
-  }
-  else{
+  } else {
     return false;
   }
 }
 
-function unameExist($conn, $uname){
+function unameExist($conn, $uname)
+{
   $sql = "SELECT * FROM users WHERE usersName = ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -137,8 +139,7 @@ function unameExist($conn, $uname){
 
   if ($row = mysqli_fetch_assoc($resultData)) {
     return $row;
-  }
-  else{
+  } else {
     $result = false;
     return $result;
   }
@@ -146,7 +147,8 @@ function unameExist($conn, $uname){
   mysqli_stmt_close($stmt);
 }
 
-function emailExist($conn, $email){
+function emailExist($conn, $email)
+{
   $sql = "SELECT * FROM users WHERE usersEmail = ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -161,8 +163,7 @@ function emailExist($conn, $email){
 
   if ($row = mysqli_fetch_assoc($resultData)) {
     return $row;
-  }
-  else{
+  } else {
     $result = false;
     return $result;
   }
