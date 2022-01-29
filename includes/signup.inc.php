@@ -17,6 +17,22 @@ if (isset($_POST["submit"])) {
     header("location: ../signup.php?error=invalid_uname");
     exit();
   }
+  if (unameLength($uname) !== false) {
+    header("location: ../signup.php?error=uname_tooshort");
+    exit();
+  }
+  if (invalidEmail($email) !== false) {
+    header("location: ../signup.php?error=invalid_email");
+    exit();
+  }
+  if (pwdShort($pwd) !== false) {
+    header("location: ../signup.php?error=pwd_tooshort");
+    exit();
+  }
+  if (invalidPassword($pwd) !== false) {
+    header("location: ../signup.php?error=invalid_password");
+    exit();
+  }
   if (pwdMatch($pwd, $conpwd) !== false) {
     header("location: ../signup.php?error=pwd_notmatch");
     exit();

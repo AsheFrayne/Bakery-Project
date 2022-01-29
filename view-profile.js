@@ -58,8 +58,6 @@ doneButton.onclick = () =>{
     const confirmPassword = cPassword.value;
     const unameValue = uname.value;
 
-
-
     if(unameValue === '') {
         warning.classList.add("show");
         warning.classList.remove("hide");

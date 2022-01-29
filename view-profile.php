@@ -44,11 +44,7 @@ $usersEmail = $_SESSION["usersEmail"];
       </div>
     </div>
   </div>
-  <div class="alert hide">
-    <span class="fas fa-exclamation-circle"></span>
-    <span class="msg">Warning: This is a warning alert!</span>
-
-  </div>
+ 
   <main>
 
     <div class="container">

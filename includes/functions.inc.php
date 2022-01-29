@@ -32,6 +32,46 @@ function invalidUid($uname)
   }
   return $result;
 }
+function unameLength($uname)
+{
+  $result;
+  if (strlen($uname) < 5) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
+function invalidEmail($email)
+{
+  $result;
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
+function pwdShort($pwd)
+{
+  $result;
+  if (strlen($pwd) < 8) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
+function invalidPassword($pwd)
+{
+  $result;
+  if (!preg_match("/^[a-zA-Z0-9]*$/", $pwd)) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
 
 function pwdMatch($pwd, $conpwd)
 {
