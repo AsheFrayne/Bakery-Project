@@ -21,8 +21,12 @@ if (isset($_POST["submit"])) {
     header("location: ../signup.php?error=pwd_notmatch");
     exit();
   }
-  if (unameEmailExist($conn, $uname, $email) !== false) {
-    header("location: ../signup.php?error=username_email_taken");
+  if (unameExist($conn, $uname) !== false) {
+    header("location: ../signup.php?error=username_taken");
+    exit();
+  }
+  if (emailExist($conn, $email) !== false) {
+    header("location: ../signup.php?error=email_taken");
     exit();
   }
 
