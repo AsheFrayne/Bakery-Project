@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <div class="navbarContainer">
     <div class="navbar">
         <a href="./index.html">

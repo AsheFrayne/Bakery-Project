@@ -38,111 +38,27 @@ include 'session.php';
         </div>
     </div>
     <div class="item-contents cake-contents">
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/1.jpeg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/images (4) (7).jpeg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/3.jpeg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/4.jpeg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/w1.jpg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/w2.jpg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
-        <div class="item cake-item">
-            <div class="item-img">
-                <img src="img/Wedding/w3.jpg" alt="">
-            </div>
-            <div class="item-name">
-                <h3>Wedding Cake</h3>
-            </div>
-            <div class="item-description">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                    veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-            </div>
-            <div class="item-price">
-                <p>Starting at ₱20</p>
-            </div>
-        </div>
+        <?php
+        $a = 0;
+        while ($a <= 5) {
+          echo '<div class="item cake-item">
+              <div class="item-img">
+                  <img src="img/Wedding/1.jpeg" alt="">
+              </div>
+              <div class="item-name">
+                  <h3>Wedding Cake</h3>
+              </div>
+              <div class="item-description">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                      veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+              </div>
+              <div class="item-price">
+                  <p>Starting at ₱20</p>
+              </div>
+          </div>';
+          $a++;
+        }
+        ?>
     </div>
 </div>
 <div class="footer-container">
