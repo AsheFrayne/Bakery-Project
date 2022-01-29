@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `products` (
   `productsID` int(11) NOT NULL,
-  `productsFname` varchar(50) NOT NULL,
+  `productsName` varchar(50) NOT NULL,
   `productsDate` varchar(11) NOT NULL,
   `productsDescription` varchar(100) NOT NULL,
   `adminID` int(11) DEFAULT NULL

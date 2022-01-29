@@ -11,7 +11,7 @@ if (isset($_POST['delete'])) {
   $sql = "DELETE FROM users WHERE usersID = '$usersID';";
   mysqli_query($conn, $sql);
 
-  $result = mysqli_query($conn, "SELECT filename FROM users WHERE usersID = '$usersID'");
+  $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID'");
   $user = mysqli_fetch_array($result);
   if (!$user) {
     session_unset();

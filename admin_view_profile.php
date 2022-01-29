@@ -1,10 +1,9 @@
 <?php
 include 'session.php';
 
-$usersName = $_SESSION["usersName"];
-$usersID = $_SESSION["usersID"];
-$usersPwd = $_SESSION["usersPwd"];
-$usersEmail = $_SESSION["usersEmail"];
+$usersName = $_SESSION["adminName"];
+$usersID = $_SESSION["adminID"];
+$usersPwd = $_SESSION["adminPwd"];
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +65,7 @@ $usersEmail = $_SESSION["usersEmail"];
 
       <div class="infobox">
         <input type="text" name="uname" class="uname txt-box" value="<?php echo $user['usersName']; ?>" readonly autocomplete="off">
-        <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
+        <!-- <input type="text" name="email" class='email' value="<?php //echo $usersEmail; ?>" readonly> -->
         <div class="pw-box">
           <label for="password">Password</label>
           <input type="password" name="password" class="password" value="<?php echo $usersPwd; ?>">
@@ -81,7 +80,7 @@ $usersEmail = $_SESSION["usersEmail"];
       </div>
       <div class="description-box">
 
-        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $_SESSION["description"]; ?></textarea>
+        <!-- <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php //echo $_SESSION["description"]; ?></textarea> -->
         <div class="buttons"><button class='edit-btn' type="button">Edit</button>
           <button class="cancel-btn">Cancel</button>
           <button type="submit" class="done-btn" name="upload"> Done</button>
