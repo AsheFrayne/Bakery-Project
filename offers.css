@@ -139,6 +139,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100%;
   margin: auto;
 }
@@ -172,6 +173,30 @@ body {
 .modal-comments {
   padding: 1rem;
   flex: 1;
+  overflow-y: scroll;
+}
+
+.comment {
+  display: flex;
+}
+
+.img-comment {
+  width: 8rem;
+}
+
+.img-comment img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.name-comment {
+  font-weight: bold;
+  font-size: 0.825rem;
+}
+
+.text-comment {
+  font-size: 0.675rem;
 }
 
 .modal-description-container {
@@ -212,6 +237,12 @@ body {
   background-color: white;
   width: 20%;
   padding: 0.825rem 0 0.825rem 0;
+}
+
+.heart-button {
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 @keyframes like {
