@@ -172,6 +172,7 @@ body {
 
 .comment {
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .img-comment img {
@@ -201,6 +202,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.delete-comment button {
+    border: none;
+    background-color: white;
+    width: 15px;
+    padding: 0;
 }
 
 .delete-comment i {
