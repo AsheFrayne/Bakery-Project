@@ -47,8 +47,8 @@ window.onload = function() {
 
     item.forEach(element => {
         element.onclick = () => {
-            // productID = element.children[1].children[1].value;
-            // modalID.value = productID;
+            productID = element.children[1].children[1].value;
+            modalID.value = productID;
             console.log(modalID.value);
             modal.style.display = 'block';
             modalImg.src = element.children[0].children[0].src;

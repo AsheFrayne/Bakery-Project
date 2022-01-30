@@ -229,7 +229,7 @@ body {
     margin-right: 0.5rem;
 }
 
-.modal-comment-box form {
+.modal-comment-box {
     display: flex;
     width: 100%;
 }

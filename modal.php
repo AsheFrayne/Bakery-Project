@@ -40,8 +40,6 @@
             <form class="" action="includes/review.inc.php" method="post">
                 <div class="modal-comment-box">
                     <form class="" action="includes/review.inc.php" method="get">
-
-
                         <input id="heart" type="hidden" value="0" name="heart">
                         <input id="productsID" type="hidden" value="0" name="productsID">
                         <input type="hidden" name="userID" value="<?php echo $_SESSION['usersName']; ?>">
@@ -52,5 +50,4 @@
         </div>
     </div>
 </div>
-
 <!-- Modal end -->
