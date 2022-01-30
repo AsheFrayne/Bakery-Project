@@ -11,7 +11,7 @@ if (isset($_POST['post'])) {
 
   $sql = "INSERT INTO reviews (reviewsCom, reviewsDate, reviewsHeart, usersName, productsID) VALUES ('$comment', '$date', '$heart', '$userID', '$productsID');";
    mysqli_query($conn, $sql);
-  header("location: ../offers.php?addProduct=success&admin=true");
+  header("location: ../offers.php?addComment=success");
 
 }
 else{

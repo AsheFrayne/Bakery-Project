@@ -47,14 +47,13 @@ window.onload = function() {
 
     item.forEach(element => {
         element.onclick = () => {
-            // productID = element.children[1].children[1].value;
-            // modalID.value = productID;
-            console.log(modalID.value);
-            modal.style.display = 'block';
-            modalImg.src = element.children[0].children[0].src;
-            modalTitle.innerHTML = element.children[1].children[0].textContent;
-            modalDescription.innerHTML = element.children[2].children[0].textContent;
-            modalPrice.innerHTML = element.children[3].children[0].textContent;
+            productID = element.children[1].children[1].value;
+            modalID.value = productID;
+            window.location = `offers.php?modal=1&productID=${productID}`
+            localStorage.setItem("img", element.children[0].children[0].src);
+            localStorage.setItem("title", element.children[1].children[0].textContent);
+            localStorage.setItem("description", element.children[2].children[0].textContent);
+            localStorage.setItem("price", element.children[3].children[0].textContent);
         }
     });
 
