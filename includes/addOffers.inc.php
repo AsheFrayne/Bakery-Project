@@ -16,5 +16,5 @@ if (isset($_POST["submit"])) {
   header("location: ../offers.php?addProduct=success&admin=true");
 }
 else{
-  //header("location: ../index.php");
+  header("location: ../index.php");
 }

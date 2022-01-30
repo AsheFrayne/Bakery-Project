@@ -59,7 +59,9 @@ include 'session.php';
         ?>
     </div>
 </div>
+
 <?php include "modal.php"; ?>
+
 <div class="footer-container">
     <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
     <div class="socmed-container">
