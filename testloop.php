@@ -15,10 +15,10 @@ include 'session.php';
     <link rel="stylesheet" href="offers.css">
     <title>Arki's Bakery - Offers</title>
 </head>
-
 <body>
   <?php
   include 'header.php';
+  require 'includes/dbh.inc.php';
   ?>
     <div class="headerContainer">
         <div class="header">
@@ -39,28 +39,27 @@ include 'session.php';
     </div>
     <div class="item-contents cake-contents">
         <?php
-        $a = 0;
-        while ($a <= 5) {
+        $result = mysqli_query($conn, "SELECT * FROM products");
+        while ($products = mysqli_fetch_assoc($result)) {
           echo '<div class="item cake-item">
               <div class="item-img">
-                  <img src="img/Wedding/1.jpeg" alt="">
+                  <img src="img/Products/'.$products['productsFilename'].'" alt="">
               </div>
               <div class="item-name">
-                  <h3>Wedding Cake</h3>
+                  <h3>'.$products['productsName'].'</h3>
               </div>
               <div class="item-description">
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                      veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                  <p>'.$products['productsDescription'].'</p><br>
               </div>
               <div class="item-price">
-                  <p>Starting at ₱20</p>
+                  <p>Php '.$products['productsPrize'].'</p>
               </div>
           </div>';
-          $a++;
         }
         ?>
     </div>
 </div>
+<?php include "modal.php"; ?>
 <div class="footer-container">
     <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
     <div class="socmed-container">

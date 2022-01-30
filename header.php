@@ -13,8 +13,15 @@
         </button>
         <div class="navmenu">
             <?php
-            if ((isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) && $_GET['admin'] == true) {
-              echo '<a href="index.php?admin=true">Home</a><a href="./offers.php?admin=true">Offers</a>';
+            if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
+              if (isset($_GET['admin'])) {
+                if ($_GET['admin'] == true) {
+                  echo '<a href="index.php?admin=true">Home</a><a href="./offers.php?admin=true">Offers</a>';
+                }
+              }
+              else{
+                echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
+              }
             }
             else{
               echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
@@ -22,8 +29,10 @@
             ?>
             <?php
             if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
-              if ($_GET['admin'] == true) {
-                echo '<a href="./admin_view_profile.php?admin=true">Profile Page</a>';
+              if (isset($_GET['admin'])) {
+                if ($_GET['admin'] == true) {
+                  echo '<a href="./admin_view_profile.php?admin=true">Profile Page</a>';
+                }
               }
               else{
                 echo '<a href="./view-profile.php">Profile Page</a>';
