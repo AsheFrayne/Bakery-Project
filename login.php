@@ -1,6 +1,3 @@
-<?php
-include 'session.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +16,13 @@ include 'session.php';
   <?php
   include 'header.php';
 
+  if (isset($_POST["submit"])) {
+    $uname = $_POST["uname"];
+    $pwd = $_POST["pwd"];
+  }
   ?>
+
+
   <main>
     <h1>Log in</h1>
     <form action="includes/login.inc.php" method="post">
@@ -28,7 +31,7 @@ include 'session.php';
                                 echo 'err-pass';
                               } ?>">
         <i class="far fa-user"></i>
-        <input type="text" name="uname" onkeyup='saveValue(this);' placeholder="Email" id='email'>
+        <input type="text" name="uname" placeholder="Email" id='lEmail'>
       </div>
       <h3>Password</h3>
       <div class="<?php if (isset($_GET['error'])) if ($_GET['error'] == 'wrongpassword' || $_GET['error'] == 'emptyinput' || $_GET['error'] == 'usernotexist') {

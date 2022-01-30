@@ -12,7 +12,7 @@ include 'session.php';
   <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/8e42a01d1f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="addOffers.css">
-  <title>Log in</title>
+  <title>Add Product</title>
 </head>
 
 <body>
