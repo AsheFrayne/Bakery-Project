@@ -25,32 +25,29 @@ include 'session.php';
             </button>
             <div class="navmenu">
                 <!-- <a href="index.php">Home</a> -->
-                <a href="">About</a>
+
                 <?php
                 if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
-                  if (isset($_GET['admin'])) {
-                    if ($_GET['admin'] == true) {
-                      echo '<a href="index.php?admin=true">Home</a><a href="./offers.php?admin=true">Offers</a>';
+                    if (isset($_GET['admin'])) {
+                        if ($_GET['admin'] == true) {
+                            echo '<a href="index.php?admin=true">Home</a><a href="about.php">About</a><a href="./offers.php?admin=true">Offers</a>';
+                        }
+                    } else {
+                        echo '<a href="index.php">Home</a><a href="about.php">About</a><a href="./offers.php">Offers</a>';
                     }
-                  }
-                  else{
-                    echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
-                  }
-                }
-                else{
-                  echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
+                } else {
+                    echo '<a href="index.php">Home</a><a href="about.php">About</a><a href="./offers.php">Offers</a>';
                 }
                 ?>
                 <?php
                 if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
-                  if (isset($_GET['admin'])) {
-                    if ($_GET['admin'] == true) {
-                      echo '<a href="./admin_view_profile.php?admin=true">Profile Page</a>';
+                    if (isset($_GET['admin'])) {
+                        if ($_GET['admin'] == true) {
+                            echo '<a href="./admin_view_profile.php?admin=true">Profile Page</a>';
+                        }
+                    } else {
+                        echo '<a href="./view-profile.php">Profile Page</a>';
                     }
-                  }
-                  else{
-                    echo '<a href="./view-profile.php">Profile Page</a>';
-                  }
                     echo '<a href="./includes/logout.inc.php">Log out</a>';
                 } else {
                     echo '<a href="./login.php">Log in</a>';

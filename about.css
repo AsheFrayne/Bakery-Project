@@ -8,7 +8,8 @@ body {
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  flex-direction: column;
   background-color: white;
   height: 100%;
   margin: 10% 20% 0 20%;
@@ -18,21 +19,100 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0 20% 0 20%;
+  box-shadow: 0px 20px 10px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 5%;
+  border-radius: 0px 0px 25px 25px;
+  border: #ffc107 2px solid;
 }
 
 .about-btn button {
   padding: 10px 20px;
-  color: #ffc107;
   font-size: 16px;
-  background-color: white;
+
   font-weight: 700;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
 }
 .aboutUs {
   border: none;
-  border-bottom: 2px solid #ffc107;
+  color: white;
+  background-color: #ffc107;
+  transition: 0.3s;
 }
 .contacts {
   border: none;
-  border-bottom: 2px solid gray;
+  background-color: white;
+  transition: 0.3s;
+  color: #ffc107;
+}
+
+.aboutUs:hover,
+.contacts:hover {
+  background-color: #ffc107;
+  color: white;
+}
+.text-field {
+  margin: 10% 25%;
+}
+#map {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#map img {
+  height: 200px;
+  width: 200px;
+}
+.contacts-con {
+  width: 100%;
+  height: 500px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.contacts-list {
+  background: #ffc107;
+  width: 50%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+ul {
+  padding: 0;
+}
+.items {
+  font-size: 16px;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid white;
+}
+li,
+a {
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  cursor: pointer;
+}
+.btn-active {
+  border: none;
+  background: #ffc107;
+  color: white;
+}
+.btn-not-active {
+  border: none;
+  color: #ffc107;
+  background: white;
+}
+.active {
+  display: flex;
+}
+.not-active {
+  display: none;
 }
