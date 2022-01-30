@@ -232,3 +232,9 @@ function loginAdmin($conn, $uname, $pwd){
     exit();
   }
 }
+
+function getFilename($usersID){
+  $ures = mysqli_query($conn, "SELECT filename FROM users WHERE usersName='$usersID';");
+  $users = mysqli_fetch_array($ures);
+  return $users['filename'];
+}
