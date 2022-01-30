@@ -20,6 +20,7 @@ include 'session.php';
   <?php
   include 'header.php';
   include 'includes/dbh.inc.php';
+  include 'includes/functions.inc.php';
   ?>
     <div class="headerContainer">
         <div class="header">
@@ -299,7 +300,17 @@ include 'session.php';
         </div>
     </div>
 
-<?php include "modal.php";?>
+<?php
+if (isset($_GET['admin']) && isset($_SESSION["adminID"])) {
+  if ($_GET['admin'] == true) {
+    include "admin_modal.php";
+  }
+}
+else{
+  include "modal.php";
+}
+  include "modal.php";
+?>
 
     <div class="footer-container">
         <img src="img/newlogobg.png" alt="Arki's Bakery Logo">

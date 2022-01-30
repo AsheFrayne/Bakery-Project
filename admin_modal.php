@@ -13,26 +13,15 @@
             </div>
             <div class="modal-comments">
                 <div class="comment">
-                  <?php
-                  $result = mysqli_query($conn, "SELECT * FROM reviews");
-                  if ($reviews = mysqli_fetch_assoc($result)) {
-                    while ($reviews = mysqli_fetch_assoc($result)) {
-                      if (empty($reviews["reviewsCom"])) {
-                        continue;
-                      }
-                      echo '<div class="img-comment">
-                                <img src="img/'.getFilename($reviews["usersName"]).'" alt="">
-                            </div>
-                            <div class="comment-content">
-                                <span class="name-comment">'.$reviews["usersName"].'</span>
-                                <span class="text-comment">'.$reviews["reviewsCom"].'</span>
-                            </div>';
-                    }
-                  }
-                  else {
-                    echo "<p>No comments in this propduct.</p>";
-                  }
-                    ?>
+                    <div class="img-comment">
+                        <img src="img/brownies.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <span class="name-comment">johnson</span>
+                        <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
+                            error.</span>
+                    </div>
                 </div>
             </div>
             <div class="modal-description-container">
@@ -43,16 +32,17 @@
                 </button>
                 <i class="far fa-comment hover"></i>
             </div>
-            <form class="" action="includes/review.inc.php" method="post">
             <div class="modal-comment-box">
+              <form class="" action="includes/review.inc.php" method="get">
                 <!-- palagyan event lisnter ung heart pag na click heart button ung value mag change from 0 to 1 -->
                 <input id="heart" type="hidden" value="0" name="heart">
                 <input id="productsID" type="hidden" value="0" name="productsID">
-                <input type="hidden" name="userID" value="<?php echo $_SESSION['usersName'];?>">
+                <!-- <input type="hidden" name="userID" value="<?php //echo $_SESSION['adminID'];?>"> -->
                 <input type="text" placeholder="Add a comment..." name="comment">
                 <button class="hover" type="submit" name="post">Post</button>
+                <button type="button" name="button">admin</button>
+              </form>
             </div>
-            </form>
         </div>
     </div>
 </div>
