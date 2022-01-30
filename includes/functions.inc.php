@@ -127,8 +127,7 @@ function createUser($conn, $uname, $email, $pwd)
   exit();
 }
 //login
-function loginUser($conn, $uname, $pwd)
-{
+function loginUser($conn, $uname, $pwd){
   $unameEmailExist = unameEmailExist($conn, $uname, $uname);
   if ($unameEmailExist === false) {
     header("location: ../login.php?error=usernotexist");
@@ -209,4 +208,27 @@ function emailExist($conn, $email)
   }
 
   mysqli_stmt_close($stmt);
+}
+
+function loginAdmin($conn, $uname, $pwd){
+  $sql = "SELECT * FROM admin WHERE adminName='$uname';";
+  $result = mysqli_query($conn, $sql);
+  $admin = mysqli_fetch_array($result);
+  if (!$admin) {
+    header("location: ../admin_login.php?error=admin_notexist");
+
+    exit();
+  }
+
+  if ($admin["adminPwd"] === $pwd) {
+    session_start();
+    $_SESSION["adminID"] = $admin["adminID"];
+    $_SESSION["adminName"] = $admin["adminName"];
+    $_SESSION["adminPwd"] = $admin["adminPwd"];
+    header("location: ../index.php?login=success&admin=true");
+    exit();
+  } else {
+    header("location: ../admin_login.php?error=wrongpassword");
+    exit();
+  }
 }

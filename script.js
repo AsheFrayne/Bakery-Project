@@ -129,9 +129,15 @@ window.onload = function () {
     const modalDescription = document.querySelector('.modal-description');
     const modalPrice = document.querySelector('.modal-price');
     const modalHeart = document.querySelector('.fa-heart');
+    let productID;
+    const modalID = document.querySelector('#productsID');
+    const heart = document.querySelector('#heart');
 
     item.forEach(element => {
         element.onclick = () => {
+            productID = element.children[1].children[1].value;
+            modalID.value = productID;
+            console.log(modalID.value);
             modal.style.display = 'block';
             modalImg.src = element.children[0].children[0].src;
             modalTitle.innerHTML = element.children[1].children[0].textContent;
@@ -152,6 +158,7 @@ window.onload = function () {
 
     modalHeart.onclick = () => {
         if(modalHeart.className == 'far fa-heart hover') {
+            heart.value = 1;
             modalHeart.className = 'fas fa-heart hover'
             modalHeart.style.color = 'red';
             modalHeart.style.animation = 'like 500ms';
@@ -159,6 +166,7 @@ window.onload = function () {
                 modalHeart.style.animation = 'none';
             }, 200);
         } else if (modalHeart.className == 'fas fa-heart hover') {
+            heart.value = 0;
             modalHeart.className = 'far fa-heart hover'
             modalHeart.style.color = 'black';
             modalHeart.style.animation = 'like 500ms';

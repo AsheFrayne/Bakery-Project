@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <div class="navbarContainer">
     <div class="navbar">
         <a href="./index.html">
@@ -9,11 +12,31 @@
             <div class="bar3"></div>
         </button>
         <div class="navmenu">
-            <a href="index.php">Home</a>
-            <a href="./offers.php">Offers</a>
             <?php
-            if (isset($_SESSION["usersID"])) {
-                echo '<a href="./view-profile.php">My Profile</a>';
+            if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
+              if (isset($_GET['admin'])) {
+                if ($_GET['admin'] == true) {
+                  echo '<a href="index.php?admin=true">Home</a><a href="./offers.php?admin=true">Offers</a>';
+                }
+              }
+              else{
+                echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
+              }
+            }
+            else{
+              echo '<a href="index.php">Home</a><a href="./offers.php">Offers</a>';
+            }
+            ?>
+            <?php
+            if (isset($_SESSION["usersID"]) || isset($_SESSION["adminID"])) {
+              if (isset($_GET['admin'])) {
+                if ($_GET['admin'] == true) {
+                  echo '<a href="./admin_view_profile.php?admin=true">Profile Page</a>';
+                }
+              }
+              else{
+                echo '<a href="./view-profile.php">Profile Page</a>';
+              }
                 echo '<a href="./includes/logout.inc.php">Log out</a>';
             } else {
                 echo '<a href="./login.php">Log in</a>';

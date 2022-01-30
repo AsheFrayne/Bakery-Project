@@ -1,10 +1,9 @@
 <?php
 include 'session.php';
 
-$usersName = $_SESSION["usersName"];
-$usersID = $_SESSION["usersID"];
-$usersPwd = $_SESSION["usersPwd"];
-$usersEmail = $_SESSION["usersEmail"];
+$usersName = $_SESSION["adminName"];
+$usersID = $_SESSION["adminID"];
+$usersPwd = $_SESSION["adminPwd"];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ $usersEmail = $_SESSION["usersEmail"];
   <?php
   include 'header.php';
   require_once 'includes/dbh.inc.php';
-  $usersID = $_SESSION["usersID"];
+  //$usersID = $_SESSION["usersID"];
   $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID'");
   $user = mysqli_fetch_array($result);
   ?>
@@ -60,29 +59,30 @@ $usersEmail = $_SESSION["usersEmail"];
         </label>
         <!-- Form start .........................................................................-->
         <form class="" action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
-          <input id="file" type="file" name="uploadDP" />
-          <img src="./img/profilePics/<?php echo $user['filename']; ?>">
+          <!-- <input id="file" type="file" name="uploadDP" />
+          <img src="./img/profilePics/<?php //echo $user['filename']; ?>"> -->
       </div>
 
       <div class="infobox">
-        <input type="text" name="uname" class="uname txt-box" value="<?php echo $user['usersName']; ?>" readonly autocomplete="off">
-        <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
+        <input type="text" name="uname" class="uname txt-box" value="<?php echo $usersName; ?>" readonly autocomplete="off">
+        <!-- <input type="text" name="email" class='email' value="<?php //echo $usersEmail; ?>" readonly> -->
         <div class="pw-box">
           <label for="password">Password</label>
           <input type="password" name="password" class="password" value="<?php echo $usersPwd; ?>">
           <label for="confirmPassword">Confirm Password</label>
           <input type="password" name="conf-password" class="conf-password" value="<?php echo $usersPwd; ?>">
         </div>
-        <div class=" date-joined">
+        <!-- <div class=" date-joined">
           <small>Date Joined</small>
-          <div><?php echo $_SESSION["dateJoined"]; ?></div>
-        </div>
+          <div><?php //echo $_SESSION["dateJoined"]; ?></div>
+        </div> -->
 
       </div>
       <div class="description-box">
 
-        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $_SESSION["description"]; ?></textarea>
-        <div class="buttons"><button class='edit-btn' type="button">Edit</button>
+        <!-- <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php //echo $_SESSION["description"]; ?></textarea> -->
+        <div class="buttons">
+          <button class='edit-btn' type="button">Edit</button>
           <button class="cancel-btn">Cancel</button>
           <button type="submit" class="done-btn" name="upload"> Done</button>
         </div>

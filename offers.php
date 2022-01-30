@@ -19,6 +19,7 @@ include 'session.php';
 <body>
   <?php
   include 'header.php';
+  include 'includes/dbh.inc.php';
   ?>
     <div class="headerContainer">
         <div class="header">
@@ -27,124 +28,39 @@ include 'session.php';
         </div>
     </div>
                 <!-- Start of first line offers -->
-    <div class="item-section">
-        <div class="item-header">
-            <div class="item-title">
-                <h1>Cakes</h1>
-            </div>
-            <div class="carousel-btn">
-                <i class="fa fa-angle-left cake-left hover"></i>
-                <i class="fa fa-angle-right cake-right hover"></i>
-            </div>
-        </div>
-        <div class="item-contents cake-contents">
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/1.jpeg" alt="">
+                <div class="item-section">
+                    <div class="item-header">
+                        <div class="item-title">
+                            <h1>Cakes</h1>
+                        </div>
+                        <div class="carousel-btn">
+                            <i class="fa fa-angle-left cake-left hover"></i>
+                            <i class="fa fa-angle-right cake-right hover"></i>
+                        </div>
+                    </div>
+                    <div class="item-contents cake-contents">
+                        <?php
+                        $result = mysqli_query($conn, "SELECT * FROM products");
+                        while ($products = mysqli_fetch_assoc($result)) {
+                          echo '<div class="item cake-item">
+                              <div class="item-img">
+                                  <img src="img/Products/'.$products['productsFilename'].'" alt="">
+                              </div>
+                              <div class="item-name">
+                                  <h3>'.$products['productsName'].'</h3>
+                                  <input type="hidden" value='.$products['productsID'].'>
+                              </div>
+                              <div class="item-description">
+                                  <p>'.$products['productsDescription'].'</p><br>
+                              </div>
+                              <div class="item-price">
+                                  <p>Php '.$products['productsPrize'].'</p>
+                              </div>
+                          </div>';
+                        }
+                        ?>
+                    </div>
                 </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/images (4) (7).jpeg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/3.jpeg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/4.jpeg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/w1.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/w2.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item cake-item">
-                <div class="item-img">
-                    <img src="img/Wedding/w3.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Wedding Cake</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- End of first line offers -->
     <div class="item-section">
         <div class="item-header">
@@ -382,160 +298,8 @@ include 'session.php';
             </div>
         </div>
     </div>
-    
-    <!-- Modal start -->
-    <div class="modal">
-        <div class="modal-exit hover">
-            <i class="fa fa-times" style="color: white"></i>
-        </div>
-        <div class="modal-content">
-            <div class="modal-img-container">
-                <img class="modal-img" src="" alt="">
-            </div>
-            <div class="modal-review">
-                <div class="modal-title-container">
-                    <h1 class="modal-title"></h1>
-                </div>
-                <div class="modal-comments">
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="img-comment">
-                            <img src="img/brownies.jpg" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <span class="name-comment">johnson</span>
-                            <span class="text-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
-                                error.</span>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="modal-description-container">
-                    <p class="modal-description"></p><br>
-                    <p class="modal-price"></p><br>
-                    <button class="heart-button">
-                        <i class="far fa-heart hover"></i>
-                    </button>
-                    <i class="far fa-comment hover"></i>
-                </div>
-                <div class="modal-comment-box">
-                    <input type="text" placeholder="Add a comment...">
-                    <button class="hover">Post</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal end -->
+<?php include "modal.php";?>
 
     <div class="footer-container">
         <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
