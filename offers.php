@@ -32,11 +32,7 @@ include 'session.php';
     <div class="item-section">
         <div class="item-header">
             <div class="item-title">
-                <h1>Cakes</h1>
-            </div>
-            <div class="carousel-btn">
-                <i class="fa fa-angle-left cake-left hover"></i>
-                <i class="fa fa-angle-right cake-right hover"></i>
+                <h1>Products</h1>
             </div>
         </div>
         <div class="item-contents cake-contents">
@@ -63,7 +59,120 @@ include 'session.php';
         </div>
     </div>
     <!-- End of first line offers -->
-
+    <!-- <div class="item-section">
+        <div class="item-header">
+            <div class="item-title">
+                <h1>Brownies</h1>
+            </div>
+        </div>
+        <div class="item-contents brownies-contents">
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img">
+                    <img src="img/brownies.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <h3>Chocolate Brownies</h3>
+                </div>
+                <div class="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
+                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
+                </div>
+                <div class="item-price">
+                    <p>Starting at ₱20</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
     <?php
     if (isset($_GET['admin']) && isset($_SESSION["adminID"])) {
