@@ -25,6 +25,8 @@ if (isset($_POST['delete'])) {
   $_pwd = $_POST["password"];
   $_description = $_POST["description"];
   $uname = $users["usersName"];
+  $description = $users["descrytion"];
+
   $update = false;
 
   $_filename = $_FILES["uploadDP"]["name"];
@@ -34,12 +36,14 @@ if (isset($_POST['delete'])) {
     $sql = "UPDATE users SET usersName = '$_uname' WHERE usersID = '$usersID';";
     mysqli_query($conn, $sql);
     $uname = $users["usersName"];
+    $description = $users["descrytion"];
     $update = true;
   }
   if (!empty($_pwd)) {
     $sql = "UPDATE users SET usersPwd = '$_pwd' WHERE usersID = '$usersID';";
     mysqli_query($conn, $sql);
     $uname = $users["usersName"];
+    $description = $users["descrytion"];
     $update = true;
   }
   if (!empty($_filename)) {
@@ -47,6 +51,7 @@ if (isset($_POST['delete'])) {
     mysqli_query($conn, $sql);
     if (move_uploaded_file($tempname, $folder)) {
       $uname = $users["usersName"];
+      $description = $users["descrytion"];
       $update = true;
     } else {
       $update = false;
@@ -56,13 +61,14 @@ if (isset($_POST['delete'])) {
     $sql = "UPDATE users SET description = '$_description' WHERE usersID = '$usersID';";
     mysqli_query($conn, $sql);
     $uname = $users["usersName"];
+    $description = $users["descrytion"];
     $update = true;
   }
   if ($update === true) {
     $uname = $users["usersName"];
+    $description = $users["descrytion"];
     header("location: ../view-profile.php?upload=success");
   } else {
-    sleep(2);
     header("location: ../view-profile.php?upload=failed");
   }
 }

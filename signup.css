@@ -93,14 +93,7 @@ button:hover {
   color: white;
   background-color: #ffc107;
 }
-.exist-err::before {
-  content: "Username is already exist";
-  color: red;
-}
-.email-err::before {
-  content: "Email is already in use";
-  color: red;
-}
+
 
 /* alerts */
 .alert {

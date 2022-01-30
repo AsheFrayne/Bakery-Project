@@ -25,23 +25,29 @@ include_once 'session.php';
     <h1>Sign up</h1>
 
     <form action="includes/signup.inc.php" method="post" id="form">
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'emptyinput' || $_GET['error'] == 'uname_tooshort') {
+                                echo 'error';
+                              } ?>">
         <h3>Username</h3>
-        <input type="text" name="uname" placeholder="Username" id="username">
-        <i class="fas fa-exclamation"></i>
+        <input type=" text" name="uname" placeholder="Username" id="username" onkeyup='saveValue(this);'>
+        <i class=" fas fa-exclamation"></i>
         <i class="far fa-check-circle"></i>
         <small>.</small>
       </div>
-      <div class="input-field ">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'emptyinput' || $_GET['error'] == 'invalid_email') {
+                                echo 'error';
+                              } ?>">
         <h3>Email</h3>
-        <input type="email" name="email" placeholder="example@email.com" id="email">
+        <input type="email" name="email" placeholder="example@email.com" id="email" onkeyup='saveValue(this);'>
         <i class="fas fa-exclamation"></i>
         <i class="far fa-check-circle"></i>
         <small>.</small>
       </div>
-      <div class="input-field">
+      <div class="input-field <?php if (isset($_GET['error'])) if ($_GET['error'] == 'emptyinput' || $_GET['error'] == 'pwd_tooshort' || $_GET['error' == 'invalid_password']) {
+                                echo 'error';
+                              } ?>">
         <h3>Password</h3>
-        <input type="password" name="pwd" placeholder="Password..." id="password">
+        <input type="password" name="pwd" placeholder="Password..." id="password" onkeyup='saveValue(this);'>
         <i class="fas fa-exclamation"></i>
         <i class="far fa-check-circle"></i>
         <small></small>
@@ -53,7 +59,7 @@ include_once 'session.php';
         <i class="far fa-check-circle"></i>
         <small></small>
       </div>
-      <button type="submit" name="submit">Sign Up</button>
+      <button class="submit" type="submit" name="submit">Sign Up</button>
     </form>
   </main>
   <?php
@@ -120,7 +126,7 @@ include_once 'session.php';
   ?>
   <footer>
     <div class="footer-container">
-      <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
+      <img src="img/newlogobg.png" alt="Arki' s Bakery Logo">
       <div class="socmed-container">
         <a href="" class="fa fa-facebook"></a>
         <a href="" class="fa fa-twitter"></a>
