@@ -17,300 +17,64 @@ include 'session.php';
 </head>
 
 <body>
-  <?php
-  include 'header.php';
-  include 'includes/dbh.inc.php';
-  include 'includes/functions.inc.php';
-  ?>
+    <?php
+    include 'header.php';
+    include 'includes/dbh.inc.php';
+    include 'includes/functions.inc.php';
+    ?>
     <div class="headerContainer">
         <div class="header">
             <h2>Our Offers</h2>
             <p>Treat yourselves with our delicious offers.</p>
         </div>
     </div>
-                <!-- Start of first line offers -->
-                <div class="item-section">
-                    <div class="item-header">
-                        <div class="item-title">
-                            <h1>Cakes</h1>
-                        </div>
-                        <div class="carousel-btn">
-                            <i class="fa fa-angle-left cake-left hover"></i>
-                            <i class="fa fa-angle-right cake-right hover"></i>
-                        </div>
-                    </div>
-                    <div class="item-contents cake-contents">
-                        <?php
-                        $result = mysqli_query($conn, "SELECT * FROM products");
-                        while ($products = mysqli_fetch_assoc($result)) {
-                          echo '<div class="item cake-item">
+    <!-- Start of first line offers -->
+    <div class="item-section">
+        <div class="item-header">
+            <div class="item-title">
+                <h1>Cakes</h1>
+            </div>
+            <div class="carousel-btn">
+                <i class="fa fa-angle-left cake-left hover"></i>
+                <i class="fa fa-angle-right cake-right hover"></i>
+            </div>
+        </div>
+        <div class="item-contents cake-contents">
+            <?php
+            $result = mysqli_query($conn, "SELECT * FROM products");
+            while ($products = mysqli_fetch_assoc($result)) {
+                echo '<div class="item cake-item">
                               <div class="item-img">
-                                  <img src="img/Products/'.$products['productsFilename'].'" alt="">
+                                  <img src="img/Products/' . $products['productsFilename'] . '" alt="">
                               </div>
                               <div class="item-name">
-                                  <h3>'.$products['productsName'].'</h3>
-                                  <input type="hidden" value='.$products['productsID'].'>
+                                  <h3>' . $products['productsName'] . '</h3>
+                                  <input type="hidden" value=' . $products['productsID'] . '>
                               </div>
                               <div class="item-description">
-                                  <p>'.$products['productsDescription'].'</p><br>
+                                  <p>' . $products['productsDescription'] . '</p><br>
                               </div>
                               <div class="item-price">
-                                  <p>Php '.$products['productsPrize'].'</p>
+                                  <p>Php ' . $products['productsPrice'] . '</p>
                               </div>
                           </div>';
-                        }
-                        ?>
-                    </div>
-                </div>
+            }
+            ?>
+        </div>
+    </div>
     <!-- End of first line offers -->
-    <div class="item-section">
-        <div class="item-header">
-            <div class="item-title">
-                <h1>Brownies</h1>
-            </div>
-            <div class="carousel-btn">
-                <i class="fa fa-angle-left brownies-left hover"></i>
-                <i class="fa fa-angle-right brownies-right hover"></i>
-            </div>
-        </div>
-        <div class="item-contents brownies-contents">
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/brownies.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Chocolate Brownies</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="item-section">
-        <div class="item-header">
-            <div class="item-title">
-                <h1>Cupcakes</h1>
-            </div>
-            <div class="carousel-btn">
-                <i class="fa fa-angle-left cupcakes-left hover"></i>
-                <i class="fa fa-angle-right cupcakes-right hover"></i>
-            </div>
-        </div>
-        <div class="item-contents cupcakes-contents">
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="img/strawberry.jpg" alt="">
-                </div>
-                <div class="item-name">
-                    <h3>Strawberry Cupcakes</h3>
-                </div>
-                <div class="item-description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum iste consequuntur rerum eum
-                        veritatis autem cumque laborum, molestiae atque aspernatur!</p><br>
-                </div>
-                <div class="item-price">
-                    <p>Starting at ₱20</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-<?php
-if (isset($_GET['admin']) && isset($_SESSION["adminID"])) {
-  if ($_GET['admin'] == true) {
-    include "admin_modal.php";
-  }
-}
-else{
-  include "modal.php";
-}
-  include "modal.php";
-?>
+
+    <?php
+    if (isset($_GET['admin']) && isset($_SESSION["adminID"])) {
+        if ($_GET['admin'] == true) {
+            include "admin_modal.php";
+        }
+    } else {
+        include "modal.php";
+    }
+    include "modal.php";
+    ?>
 
     <div class="footer-container">
         <img src="img/newlogobg.png" alt="Arki's Bakery Logo">

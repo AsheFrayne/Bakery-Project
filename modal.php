@@ -39,10 +39,9 @@
             </div>
             <form class="" action="includes/review.inc.php" method="post">
                 <div class="modal-comment-box">
-                    <<<<<<< HEAD <form class="" action="includes/review.inc.php" method="get">
-                        =======
-                        <!-- palagyan event lisnter ung heart pag na click heart button ung value mag change from 0 to 1 -->
-                        >>>>>>> d780e0110379b29090f110f9445ac46b3c67469b
+                    <form class="" action="includes/review.inc.php" method="get">
+
+
                         <input id="heart" type="hidden" value="0" name="heart">
                         <input id="productsID" type="hidden" value="0" name="productsID">
                         <input type="hidden" name="userID" value="<?php echo $_SESSION['usersName']; ?>">
