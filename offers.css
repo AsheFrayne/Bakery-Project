@@ -208,6 +208,14 @@ body {
   justify-content: space-between;
 }
 
+.delete-comment button {
+  padding: 0;
+  margin: 0;
+  width: 15px;
+  border: none;
+  background-color: white;
+}
+
 .delete-comment i {
   width: 15px;
   padding: 0;
