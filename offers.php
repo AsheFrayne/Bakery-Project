@@ -62,7 +62,7 @@ include 'session.php';
                     </div>
                 </div>
     <!-- End of first line offers -->
-    <div class="item-section">
+    <!-- <div class="item-section">
         <div class="item-header">
             <div class="item-title">
                 <h1>Brownies</h1>
@@ -297,7 +297,7 @@ include 'session.php';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 <?php include "modal.php";?>
 
