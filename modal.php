@@ -22,6 +22,11 @@
                             Recusandae at nisi aliquid sed neque, magni blanditiis omnis mollitia facilis
                             error.</span>
                     </div>
+                    <div class="delete-comment">
+                        <i class="fa fa-times hover user-comment-delete"></i>
+                        <i class="fas fa-edit hover user-comment-edit"></i>
+                        <i class="fas fa-check hover check-edit" style="display: none"></i>
+                    </div>
                 </div>
             </div>
             <div class="modal-description-container">
@@ -34,7 +39,6 @@
             </div>
             <div class="modal-comment-box">
               <form class="" action="includes/review.inc.php" method="get">
-                <!-- palagyan event lisnter ung heart pag na click heart button ung value mag change from 0 to 1 -->
                 <input id="heart" type="hidden" value="0" name="heart">
                 <input id="productsID" type="hidden" value="0" name="productsID">
                 <input type="hidden" name="userID" value="<?php echo $_SESSION['usersID'];?>">

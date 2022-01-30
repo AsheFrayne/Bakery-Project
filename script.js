@@ -33,21 +33,10 @@ window.onload = function () {
 
 
     const itemWidth = 284;
-
     var cakeDirection;
     const cakeLeft = document.querySelector(".cake-left");
     const cakeRight = document.querySelector(".cake-right");
     const cakeContents = document.querySelector(".cake-contents");
-
-    var browniesDirection;
-    const browniesLeft = document.querySelector(".brownies-left");
-    const browniesRight = document.querySelector(".brownies-right");
-    const browniesContents = document.querySelector(".brownies-contents");
-
-    var cupcakesDirection;
-    const cupcakesLeft = document.querySelector(".cupcakes-left");
-    const cupcakesRight = document.querySelector(".cupcakes-right");
-    const cupcakesContents = document.querySelector(".cupcakes-contents");
 
     cakeLeft.onclick = function () {
         cakeDirection = 'left';
@@ -71,55 +60,8 @@ window.onload = function () {
             cakeContents.style.transition = 'transform 500ms';
         });
     })
-
-    browniesLeft.onclick = function () {
-        browniesDirection = 'left';
-        browniesContents.style.transform = `translateX(${itemWidth}px)`
-    }
-
-    browniesRight.onclick = function () {
-        browniesDirection = 'right';
-        browniesContents.style.transform = `translateX(-${itemWidth}px)`
-    }
-
-    browniesContents.addEventListener("transitionend", () => {
-        if (browniesDirection == 'left') {
-            browniesContents.prepend(browniesContents.lastElementChild);
-        } else if (browniesDirection == 'right') {
-            browniesContents.append(browniesContents.firstElementChild);
-        }
-        browniesContents.style.transition = 'none';
-        browniesContents.style.transform = 'translateX(0px)';
-        setTimeout(function () {
-            browniesContents.style.transition = 'transform 500ms';
-        });
-    })
-
-    cupcakesLeft.onclick = function () {
-        cupcakesDirection = 'left';
-        cupcakesContents.style.transform = `translateX(${itemWidth}px)`
-    }
-
-    cupcakesRight.onclick = function () {
-        cupcakesDirection = 'right';
-        cupcakesContents.style.transform = `translateX(-${itemWidth}px)`
-    }
-
-    cupcakesContents.addEventListener("transitionend", () => {
-        if (cupcakesDirection == 'left') {
-            cupcakesContents.prepend(cupcakesContents.lastElementChild);
-        } else if (browniesDirection == 'right') {
-            cupcakesContents.append(cupcakesContents.firstElementChild);
-        }
-        cupcakesContents.style.transition = 'none';
-        cupcakesContents.style.transform = 'translateX(0px)';
-        setTimeout(function () {
-            cupcakesContents.style.transition = 'transform 500ms';
-        });
-    })
-
+    
     const item = document.querySelectorAll('.item');
-
     const modal = document.querySelector('.modal');
     const modalImgContainer = document.querySelector('.modal-img-container');
     const modalReview = document.querySelector('.modal-review');
@@ -135,8 +77,8 @@ window.onload = function () {
 
     item.forEach(element => {
         element.onclick = () => {
-            productID = element.children[1].children[1].value;
-            modalID.value = productID;
+            // productID = element.children[1].children[1].value;
+            // modalID.value = productID;
             console.log(modalID.value);
             modal.style.display = 'block';
             modalImg.src = element.children[0].children[0].src;
@@ -174,5 +116,23 @@ window.onload = function () {
                 modalHeart.style.animation = 'none';
             }, 200);
         }
+    }
+
+    const userCommentEdit = document.querySelector('.user-comment-edit'); 
+    const textComment = document.querySelector('.text-comment'); 
+    const checkEdit = document.querySelector('.check-edit'); 
+    
+    userCommentEdit.onclick = () => {
+        textComment.style.border = '1px solid black'
+        textComment.setAttribute('contenteditable', 'true');
+        checkEdit.style.display = 'block';
+        userCommentEdit.style.display = 'none';
+    }
+
+    checkEdit.onclick = () => {
+        textComment.style.border = 'none';
+        textComment.setAttribute('contenteditable', 'false');
+        checkEdit.style.display = 'none';
+        userCommentEdit.style.display = 'block';
     }
 }
