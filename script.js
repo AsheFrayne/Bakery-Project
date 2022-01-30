@@ -1,23 +1,23 @@
-window.onload = function () {
+window.onload = function() {
     const dropdown = document.querySelector(".dropdown");
     const navmenu = document.querySelector(".navmenu");
     const bar1 = document.querySelector(".bar1");
     const bar2 = document.querySelector(".bar2");
     const bar3 = document.querySelector(".bar3");
 
-    dropdown.onmouseover = function () {
+    dropdown.onmouseover = function() {
         bar1.style.backgroundColor = "#ffc107";
         bar2.style.backgroundColor = "#ffc107";
         bar3.style.backgroundColor = "#ffc107";
     }
 
-    dropdown.onmouseleave = function () {
+    dropdown.onmouseleave = function() {
         bar1.style.backgroundColor = "black";
         bar2.style.backgroundColor = "black";
         bar3.style.backgroundColor = "black";
     }
 
-    dropdown.onclick = function () {
+    dropdown.onclick = function() {
         if (window.getComputedStyle(navmenu, null).display == "none") {
             navmenu.style.display = "flex";
             bar1.style.transform = "rotate(-45deg) translate(-6px, 6px)";
@@ -31,36 +31,6 @@ window.onload = function () {
         }
     }
 
-
-    const itemWidth = 284;
-    var cakeDirection;
-    const cakeLeft = document.querySelector(".cake-left");
-    const cakeRight = document.querySelector(".cake-right");
-    const cakeContents = document.querySelector(".cake-contents");
-
-    cakeLeft.onclick = function () {
-        cakeDirection = 'left';
-        cakeContents.style.transform = `translateX(${itemWidth}px)`
-    }
-
-    cakeRight.onclick = function () {
-        cakeDirection = 'right';
-        cakeContents.style.transform = `translateX(-${itemWidth}px)`
-    }
-
-    cakeContents.addEventListener("transitionend", () => {
-        if (cakeDirection == 'left') {
-            cakeContents.prepend(cakeContents.lastElementChild);
-        } else if (cakeDirection == 'right') {
-            cakeContents.append(cakeContents.firstElementChild);
-        }
-        cakeContents.style.transition = 'none';
-        cakeContents.style.transform = 'translateX(0px)';
-        setTimeout(function () {
-            cakeContents.style.transition = 'transform 500ms';
-        });
-    })
-    
     const item = document.querySelectorAll('.item');
     const modal = document.querySelector('.modal');
     const modalImgContainer = document.querySelector('.modal-img-container');
@@ -99,7 +69,7 @@ window.onload = function () {
     }
 
     modalHeart.onclick = () => {
-        if(modalHeart.className == 'far fa-heart hover') {
+        if (modalHeart.className == 'far fa-heart hover') {
             heart.value = 1;
             modalHeart.className = 'fas fa-heart hover'
             modalHeart.style.color = 'red';
@@ -118,10 +88,10 @@ window.onload = function () {
         }
     }
 
-    const userCommentEdit = document.querySelector('.user-comment-edit'); 
-    const textComment = document.querySelector('.text-comment'); 
-    const checkEdit = document.querySelector('.check-edit'); 
-    
+    const userCommentEdit = document.querySelector('.user-comment-edit');
+    const textComment = document.querySelector('.text-comment');
+    const checkEdit = document.querySelector('.check-edit');
+
     userCommentEdit.onclick = () => {
         textComment.style.border = '1px solid black'
         textComment.setAttribute('contenteditable', 'true');
