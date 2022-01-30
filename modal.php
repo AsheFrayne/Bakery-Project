@@ -23,9 +23,15 @@
                             error.</span>
                     </div>
                     <div class="delete-comment">
-                        <i class="fa fa-times hover user-comment-delete"></i>
-                        <i class="fas fa-edit hover user-comment-edit"></i>
-                        <i class="fas fa-check hover check-edit" style="display: none"></i>
+                        <button class="hover user-comment-delete">
+                            <i class="fa fa-times"></i>   
+                        </button>
+                        <button class="hover user-comment-edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="hover check-edit" style="display: none">
+                            <i class="fas fa-check"></i>
+                        </button>
                     </div>
                 </div>
             </div>
