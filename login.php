@@ -28,7 +28,7 @@ include 'session.php';
                                 echo 'err-pass';
                               } ?>">
         <i class="far fa-user"></i>
-        <input type="text" name="uname" placeholder="Email">
+        <input type="text" name="uname" onkeyup='saveValue(this);' placeholder="Email" id='email'>
       </div>
       <h3>Password</h3>
       <div class="<?php if (isset($_GET['error'])) if ($_GET['error'] == 'wrongpassword' || $_GET['error'] == 'emptyinput' || $_GET['error'] == 'usernotexist') {
@@ -45,13 +45,13 @@ include 'session.php';
           echo '<p >Error: Fill in all fields!<p>';
         }
         if ($_GET["error"] == "wrongpassword") {
-          echo '<p>Error: Incorrect Password!<p>';
+          echo '<p>Error: Incorrect Password or Email!<p>';
         } else if ($_GET["error"] == "usernotexist") {
           echo '<p>Error: User not Exist!<p>';
         }
       }
       ?>
-      <button type="submit" name="submit">LOGIN</button>
+      <button class=' submit' type="submit" name="submit">LOGIN</button>
 
     </form>
   </main>
@@ -67,7 +67,7 @@ include 'session.php';
       </div>
     </div>
   </footer>
-
+  <script src='login.js'></script>
 </body>
 
 </html>

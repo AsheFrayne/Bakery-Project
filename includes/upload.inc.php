@@ -25,6 +25,7 @@ if (isset($_POST['delete'])) {
   $_pwd = $_POST["password"];
   $_description = $_POST["description"];
   $uname = $users["usersName"];
+
   $update = false;
 
   $_filename = $_FILES["uploadDP"]["name"];

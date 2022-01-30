@@ -69,9 +69,9 @@ $usersEmail = $_SESSION["usersEmail"];
         <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
         <div class="pw-box">
           <label for="password">Password</label>
-          <input type="password" name="password" class="password" value="<?php echo $usersPwd; ?>">
+          <input type="password" name="password" class="password">
           <label for="confirmPassword">Confirm Password</label>
-          <input type="password" name="conf-password" class="conf-password" value="<?php echo $usersPwd; ?>">
+          <input type="password" name="conf-password" class="conf-password">
         </div>
         <div class=" date-joined">
           <small>Date Joined</small>
