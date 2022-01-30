@@ -47,7 +47,7 @@
                 <form class="" action="includes/review.inc.php" method="get">
                     <input id="heart" type="hidden" value="0" name="heart">
                     <input id="productsID" type="hidden" value="0" name="productsID">
-                    <!-- <input type="hidden" name="userID" value="<?php echo $_SESSION['usersID']; ?>"> -->
+                    <input type="hidden" name="userID" value="<?php echo $_SESSION['usersID']; ?>">
                     <input type="text" placeholder="Add a comment..." name="comment">
                     <button class="hover" type="submit" name="post">Post</button>
                 </form>
