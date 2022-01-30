@@ -10,9 +10,9 @@ if (isset($_POST["submit"])) {
   include 'dbh.inc.php';
   include 'functions.inc.php';
 
-  $sql = "INSERT INTO products (productsFilename, produtsDate, productsDescription, adminID, productsPrize) VALUES ('$filename', '$date', '$description', '$adminID', '$prize')";
+  $sql = "INSERT INTO products (productsFilename, productsPrize, productsDescription, productsDate, adminID) VALUES ('$filename', '$prize', '$description', '$date', '$adminID')";
   mysqli_query($conn, $sql);
-
+  header("location: ../offers.php?addProduct=success&admin=true");
 }
 else{
   header("location: ../index.php");
