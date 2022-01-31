@@ -6,15 +6,22 @@
     </div>
     <div class="modal-content">
         <div class="modal-img-container">
-            <img class="modal-img" src="" alt="">
+          <?php 
+            $productID = $_GET['productID'];
+            $check = "SELECT * FROM products WHERE productsID = '$productID';";
+            $result = mysqli_query($conn, $check);
+            $products = mysqli_fetch_assoc($result);
+            
+            echo '<img class="modal-img" src="img/Products/'.$products['productsFilename'].'" alt="">'
+          ?>
+            
         </div>
         <div class="modal-review">
             <div class="modal-title-container">
-                <h1 class="modal-title"></h1>
+                <h1 class="modal-title"><?php echo $products['productsName'] ?></h1>
             </div>
             <div class="modal-comments">
               <?php
-                  $productID = $_GET['productID'];
                   $result = mysqli_query($conn, "SELECT * FROM reviews WHERE productsID = '$productID';");
                     while ($reviews = mysqli_fetch_assoc($result)) {
                       if (empty($reviews["reviewsCom"])) {
@@ -60,8 +67,10 @@
             }
             ?>
             <div class="modal-description-container">
-                <p class="modal-description"></p>
-                <p class="modal-price"></p>
+                <p class="modal-description"><?php echo $products['productsDescription'] ?></p>
+                <div>
+                  <span class="green">Php</span><span class="green modal-price"><?php echo $products['productsPrice'] ?></span>
+                </div>
                 <div class="description-buttons">
                   <form class="" action="includes/heart.inc.php" method="post">
                     <input type="hidden" value="<?php echo $_GET['productID']; ?>" name="productsID">

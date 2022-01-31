@@ -7,20 +7,34 @@
     <div class="modal-content">
         <div class="modal-img-container">
             <label class="offer-upload hover" for="offer-img">
-                <img class="modal-img" src="" alt="">
+                <?php 
+                    $productID = $_GET['productID'];
+                    $check = "SELECT * FROM products WHERE productsID = '$productID';";
+                    $result = mysqli_query($conn, $check);
+                    $products = mysqli_fetch_assoc($result);
+                    
+                    echo '<img class="modal-img" src="img/Products/'.$products['productsFilename'].'" alt="">'
+                ?>
             </label>
-            <input id="offer-img" type="file" accept=".jpg, .jpeg, .png" style="display: none;">
-            <button class="offer-submit hover" type="submit" name="submit" style="display: none"><i class="fas fa-check"></i></button>
+            <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+                <input id="offer-img" type="file" accept=".jpg, .jpeg, .png" style="display: none;" name="filename">
+                <button class="offer-submit hover" type="submit" name="submit" style="display: none"><i class="fas fa-check"></i></button>
+            </form>
         </div>
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">
-                <h1 class="modal-title"></h1>
-                <button class="hover admin-title-edit">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="hover admin-title-check-edit" style="display: none" name="title">
-                    <i class="fas fa-check"></i>
-                </button>
+                <h1 class="modal-title"><?php echo $products['productsName'] ?></h1>
+                <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+                    <input class="input-name" type="hidden" name="productsName" value="">
+                    <button type="button" class="hover admin-title-edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button type="submit" class="hover admin-title-check-edit" style="display: none" name="title">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </form>
             </div>
             <div class="modal-comments">
                 <?php
@@ -53,25 +67,33 @@
             ?>
             <div class="modal-description-container">
                 <div class="admin-modal-description">
-                    <p class="modal-description"></p>
-                    <button class="hover admin-description-edit">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="hover admin-description-check-edit" style="display: none" name="description">
-                        <i class="fas fa-check"></i>
-                    </button>
+                    <p class="modal-description"><?php echo $products['productsDescription'] ?></p>
+                    <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+                        <input class="input-description" type="hidden" name="productsDescription" value="">
+                        <button type="button" class="hover admin-description-edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="submit" class="hover admin-description-check-edit" style="display: none" name="description">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="admin-modal-price">
-                    <p class="modal-price"></p>
-                    <button class="hover admin-price-edit">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="hover admin-price-check-edit" style="display: none" name="price">
-                        <i class="fas fa-check"></i>
-                    </button>
+                    <span class="green">Php </span><span class="green modal-price"><?php echo $products['productsPrice'] ?></span>
+                    <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+                        <input class="input-price" type="hidden" name="productsPrice" value="">
+                        <button type="button" class="hover admin-price-edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="submit" class="hover admin-price-check-edit" style="display: none" name="price">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="description-buttons" style="display: none;">
-                    <button class="heart-button" type="button">
+                    <button type="button" class="heart-button" type="button">
                         <i class="far fa-heart hover"></i>
                     </button>
                     <button>
