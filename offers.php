@@ -43,20 +43,20 @@
             $result = mysqli_query($conn, "SELECT * FROM products");
             while ($products = mysqli_fetch_assoc($result)) {
                 echo '<div class="item cake-item">
-                              <div class="item-img">
-                                  <img src="img/Products/' . $products['productsFilename'] . '" alt="">
-                              </div>
-                              <div class="item-name">
-                                  <h3>' . $products['productsName'] . '</h3>
-                                  <input type="hidden" value=' . $products['productsID'] . '>
-                              </div>
-                              <div class="item-description">
-                                  <p>' . $products['productsDescription'] . '</p><br>
-                              </div>
-                              <div class="item-price">
-                                  <p>Php ' . $products['productsPrice'] . '</p>
-                              </div>
-                          </div>';
+                            <div class="item-img">
+                                <img src="img/Products/' . $products['productsFilename'] . '" alt="">
+                            </div>
+                            <div class="item-name">
+                                <h3>' . $products['productsName'] . '</h3>
+                                <input type="hidden" value=' . $products['productsID'] . '>
+                            </div>
+                            <div class="item-description">
+                                <p>' . $products['productsDescription'] . '</p><br>
+                            </div>
+                            <div class="item-price">
+                                <p>Php ' . $products['productsPrice'] . '</p>
+                            </div>
+                        </div>';
             }
             ?>
         </div>
