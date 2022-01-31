@@ -28,13 +28,13 @@
     <div class="item-section">
         <div class="item-header">
             <div class="item-title">
-              <?php
-              if (isset($_SESSION['usersType'])) {
-                if ($_SESSION['usersType'] == 'admin') {
-                  echo '<a href="addOffers.php"><i class="fas fa-plus"></i>Add Offers</a>';
+                <?php
+                if (isset($_SESSION['usersType'])) {
+                    if ($_SESSION['usersType'] == 'admin') {
+                        echo '<a href="addOffers.php"><i class="fas fa-plus"></i>Add Offers</a>';
+                    }
                 }
-              }
-              ?>
+                ?>
                 <h1>Products</h1>
             </div>
         </div>
@@ -44,11 +44,11 @@
             while ($products = mysqli_fetch_assoc($result)) {
                 echo '<div class="item cake-item">
                               <div class="item-img">
-                                  <img src="img/Products/'.$products['productsFilename'].'" alt="">
+                                  <img src="img/Products/' . $products['productsFilename'] . '" alt="">
                               </div>
                               <div class="item-name">
                                   <h3>' . $products['productsName'] . '</h3>
-                                  <input type="hidden" value='. $products['productsID'] .'>
+                                  <input type="hidden" value=' . $products['productsID'] . '>
                               </div>
                               <div class="item-description">
                                   <p>' . $products['productsDescription'] . '</p><br>
@@ -63,10 +63,9 @@
     </div>
     <?php
     if (isset($_SESSION["usersID"])) {
-      if ($_SESSION["usersType"] == 'admin') {
+        if ($_SESSION["usersType"] == 'admin') {
             include "admin_modal.php";
-        }
-        else {
+        } else {
             include "modal.php";
         }
     } else {
@@ -88,8 +87,8 @@
 <script src="script.js" defer></script>
 <?php
 if (isset($_GET['modal'])) {
-  if ($_GET['modal'] == 1) {
-    echo "<script>
+    if ($_GET['modal'] == 1) {
+        echo "<script>
 
     const modal = document.querySelector('.modal');
     const modalImgContainer = document.querySelector('.modal-img-container');
@@ -105,7 +104,8 @@ if (isset($_GET['modal'])) {
     modalPrice.innerHTML = localStorage.getItem('price');
     modal.style.display = 'flex';
     </script>";
-  }
+    }
 }
 ?>
+
 </html>

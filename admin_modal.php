@@ -6,7 +6,11 @@
     </div>
     <div class="modal-content">
         <div class="modal-img-container">
-            <img class="modal-img" src="" alt="">
+            <button class="offer-delete hover"><i class="fa fa-times"></i></button>
+            <label class="offer-upload hover" for="offer-img">
+                <img class="modal-img" src="" alt="">
+            </label>
+            <input id="offer-img" type="file" style="display: none;">
         </div>
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">
@@ -29,33 +33,31 @@
                         }
                         echo '<div class="comment">
                             <div class="img-comment">';
-                        if ($reviews["usersName"] !== "Guest") {
-                            echo    '<a href="view-profile.php?userName=' . $reviews["usersName"] . '"><img src="img/profilePics/' . getFilename($conn, $reviews["usersName"]) . '" alt=""></a>';
-                        } else {
-                            echo    '<img src="img/profilePics/' . getFilename($conn, $reviews["usersName"]) . '" alt="">';
-                        }
-
+                        echo    '<a href="view-profile.php?userName=' . $reviews["usersName"] . '"><img src="img/profilePics/' . getFilename($conn, $reviews["usersName"]) . '" alt=""></a>';
                         echo '</div>
                             <div class="comment-content">';
-                        if ($reviews["usersName"] !== "Guest") {
-                            echo    '<a href="view-profile.php?userName=' . $reviews["usersName"] . '"><span class="name-comment">' . $reviews["usersName"] . '</span></a>';
-                        } else {
-                            echo    '<span class="name-comment">' . $reviews["usersName"] . '</span>';
-                        }
+                        echo    '<a href="view-profile.php?userName=' . $reviews["usersName"] . '"><span class="name-comment">' . $reviews["usersName"] . '</span></a>';
                         echo '    <span class="text-comment">' . $reviews["reviewsCom"] . '</span>
-                            </div>
-                            <div class="delete-comment">
-                              <button class="hover user-comment-delete">
-                                  <i class="fa fa-times"></i>
-                              </button>
-                              <button class="hover user-comment-edit">
-                                  <i class="fas fa-edit"></i>
-                              </button>
-                              <button class="hover check-edit" style="display: none">
-                                  <i class="fas fa-check"></i>
-                              </button>
-                            </div>
                             </div>';
+                        if ($_SESSION["usersName"] == $reviews["usersName"]) {
+                            echo  '<div class="delete-comment">
+                                <form action="includes/editDeleteComment.inc.php" method="post">
+                                  <input type="hidden" class="comment-input" name="reviewsCom" value="">
+                                  <input type="hidden" name="productID" value="' . $productID . '">
+                                  <input type="hidden" name="reviewsID" value="' . $reviews["reviewsID"] . '">
+                                  <button type="submit" name="delete" class="hover user-comment-delete">
+                                      <i class="fa fa-times"></i>
+                                  </button>
+                                  <button type="button" class="hover user-comment-edit">
+                                      <i class="fas fa-edit"></i>
+                                  </button>
+                                  <button type="submit" name="edit" class="hover check-edit" style="display: none">
+                                      <i class="fas fa-check"></i>
+                                  </button>
+                                </form>
+                              </div>';
+                        }
+                        echo  '</div>';
                     }
                 }
                 ?>

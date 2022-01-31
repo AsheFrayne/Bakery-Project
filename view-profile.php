@@ -31,7 +31,7 @@ if (!isset($_GET['userName'])) {
     $usersID = $_GET['userName'];
     $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
     $user = mysqli_fetch_assoc($result);
-  }else{
+  } else {
     $usersID = $_SESSION["usersID"];
     $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
     $user = mysqli_fetch_assoc($result);

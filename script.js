@@ -69,28 +69,6 @@ window.onload = function() {
         }
     }
 
-    if (modalHeart != null) {
-        modalHeart.onclick = () => {
-            if (modalHeart.className == 'far fa-heart hover') {
-                heart.value = 1;
-                modalHeart.className = 'fas fa-heart hover'
-                modalHeart.style.color = 'red';
-                modalHeart.style.animation = 'like 500ms';
-                setTimeout(function() {
-                    modalHeart.style.animation = 'none';
-                }, 200);
-            } else if (modalHeart.className == 'fas fa-heart hover') {
-                heart.value = 0;
-                modalHeart.className = 'far fa-heart hover'
-                modalHeart.style.color = 'black';
-                modalHeart.style.animation = 'like 500ms';
-                setTimeout(function() {
-                    modalHeart.style.animation = 'none';
-                }, 200);
-            }
-        }
-    }
-
     const comment = document.querySelectorAll('.comment');
 
 
