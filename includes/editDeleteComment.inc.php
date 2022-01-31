@@ -27,7 +27,7 @@ elseif (isset($_POST['edit'])) {
   $sql = "SELECT reviewsCom FROM reviews WHERE reviewsID = '$reviewsID';";
   $result = mysqli_query($conn, $sql);
   $user = mysqli_fetch_assoc($result);
-  if ($user['reviewsCom'] != $reviewsCom) {
+  if ($user['reviewsCom'] == $reviewsCom) {
     header('location: ../offers.php?modal=1&productID='.$productID.'&change=success');
   }
   else {

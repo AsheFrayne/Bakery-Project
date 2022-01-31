@@ -91,24 +91,28 @@ window.onload = function() {
         }
     }
 
-    const userCommentEdit = document.querySelector('.user-comment-edit');
-    const textComment = document.querySelector('.text-comment');
-    const checkEdit = document.querySelector('.check-edit');
+    const comment = document.querySelectorAll('.comment');
 
-    if (userCommentEdit != null) {
-        userCommentEdit.onclick = () => {
+
+    comment.forEach(comment => {
+        const editButton = comment.children[2].children[0].children[4];
+        const checkButton = comment.children[2].children[0].children[5];
+        const textComment = comment.children[1].children[1];
+        const commentInput = comment.children[2].children[0].children[0];
+
+        editButton.onclick = () => {
             textComment.style.border = '1px solid black'
             textComment.setAttribute('contenteditable', 'true');
-            checkEdit.style.display = 'block';
-            userCommentEdit.style.display = 'none';
+            checkButton.style.display = 'block';
+            editButton.style.display = 'none';
         }
 
-        checkEdit.onclick = () => {
-            textComment.style.border = 'none';
+        checkButton.onclick = () => {
+            textComment.style.border = 'none'
             textComment.setAttribute('contenteditable', 'false');
-            checkEdit.style.display = 'none';
-            userCommentEdit.style.display = 'block';
+            checkButton.style.display = 'none';
+            editButton.style.display = 'block';
+            commentInput.value = textComment.textContent;
         }
-    }
-
+    });
 }

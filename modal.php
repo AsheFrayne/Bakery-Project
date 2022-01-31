@@ -32,13 +32,13 @@
                       if ($_SESSION["usersName"] == $reviews["usersName"]) {
                         echo  '<div class="delete-comment">
                                 <form action="includes/editDeleteComment.inc.php" method="post">
-                                  <input type="hidden" name="reviewsCom" value="">
+                                  <input type="hidden" class="comment-input" name="reviewsCom" value="">
                                   <input type="hidden" name="productID" value="'.$productID.'">
                                   <input type="hidden" name="reviewsID" value="'.$reviews["reviewsID"].'">
                                   <button type="submit" name="delete" class="hover user-comment-delete">
                                       <i class="fa fa-times"></i>
                                   </button>
-                                  <button class="hover user-comment-edit">
+                                  <button type="button" class="hover user-comment-edit">
                                       <i class="fas fa-edit"></i>
                                   </button>
                                   <button type="submit" name="edit" class="hover check-edit" style="display: none">
