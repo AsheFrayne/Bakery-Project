@@ -9,10 +9,10 @@
             <label class="offer-upload hover" for="offer-img">
                 <img class="modal-img" src="" alt="">
             </label>
-            <!-- insert image -->
             <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
             <input id="offer-img" type="file" style="display: none;" name="filename">
+            <button class="offer-submit hover" type="submit" name="submit" style="display: none"><i class="fas fa-check"></i></button>
         </div>
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">

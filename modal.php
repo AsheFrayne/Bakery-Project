@@ -94,7 +94,7 @@
                     <i class="far fa-comment hover"></i>
                   </button>
                 </div>
-                <span class="heart-number"><?php echo $countheart;?>like/s</span>
+                <span class="heart-number"><?php echo $countheart;?> like/s</span>
             </div>
             <form class="" action="includes/review.inc.php" method="POST">
                 <div class="modal-comment-box">

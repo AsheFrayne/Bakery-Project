@@ -46,3 +46,11 @@ adminPriceCheckEdit.onclick = () => {
     adminPriceCheckEdit.style.display = 'none';
     adminPriceEdit.style.display = 'block';
 }
+
+const offerImg = document.querySelector('#offer-img');
+const offerSubmit = document.querySelector('.offer-submit');
+
+offerImg.onchange = () => {
+    modalImg.src = URL.createObjectURL(offerImg.files[0]);
+    offerSubmit.style.display = "block";
+}
