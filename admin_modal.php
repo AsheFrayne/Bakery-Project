@@ -21,7 +21,7 @@
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">
                 <h1 class="modal-title"></h1>
-                <button class="hover admin-title-edit">
+                <button type="button" class="hover admin-title-edit">
                     <i class="fas fa-edit"></i>
                 </button>
                 <button class="hover admin-title-check-edit" style="display: none" name="title">
@@ -60,7 +60,7 @@
             <div class="modal-description-container">
                 <div class="admin-modal-description">
                     <p class="modal-description"></p>
-                    <button class="hover admin-description-edit">
+                    <button type="button" class="hover admin-description-edit">
                         <i class="fas fa-edit"></i>
                     </button>
                     <button class="hover admin-description-check-edit" style="display: none" name="description">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="admin-modal-price">
                     <p class="modal-price"></p>
-                    <button class="hover admin-price-edit">
+                    <button type="button" class="hover admin-price-edit">
                         <i class="fas fa-edit"></i>
                     </button>
                     <button class="hover admin-price-check-edit" style="display: none" name="price">
@@ -77,7 +77,7 @@
                     </button>
                 </div>
                 <div class="description-buttons" style="display: none;">
-                    <button class="heart-button" type="button">
+                    <button type="button" class="heart-button" type="button">
                         <i class="far fa-heart hover"></i>
                     </button>
                     <button>
