@@ -6,7 +6,6 @@
     </div>
     <div class="modal-content">
         <div class="modal-img-container">
-            <button class="offer-delete hover"><i class="fa fa-times"></i></button>
             <label class="offer-upload hover" for="offer-img">
                 <img class="modal-img" src="" alt="">
             </label>
@@ -96,7 +95,10 @@
                         <i class="far fa-comment hover"></i>
                     </button>
                 </div>
-                <span class="heart-number"><?php echo $countheart; ?> like/s</span>
+                <div class="bottom-description">
+                    <span class="heart-number"><?php echo $countheart; ?> like/s</span>
+                    <button class="offer-delete hover"><i class="fa fa-times"></i></button>
+                </div>
             </div>
             <form class="" action="includes/review.inc.php" method="POST" style="display: none;">
                 <div class="modal-comment-box">
