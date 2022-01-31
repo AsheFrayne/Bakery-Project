@@ -62,8 +62,8 @@
         </div>
     </div>
     <?php
-    if (isset($_GET['admin']) && isset($_SESSION["adminID"])) {
-        if ($_GET['admin'] == true) {
+    if (isset($_SESSION["usersID"])) {
+      if ($_SESSION["usersType"] == 'admin') {
             include "admin_modal.php";
         }
     } else {
