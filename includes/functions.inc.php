@@ -146,6 +146,7 @@ function loginUser($conn, $uname, $pwd){
     $_SESSION["dateJoined"] = $unameEmailExist["dateJoined"];
     $_SESSION["filename"] = $unameEmailExist["filename"];
     $_SESSION["description"] = $unameEmailExist["description"];
+    $_SESSION["usersType"] = $unameEmailExist["usersType"];
     header("location: ../index.php?login=success");
     exit();
   } else {
