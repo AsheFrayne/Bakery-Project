@@ -237,6 +237,7 @@ body {
 .modal-title,
 .modal-description,
 .modal-price {
+    width: 100%;
     word-break: break-word;
 }
 
