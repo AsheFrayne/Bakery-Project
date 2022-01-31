@@ -40,10 +40,8 @@ window.onload = function() {
     const modalTitle = document.querySelector('.modal-title');
     const modalDescription = document.querySelector('.modal-description');
     const modalPrice = document.querySelector('.modal-price');
-    const modalHeart = document.querySelector('.fa-heart');
     let productID;
     const modalID = document.querySelector('#productsID');
-    const heart = document.querySelector('#heart');
 
     item.forEach(element => {
         element.onclick = () => {

@@ -62,6 +62,13 @@
                 }
                 ?>
             </div>
+            <?php
+            $countheart = 0;
+            $res = mysqli_query($conn, "SELECT * FROM heart WHERE productsID = '$productID';");
+            while ($heart = mysqli_fetch_assoc($res)) {
+                $countheart++;
+            }
+            ?>
             <div class="modal-description-container">
                 <div class="admin-modal-description">
                     <p class="modal-description"></p>
@@ -89,7 +96,7 @@
                         <i class="far fa-comment hover"></i>
                     </button>
                 </div>
-                <span class="heart-number">999,999 likes</span>
+                <span class="heart-number"><?php echo $countheart; ?> like/s</span>
             </div>
             <form class="" action="includes/review.inc.php" method="POST" style="display: none;">
                 <div class="modal-comment-box">
