@@ -15,7 +15,7 @@ session_start();
       <?php
       if (isset($_SESSION["usersID"])) {
         if ($_SESSION["usersType"] == 'admin') {
-          echo '<a href="index.php?admin=true">Home</a><a href="about.php?admin=true">About</a><a href="./offers.php?admin=true">Offers</a>';
+          echo '<a href="index.php?admin=true">Home</a><a href="./offers.php?admin=true">Offers</a>';
         } else {
           echo '<a href="index.php">Home</a><a href="about.php">About</a><a href="./offers.php">Offers</a>';
         }
