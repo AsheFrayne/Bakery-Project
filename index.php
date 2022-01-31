@@ -62,8 +62,8 @@ include 'session.php';
         </video>
     </div>
     <div class="overlay">
-        <img src="./img/newlogobg.png" alt="logo" class="overlay-img">
-        <p>Arki's Bakery</p>
+        <img src="./img/newlogobg.png" alt="logo" class="overlay-img unselectable">
+        <p class="unselectable">Arki's Bakery</p>
     </div>
     <div class="bttm-home">
         <section class="box">
