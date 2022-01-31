@@ -102,9 +102,11 @@
                 </div>
                 <div class="bottom-description">
                     <span class="heart-number"><?php echo $countheart; ?> like/s</span>
-                    <button class="offer-delete hover" name="delete"><i class="fa fa-times"></i></button>
+                    <form class="" action="includes/editDeleteOffers.inc.php" method="get" enctype="multipart/form-data">
+                        <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+                        <button type="submit" class="offer-delete hover" name="delete"><i class="fa fa-times"></i></button>
+                    </form>
                 </div>
-                </form>
             </div>
             <form class="" action="includes/review.inc.php" method="POST" style="display: none;">
                 <div class="modal-comment-box">
