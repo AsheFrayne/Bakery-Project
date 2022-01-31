@@ -57,8 +57,10 @@ window.onload = function() {
         }
     });
 
-    modalExit.onclick = () => {
-        modal.style.display = 'none';
+    if (modalExit != null) {
+        modalExit.onclick = () => {
+            modal.style.display = 'none';
+        }
     }
 
     window.onclick = (e) => {
@@ -67,23 +69,25 @@ window.onload = function() {
         }
     }
 
-    modalHeart.onclick = () => {
-        if (modalHeart.className == 'far fa-heart hover') {
-            heart.value = 1;
-            modalHeart.className = 'fas fa-heart hover'
-            modalHeart.style.color = 'red';
-            modalHeart.style.animation = 'like 500ms';
-            setTimeout(function() {
-                modalHeart.style.animation = 'none';
-            }, 200);
-        } else if (modalHeart.className == 'fas fa-heart hover') {
-            heart.value = 0;
-            modalHeart.className = 'far fa-heart hover'
-            modalHeart.style.color = 'black';
-            modalHeart.style.animation = 'like 500ms';
-            setTimeout(function() {
-                modalHeart.style.animation = 'none';
-            }, 200);
+    if (modalHeart != null) {
+        modalHeart.onclick = () => {
+            if (modalHeart.className == 'far fa-heart hover') {
+                heart.value = 1;
+                modalHeart.className = 'fas fa-heart hover'
+                modalHeart.style.color = 'red';
+                modalHeart.style.animation = 'like 500ms';
+                setTimeout(function() {
+                    modalHeart.style.animation = 'none';
+                }, 200);
+            } else if (modalHeart.className == 'fas fa-heart hover') {
+                heart.value = 0;
+                modalHeart.className = 'far fa-heart hover'
+                modalHeart.style.color = 'black';
+                modalHeart.style.animation = 'like 500ms';
+                setTimeout(function() {
+                    modalHeart.style.animation = 'none';
+                }, 200);
+            }
         }
     }
 
@@ -91,17 +95,20 @@ window.onload = function() {
     const textComment = document.querySelector('.text-comment');
     const checkEdit = document.querySelector('.check-edit');
 
-    userCommentEdit.onclick = () => {
-        textComment.style.border = '1px solid black'
-        textComment.setAttribute('contenteditable', 'true');
-        checkEdit.style.display = 'block';
-        userCommentEdit.style.display = 'none';
+    if (userCommentEdit != null) {
+        userCommentEdit.onclick = () => {
+            textComment.style.border = '1px solid black'
+            textComment.setAttribute('contenteditable', 'true');
+            checkEdit.style.display = 'block';
+            userCommentEdit.style.display = 'none';
+        }
+
+        checkEdit.onclick = () => {
+            textComment.style.border = 'none';
+            textComment.setAttribute('contenteditable', 'false');
+            checkEdit.style.display = 'none';
+            userCommentEdit.style.display = 'block';
+        }
     }
 
-    checkEdit.onclick = () => {
-        textComment.style.border = 'none';
-        textComment.setAttribute('contenteditable', 'false');
-        checkEdit.style.display = 'none';
-        userCommentEdit.style.display = 'block';
-    }
 }
