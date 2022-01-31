@@ -8,6 +8,12 @@ $uname = $_SESSION["usersName"];
 $description = $_SESSION["description"];
 
 if (isset($_POST['delete'])) {
+  $sql = "DELETE FROM heart WHERE usersName='$uname';";
+  mysqli_query($conn, $sql);
+
+  $sql = "DELETE FROM reviews WHERE usersName='$uname';";
+  mysqli_query($conn, $sql);
+
   $sql = "DELETE FROM users WHERE usersID = '$usersID';";
   mysqli_query($conn, $sql);
 
