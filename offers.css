@@ -21,6 +21,13 @@ body {
     background-image: url(./img/Sprinkle.svg);
 }
 
+.delete-comment button {
+    border: none;
+    background-color: white;
+    width: 15px;
+    padding: 0;
+}
+
 .headerContainer {
     margin-top: 90px;
 }
