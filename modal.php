@@ -6,15 +6,15 @@
     </div>
     <div class="modal-content">
         <div class="modal-img-container">
-          <?php 
+          <?php
             $productID = $_GET['productID'];
             $check = "SELECT * FROM products WHERE productsID = '$productID';";
             $result = mysqli_query($conn, $check);
             $products = mysqli_fetch_assoc($result);
-            
+
             echo '<img class="modal-img" src="img/Products/'.$products['productsFilename'].'" alt="">'
           ?>
-            
+
         </div>
         <div class="modal-review">
             <div class="modal-title-container">
@@ -116,7 +116,7 @@
                         }
                         else {
                           echo '<input type="hidden" name="userID" value="Guest">
-                                <input type="text" placeholder="Add a comment..." name="comment">
+                                <input type="text" placeholder="Add a comment..." name="comment" disabled>
                                 <button class="hover" type="submit" name="post" disabled>Post</button>';
                         }
                         ?>
