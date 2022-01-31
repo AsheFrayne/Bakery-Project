@@ -9,7 +9,10 @@
             <label class="offer-upload hover" for="offer-img">
                 <img class="modal-img" src="" alt="">
             </label>
-            <input id="offer-img" type="file" style="display: none;">
+            <!-- insert image -->
+            <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+            <input id="offer-img" type="file" style="display: none;" name="filename">
         </div>
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">
@@ -17,7 +20,7 @@
                 <button class="hover admin-title-edit">
                     <i class="fas fa-edit"></i>
                 </button>
-                <button class="hover admin-title-check-edit" style="display: none">
+                <button class="hover admin-title-check-edit" style="display: none" name="title">
                     <i class="fas fa-check"></i>
                 </button>
             </div>
@@ -38,24 +41,6 @@
                         echo    '<a href="view-profile.php?userName=' . $reviews["usersName"] . '"><span class="name-comment">' . $reviews["usersName"] . '</span></a>';
                         echo '    <span class="text-comment">' . $reviews["reviewsCom"] . '</span>
                             </div>';
-                        if ($_SESSION["usersName"] == $reviews["usersName"]) {
-                            echo  '<div class="delete-comment">
-                                <form action="includes/editDeleteComment.inc.php" method="post">
-                                  <input type="hidden" class="comment-input" name="reviewsCom" value="">
-                                  <input type="hidden" name="productID" value="' . $productID . '">
-                                  <input type="hidden" name="reviewsID" value="' . $reviews["reviewsID"] . '">
-                                  <button type="submit" name="delete" class="hover user-comment-delete">
-                                      <i class="fa fa-times"></i>
-                                  </button>
-                                  <button type="button" class="hover user-comment-edit">
-                                      <i class="fas fa-edit"></i>
-                                  </button>
-                                  <button type="submit" name="edit" class="hover check-edit" style="display: none">
-                                      <i class="fas fa-check"></i>
-                                  </button>
-                                </form>
-                              </div>';
-                        }
                         echo  '</div>';
                     }
                 }
@@ -74,7 +59,7 @@
                     <button class="hover admin-description-edit">
                         <i class="fas fa-edit"></i>
                     </button>
-                    <button class="hover admin-description-check-edit" style="display: none">
+                    <button class="hover admin-description-check-edit" style="display: none" name="description">
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
@@ -83,7 +68,7 @@
                     <button class="hover admin-price-edit">
                         <i class="fas fa-edit"></i>
                     </button>
-                    <button class="hover admin-price-check-edit" style="display: none">
+                    <button class="hover admin-price-check-edit" style="display: none" name="price">
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
@@ -97,8 +82,9 @@
                 </div>
                 <div class="bottom-description">
                     <span class="heart-number"><?php echo $countheart; ?> like/s</span>
-                    <button class="offer-delete hover"><i class="fa fa-times"></i></button>
+                    <button class="offer-delete hover" name="delete"><i class="fa fa-times"></i></button>
                 </div>
+                </form>
             </div>
             <form class="" action="includes/review.inc.php" method="POST" style="display: none;">
                 <div class="modal-comment-box">
