@@ -102,27 +102,21 @@ i {
 .-label {
     position: absolute;
     background-color: transparent;
-    cursor: pointer;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .-label i {
     margin-right: 10px;
-}
-
-.hover-pic {
-    font-size: 14px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    transition: background-color 0.2s ease;
-    border-radius: 100px;
-    margin-bottom: 0;
-    cursor: pointer;
 }
 
 .infobox {

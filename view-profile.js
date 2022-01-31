@@ -23,6 +23,7 @@ fileUpload.onchange = () => {
 }
 
 editButton.addEventListener("click", e => {
+    fileUpload.disabled = false;
     textBox.removeAttribute('readonly');
     textArea.removeAttribute('readonly');
     textBox.style.borderBottom = '1px gray solid';
@@ -31,9 +32,16 @@ editButton.addEventListener("click", e => {
     editButton.style.display = 'none';
     dateBox.style.display = "none";
 
-    hover.onmouseover = () => {
-        hover.classList.toggle("hover-pic");
+    var css = '.-label:hover {width: 150px; height: 150px; font-size: 14px; z-index: 1; background-color: rgba(0, 0, 0, 0.8); color: white; transition: background-color 0.2s ease; border-radius: 100px; margin-bottom: 0; cursor: pointer; }';
+    var style = document.createElement('style');
+
+    if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+    } else {
+        style.appendChild(document.createTextNode(css));
     }
+
+    document.getElementsByTagName('head')[0].appendChild(style);
 });
 
 

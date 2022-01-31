@@ -42,7 +42,7 @@
             <?php
             $result = mysqli_query($conn, "SELECT * FROM products");
             while ($products = mysqli_fetch_assoc($result)) {
-                echo '<div class="item cake-item">
+                echo '<div class="hover item cake-item">
                             <div class="item-img">
                                 <img src="img/Products/' . $products['productsFilename'] . '" alt="">
                             </div>
@@ -93,7 +93,7 @@ if (isset($_GET['modal'])) {
 
     const modal = document.querySelector('.modal');
     modal.style.display = 'flex';
-    
+
     </script>";
     }
 }

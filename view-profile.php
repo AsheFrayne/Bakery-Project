@@ -62,7 +62,7 @@
           <span>Change Image</span>
         </label>
         <form class="" action="includes/upload.inc.php" method="post" enctype="multipart/form-data">
-          <input id="file" type="file" accept=".jpg, .jpeg, .png" name="uploadDP" />
+          <input id="file" disabled="true" type="file" accept=".jpg, .jpeg, .png" name="uploadDP" />
           <img class="profile-img" src="./img/profilePics/<?php echo $user['filename']; ?>">
       </div>
 
