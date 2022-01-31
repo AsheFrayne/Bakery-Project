@@ -51,7 +51,7 @@ INSERT INTO `admin` (`adminID`, `adminName`, `adminPwd`) VALUES
 CREATE TABLE `products` (
   `productsID` int(11) NOT NULL,
   `productsFilename` varchar(50) NOT NULL,
-  `productsPrize` varchar(10) NOT NULL,
+  `productsPrice` varchar(10) NOT NULL,
   `productsDescription` varchar(500) NOT NULL,
   `productsDate` varchar(11) NOT NULL,
   `adminID` int(11) DEFAULT NULL,
