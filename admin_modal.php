@@ -11,17 +11,12 @@
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">
                 <h1 class="modal-title"></h1>
-                <div class="admin-buttons">
-                    <button class="hover admin-title-delete">
-                        <i class="fa fa-times"></i>
-                    </button>
-                    <button class="hover admin-title-edit">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="hover admin-title-check-edit" style="display: none">
-                        <i class="fas fa-check"></i>
-                    </button>
-                </div>
+                <button class="hover admin-title-edit">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="hover admin-title-check-edit" style="display: none">
+                    <i class="fas fa-check"></i>
+                </button>
             </div>
             <div class="modal-comments">
                 <?php
@@ -68,31 +63,21 @@
             <div class="modal-description-container">
                 <div class="admin-modal-description">
                     <p class="modal-description"></p>
-                    <div class="admin-buttons">
-                        <button class="hover admin-description-delete">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <button class="hover admin-description-edit">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="hover admin-description-check-edit" style="display: none">
-                            <i class="fas fa-check"></i>
-                        </button>
-                    </div>
+                    <button class="hover admin-description-edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="hover admin-description-check-edit" style="display: none">
+                        <i class="fas fa-check"></i>
+                    </button>
                 </div>
                 <div class="admin-modal-price">
                     <p class="modal-price"></p>
-                    <div class="admin-buttons">
-                        <button class="hover admin-price-delete">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <button class="hover admin-price-edit">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="hover admin-price-check-edit" style="display: none">
-                            <i class="fas fa-check"></i>
-                        </button>
-                    </div>
+                    <button class="hover admin-price-edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="hover admin-price-check-edit" style="display: none">
+                        <i class="fas fa-check"></i>
+                    </button>
                 </div>
                 <div class="description-buttons" style="display: none;">
                     <button class="heart-button" type="button">
