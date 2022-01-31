@@ -1,242 +1,305 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url(./footer.css);
 html {
-  font-family: "GFS Didot";
-  font-size: 1.25rem;
+    font-family: "GFS Didot";
+    font-size: 1.25rem;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-image: url(./img/Sprinkle.svg);
+    background-image: url(./img/Sprinkle.svg);
 }
 
 a {
-  text-decoration: none;
-  color: #313131;
+    text-decoration: none;
+    color: #313131;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .navbarContainer {
-  display: flex;
-  justify-content: end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 4px 16px 4px 16px;
-  z-index: 1;
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 4px 16px 4px 16px;
+    z-index: 1;
 }
 
 .navbarContainer .navmenu a {
-  color: white;
+    color: white;
 }
 
 .navbar-scroll {
-  transition: background 100ms ease-in-out;
-  background: white;
-  display: flex;
-  justify-content: end;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  padding: 4px 16px 4px 16px;
-  z-index: 1;
-  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.75);
+    transition: background 100ms ease-in-out;
+    background: white;
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    padding: 4px 16px 4px 16px;
+    z-index: 1;
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.75);
 }
 
 .navbar-scroll .navmenu a {
-  color: #313131;
+    color: #313131;
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .navmenu a {
-  margin-right: 24px;
+    margin-right: 24px;
 }
 
 .navmenu a:hover {
-  color: #ffc107;
+    color: #ffc107;
 }
 
 .dropdown {
-  display: none;
-  border: none;
-  background-color: white;
-  margin-right: 90px;
+    display: none;
+    border: none;
+    background-color: white;
+    margin-right: 90px;
 }
 
 .dropdown:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  width: 25px;
-  height: 2px;
-  background-color: black;
-  margin: 6px 0;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  transition: transform 0.5s, opacity 0.25s;
+    transition: transform 0.5s, opacity 0.25s;
 }
 
 video {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: relative;
-  z-index: -1;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
 }
 
 .video-container {
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
 }
 
 .overlay-img {
-  margin-right: 50px;
+    margin-right: 50px;
 }
 
 .overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  font-family: "Lobster", cursive;
-  color: white;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-family: "Lobster", cursive;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 3rem;
 }
 
 .bttm-home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 3rem 5rem;
 }
 
 .box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: bisque;
-  margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffc107;
+    ;
+    margin-bottom: 100px;
 }
+
 .imgbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
+
 .imgbox img {
-  padding: 0;
-  height: 100%;
-  width: 300px;
+    padding: 0;
+    height: 100%;
+    width: 300px;
 }
 
 .boxtext {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.boxtext p {
+    color: white;
 }
 
 @media (min-width: 769px) {
-  .navmenu {
-    display: block !important;
-  }
+    .navmenu {
+        display: block !important;
+    }
 }
 
 @media (max-width: 768px) {
-  .navmenu {
-    margin: 0;
-    width: 50%;
-    background-color: white;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 78px;
-    right: 0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  .navmenu a {
-    margin: 6px 0;
-  }
-  .dropdown {
-    display: block;
-    margin-left: 60%;
-  }
-  .overlay {
-    font-size: 2rem;
-  }
-  .overlay-img {
-    width: 30%;
-    height: auto;
-    margin-right: 20px;
-  }
-
-  .imgbox img {
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
-  .boxtext {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-  }
-  .boxtext p {
-    font-size: 20px;
-  }
+    .navmenu {
+        margin: 0;
+        width: 50%;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 78px;
+        right: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .navmenu a {
+        margin: 6px 0;
+    }
+    .dropdown {
+        display: block;
+        margin-left: 60%;
+    }
+    .overlay {
+        font-size: 2rem;
+    }
+    .overlay-img {
+        width: 30%;
+        height: auto;
+        margin-right: 20px;
+    }
+    .imgbox img {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .boxtext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    .boxtext p {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 375px) {
-  .overlay {
-    font-size: 1.5rem;
-    flex-direction: column;
-  }
-  .overlay-img {
-    width: 30%;
-    height: auto;
-    margin-right: 20px;
-  }
-  .box {
-    flex-direction: column;
-  }
-  .imgbox img {
-    padding: 0;
-    height: 50%;
-    width: 100%;
-  }
-  .boxtext {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-  }
-  .boxtext p {
-    font-size: 12px;
-  }
+    .overlay {
+        font-size: 1.5rem;
+        flex-direction: column;
+    }
+    .overlay-img {
+        width: 30%;
+        height: auto;
+        margin-right: 20px;
+    }
+    .box {
+        flex-direction: column;
+    }
+    .imgbox img {
+        padding: 0;
+        height: 50%;
+        width: 100%;
+    }
+    .boxtext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    .boxtext p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbarContainer {
+        background: white;
+    }
+    .navmenu {
+        margin: 0;
+        width: 50%;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 78px;
+        right: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .navmenu a {
+        margin: 6px 0;
+    }
+    .navbarContainer .navmenu a {
+        color: black;
+    }
+    .dropdown {
+        display: block;
+        margin-left: 60%;
+    }
+    .overlay {
+        font-size: 2rem;
+    }
+    .overlay-img {
+        width: 30%;
+        height: auto;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 374px) {
+    .overlay {
+        font-size: 1.5rem;
+    }
+    .overlay-img {
+        width: 30%;
+        height: auto;
+        margin-right: 20px;
+    }
 }

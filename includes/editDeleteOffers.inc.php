@@ -66,8 +66,8 @@ if (isset($_POST["submit"])) {
     header('location: ../offers.php?modal=1&productID='.$productsID.'&productsDescription=failed');
   }
 
-}elseif (isset($_POST["delete"])) {
-  $productsID = $_POST['productsID'];
+}elseif (isset($_GET["delete"])) {
+  $productsID = $_GET['productsID'];
 
   $sql = "DELETE FROM heart WHERE productsID='$productsID';";
   mysqli_query($conn, $sql);

@@ -54,7 +54,8 @@
                                 <p>' . $products['productsDescription'] . '</p><br>
                             </div>
                             <div class="item-price">
-                                <p>Php ' . $products['productsPrice'] . '</p>
+                                <span>Php</span>
+                                <span>' . $products['productsPrice'] . '</span>
                             </div>
                         </div>';
             }
@@ -91,18 +92,8 @@ if (isset($_GET['modal'])) {
         echo "<script>
 
     const modal = document.querySelector('.modal');
-    const modalImgContainer = document.querySelector('.modal-img-container');
-    const modalReview = document.querySelector('.modal-review');
-    const modalImg = document.querySelector('.modal-img');
-    const modalTitle = document.querySelector('.modal-title');
-    const modalDescription = document.querySelector('.modal-description');
-    const modalPrice = document.querySelector('.modal-price');
-
-    modalImg.src = localStorage.getItem('img');
-    modalTitle.innerHTML = localStorage.getItem('title');
-    modalDescription.innerHTML = localStorage.getItem('description');
-    modalPrice.innerHTML = localStorage.getItem('price');
     modal.style.display = 'flex';
+    
     </script>";
     }
 }

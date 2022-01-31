@@ -15,8 +15,12 @@ const password = document.querySelector(".password");
 const cPassword = document.querySelector(".conf-password");
 const msg = document.querySelector(".msg");
 const uname = document.querySelector(".uname");
+const fileUpload = document.querySelector('#file');
+const profileImg = document.querySelector('.profile-img');
 
-
+fileUpload.onchange = () => {
+    profileImg.src = URL.createObjectURL(fileUpload.files[0]);
+}
 
 editButton.addEventListener("click", e => {
     textBox.removeAttribute('readonly');
