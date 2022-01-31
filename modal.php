@@ -16,7 +16,6 @@
               <?php
                   $productID = $_GET['productID'];
                   $result = mysqli_query($conn, "SELECT * FROM reviews WHERE productsID = '$productID';");
-                  if ($reviews = mysqli_fetch_assoc($result)) {
                     while ($reviews = mysqli_fetch_assoc($result)) {
                       if (empty($reviews["reviewsCom"])) {
                         continue;
@@ -49,27 +48,44 @@
                       }
                       echo  '</div>';
                     }
-                  }
                     ?>
             </div>
+            <?php
+            $countheart = 0;
+            $res = mysqli_query($conn, "SELECT * FROM heart WHERE productsID = '$productID';");
+            while ($heart = mysqli_fetch_assoc($res)) {
+              $countheart++;
+            }
+            ?>
             <div class="modal-description-container">
                 <p class="modal-description"></p>
                 <p class="modal-price"></p>
                 <div class="description-buttons">
-                  <button class="heart-button" type="button">
-                      <i class="far fa-heart hover"></i>
-                  </button>
+                  <form class="" action="includes/heart.inc.php" method="post">
+                    <input type="hidden" value="<?php echo $_GET['productID']; ?>" name="productsID">
+                    <input type="hidden" value="<?php echo $_SESSION["usersName"]; ?>" name="usersName">
+                    <button class="heart-button" type="submit" name="heart">
+                      <?php
+                      $usersName = $_SESSION['usersName'];
+                      $res = mysqli_query($conn, "SELECT * FROM heart WHERE productsID = '$productID' AND usersName = '$usersName';");
+                        if ($heart = mysqli_fetch_assoc($res)) {
+                          echo '<i class="fas fa-heart hover"></i>';
+                        }
+                        else{
+                          echo '<i class="far fa-heart hover"></i>';
+                        }
+                      ?>
+                    </button>
+                  </form>
                   <button>
                     <i class="far fa-comment hover"></i>
                   </button>
                 </div>
-                <span class="heart-number">999,999 likes</span>
+                <span class="heart-number"><?php echo $countheart;?>likes</span>
             </div>
             <form class="" action="includes/review.inc.php" method="POST">
                 <div class="modal-comment-box">
-                        <input id="heart" type="hidden" value="0" name="heart">
                         <input id="productsID" type="hidden" value="<?php echo $_GET['productID']; ?>" name="productsID">
-
                         <?php
                         if (isset($_SESSION['usersName'])) {
                           echo '<input type="hidden" name="userID" value="'.$_SESSION['usersName'].'">';
