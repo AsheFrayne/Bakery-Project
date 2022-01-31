@@ -5,7 +5,11 @@ window.onload = function() {
     const bar2 = document.querySelector(".bar2");
     const bar3 = document.querySelector(".bar3");
 
-    w
+    dropdown.onmouseover = function() {
+        bar1.style.backgroundColor = "#ffc107";
+        bar2.style.backgroundColor = "#ffc107";
+        bar3.style.backgroundColor = "#ffc107";
+    }
 
     dropdown.onmouseleave = function() {
         bar1.style.backgroundColor = "black";
@@ -45,12 +49,20 @@ window.onload = function() {
         element.onclick = () => {
             productID = element.children[1].children[1].value;
             modalID.value = productID;
+            window.location = `offers.php?modal=1&productID=${productID}`
             localStorage.setItem("img", element.children[0].children[0].src);
             localStorage.setItem("title", element.children[1].children[0].textContent);
             localStorage.setItem("description", element.children[2].children[0].textContent);
             localStorage.setItem("price", element.children[3].children[0].textContent);
         }
     });
+
+    modalExit.onclick = () => {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = (e) => {
+        if (modal.contains(e.target) && !modalImgContainer.contains(e.target) && !modalReview.contains(e.target)) {
             modal.style.display = 'none';
         }
     }

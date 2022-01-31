@@ -1,10 +1,12 @@
 <?php
-include 'session.php';
+if (!isset($_GET['userName'])) {
+  include 'session.php';
+  $usersName = $_SESSION["usersName"];
+  $usersID = $_SESSION["usersID"];
+  $usersPwd = $_SESSION["usersPwd"];
+  $usersEmail = $_SESSION["usersEmail"];
+}
 
-$usersName = $_SESSION["usersName"];
-$usersID = $_SESSION["usersID"];
-$usersPwd = $_SESSION["usersPwd"];
-$usersEmail = $_SESSION["usersEmail"];
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +27,15 @@ $usersEmail = $_SESSION["usersEmail"];
   <?php
   include 'header.php';
   require_once 'includes/dbh.inc.php';
-  $usersID = $_SESSION["usersID"];
-  $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID'");
-  $user = mysqli_fetch_array($result);
+  if (isset($_GET['userName'])) {
+    $usersID = $_GET['userName'];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
+    $user = mysqli_fetch_assoc($result);
+  }else{
+    $usersID = $_SESSION["usersID"];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
+    $user = mysqli_fetch_assoc($result);
+  }
   ?>
   ?>
   <div class="modal-bg">
@@ -66,7 +74,7 @@ $usersEmail = $_SESSION["usersEmail"];
 
       <div class="infobox">
         <input type="text" name="uname" class="uname txt-box" value="<?php echo $user['usersName']; ?>" readonly autocomplete="off">
-        <input type="text" name="email" class='email' value="<?php echo $usersEmail ?>" readonly>
+        <input type="text" name="email" class='email' value="<?php echo $user['usersEmail']; ?>" readonly>
         <div class="pw-box">
           <label for="password">Password</label>
           <input type="password" name="password" class="password">
@@ -75,13 +83,13 @@ $usersEmail = $_SESSION["usersEmail"];
         </div>
         <div class=" date-joined">
           <small>Date Joined</small>
-          <div><?php echo $_SESSION["dateJoined"]; ?></div>
+          <div><?php echo $user["dateJoined"]; ?></div>
         </div>
 
       </div>
       <div class="description-box">
 
-        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $_SESSION["description"]; ?></textarea>
+        <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $user["description"]; ?></textarea>
         <div class="buttons"><button class='edit-btn' type="button">Edit</button>
           <button class="cancel-btn">Cancel</button>
           <button type="submit" class="done-btn" name="upload"> Done</button>

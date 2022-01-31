@@ -113,14 +113,15 @@ function createUser($conn, $uname, $email, $pwd)
   $date = date("m/d/Y");
   $filename = "default.png";
   $description = "Describe yourself!";
-  $sql = "INSERT INTO users (usersName, usersEmail, usersPwd, dateJoined, filename, description) VALUES (?, ?, ?, ?, ?, ?);";
+  $userstype = "user";
+  $sql = "INSERT INTO users (usersName, usersEmail, usersPwd, dateJoined, filename, description, usersType) VALUES (?, ?, ?, ?, ?, ?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../signup.php?error=username/stmt_failed");
     exit();
   }
 
-  mysqli_stmt_bind_param($stmt, "ssssss", $uname, $email, $pwd, $date, $filename, $description);
+  mysqli_stmt_bind_param($stmt, "sssssss", $uname, $email, $pwd, $date, $filename, $description, $userstype);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   header("location: ../login.php?signup=success");

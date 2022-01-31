@@ -22,12 +22,21 @@
                         continue;
                       }
                       echo '<div class="comment">
-                            <div class="img-comment">
-                                <img src="img/profilePics/'.getFilename($conn,$reviews["usersName"]).'" alt="">
-                            </div>
-                            <div class="comment-content">
-                                <span class="name-comment">'.$reviews["usersName"].'</span>
-                                <span class="text-comment">'.$reviews["reviewsCom"].'</span>
+                            <div class="img-comment">';
+                      if ($reviews["usersName"] !== "Guest") {
+                          echo    '<a href="view-profile.php?userName='.$reviews["usersName"].'"><img src="img/profilePics/'.getFilename($conn,$reviews["usersName"]).'" alt=""></a>';
+                      }else {
+                          echo    '<img src="img/profilePics/'.getFilename($conn,$reviews["usersName"]).'" alt="">';
+                      }
+
+                      echo '</div>
+                            <div class="comment-content">';
+                      if ($reviews["usersName"] !== "Guest") {
+                        echo    '<a href="view-profile.php?userName='.$reviews["usersName"].'"><span class="name-comment">'.$reviews["usersName"].'</span></a>';
+                      }else {
+                        echo    '<span class="name-comment">'.$reviews["usersName"].'</span>';
+                      }
+                      echo '    <span class="text-comment">'.$reviews["reviewsCom"].'</span>
                             </div>
                             <div class="delete-comment">
                               <button class="hover user-comment-delete">
@@ -57,7 +66,15 @@
                 <div class="modal-comment-box">
                         <input id="heart" type="hidden" value="0" name="heart">
                         <input id="productsID" type="hidden" value="<?php echo $_GET['productID']; ?>" name="productsID">
-                        <input type="hidden" name="userID" value="<?php echo $_SESSION['usersName']; ?>">
+
+                        <?php
+                        if (isset($_SESSION['usersName'])) {
+                          echo '<input type="hidden" name="userID" value="'.$_SESSION['usersName'].'">';
+                        }
+                        else {
+                          echo '<input type="hidden" name="userID" value="Guest">';
+                        }
+                        ?>
                         <input type="text" placeholder="Add a comment..." name="comment">
                         <button class="hover" type="submit" name="post">Post</button>
                 </div>
