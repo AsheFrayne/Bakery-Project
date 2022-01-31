@@ -31,7 +31,7 @@
               <?php
               if (isset($_SESSION['usersType'])) {
                 if ($_SESSION['usersType'] == 'admin') {
-                  echo '<a href="addOffers.php">Add Offers</a>';
+                  echo '<a href="addOffers.php"><i class="fas fa-plus"></i>Add Offers</a>';
                 }
               }
               ?>

@@ -1,99 +1,97 @@
 html {
-  font-family: "GFS Didot";
-  font-size: 1.25rem;
+    font-family: "GFS Didot";
+    font-size: 1.25rem;
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 .navbarContainer {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  padding: 4px 16px 4px 16px;
-  box-shadow: 0 -10px 25px 0px;
-  z-index: 1;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    padding: 4px 16px 4px 16px;
+    box-shadow: 0 -10px 25px 0px;
+    z-index: 1;
 }
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar img {
-  width: 80px;
+    width: 80px;
 }
 
 .navmenu {
-  margin-left: 600px;
+    margin-left: 600px;
 }
 
 .navmenu a {
-  margin-right: 16px;
-  color: black;
+    margin-right: 16px;
+    color: black;
 }
 
 .navmenu a:hover {
-  color: #ffc107;
+    color: #ffc107;
 }
 
 .dropdown {
-  display: none;
-  border: none;
-  background-color: white;
+    display: none;
+    border: none;
+    background-color: white;
 }
 
 .dropdown:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  width: 25px;
-  height: 2px;
-  background-color: black;
-  margin: 6px 0;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  transition: transform 0.5s, opacity 0.25s;
+    transition: transform 0.5s, opacity 0.25s;
 }
 
 @media (max-width: 1220px) {
-  .navmenu {
-    margin: 0;
-    width: 85%;
-    background-color: white;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 94px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  .navmenu a {
-    margin: 6px 0;
-  }
-
-  .dropdown {
-    display: block;
-    margin-left: 60%;
-  }
+    .navmenu {
+        margin: 0;
+        width: 85%;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 85px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .navmenu a {
+        margin: 6px 0;
+    }
+    .dropdown {
+        display: block;
+        margin-left: 60%;
+    }
 }
 
 @media (min-width: 1280px) {
-  .navmenu {
-    display: block !important;
-  }
+    .navmenu {
+        display: block !important;
+    }
 }
