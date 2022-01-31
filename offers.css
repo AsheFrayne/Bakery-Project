@@ -110,15 +110,23 @@ body {
 .item-img img {
     width: 264px;
     height: 300px;
+    transition: transform 300ms;
 }
 
 .item-img img:hover {
-    cursor: pointer;
     transform: scale(1.05);
 }
 
 .item-name {
     margin-bottom: 1.5rem;
+}
+
+.item-name h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item-description {
@@ -226,6 +234,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 500px;
+    width: 100%;
     height: 100%;
     background-color: white;
 }
