@@ -95,24 +95,25 @@ window.onload = function() {
 
 
     comment.forEach(comment => {
-        const editButton = comment.children[2].children[0].children[4];
-        const checkButton = comment.children[2].children[0].children[5];
-        const textComment = comment.children[1].children[1];
-        const commentInput = comment.children[2].children[0].children[0];
+        if (comment.children[2] != null || comment.children[2] != undefined) {
+            const editButton = comment.children[2].children[0].children[4];
+            const checkButton = comment.children[2].children[0].children[5];
+            const textComment = comment.children[1].children[1];
+            const commentInput = comment.children[2].children[0].children[0];
 
-        editButton.onclick = () => {
-            textComment.style.border = '1px solid black'
-            textComment.setAttribute('contenteditable', 'true');
-            checkButton.style.display = 'block';
-            editButton.style.display = 'none';
-        }
-
-        checkButton.onclick = () => {
-            textComment.style.border = 'none'
-            textComment.setAttribute('contenteditable', 'false');
-            checkButton.style.display = 'none';
-            editButton.style.display = 'block';
-            commentInput.value = textComment.textContent;
+            editButton.onclick = () => {
+                textComment.style.border = '1px solid black'
+                textComment.setAttribute('contenteditable', 'true');
+                checkButton.style.display = 'block';
+                editButton.style.display = 'none';
+            }
+            checkButton.onclick = () => {
+                textComment.style.border = 'none'
+                textComment.setAttribute('contenteditable', 'false');
+                checkButton.style.display = 'none';
+                editButton.style.display = 'block';
+                commentInput.value = textComment.textContent;
+            }
         }
     });
 }
