@@ -69,7 +69,6 @@ window.onload = function() {
 
     const comment = document.querySelectorAll('.comment');
 
-
     comment.forEach(comment => {
         if (comment.children[2] != null || comment.children[2] != undefined) {
             const editButton = comment.children[2].children[0].children[4];
@@ -92,4 +91,13 @@ window.onload = function() {
             }
         }
     });
+
+    const userComment = document.querySelector('.user-comment');
+    const commentBox = document.querySelector('.comment-box');
+
+    if (userComment != null) {
+        userComment.onclick = () => {
+            commentBox.focus();
+        }
+    }
 }

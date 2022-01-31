@@ -76,7 +76,7 @@
               ?>
             </button>
           </form>
-          <button>
+          <button class="user-comment">
             <i class="far fa-comment hover"></i>
           </button>
         </div>
@@ -92,7 +92,7 @@
             echo '<input type="hidden" name="userID" value="Guest">';
           }
           ?>
-          <input type="text" placeholder="Add a comment..." name="comment">
+          <input class="comment-box" type="text" placeholder="Add a comment..." name="comment">
           <button class="hover" type="submit" name="post">Post</button>
         </div>
       </form>
