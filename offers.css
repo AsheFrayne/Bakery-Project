@@ -110,7 +110,6 @@ body {
 .item-img img {
     width: 264px;
     height: 300px;
-    object-fit: cover;
 }
 
 .item-img img:hover {
@@ -186,6 +185,45 @@ body {
     background-color: white;
 }
 
+.admin-modal-title-container,
+.admin-modal-description,
+.admin-modal-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.admin-modal-title-container button,
+.admin-modal-description button,
+.admin-modal-price button {
+    border: none;
+    background-color: white;
+    width: 15px;
+    padding: 0;
+}
+
+.admin-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 0.375rem;
+}
+
+.admin-title-delete i,
+.admin-description-delete i,
+.admin-price-delete i {
+    font-size: 1rem;
+    width: 15px;
+    padding: 0;
+}
+
+.modal-title,
+.modal-description,
+.modal-price {
+    word-break: break-word;
+}
+
 .modal-title-container {
     border-bottom: 1px solid rgb(214, 214, 214);
     padding: 1rem;
@@ -258,11 +296,11 @@ body {
     font-size: 0.825rem;
 }
 
-.modal-description-container p:nth-of-type(2) {
+.modal-price {
     color: rgb(2, 184, 2);
 }
 
-.modal-description-container i {
+.description-buttons i {
     font-size: 1.375rem;
     margin-right: 0.5rem;
 }
@@ -293,6 +331,11 @@ body {
     padding: 0;
     border: none;
     background: none;
+}
+
+.heart-number {
+    font-weight: bold;
+    font-size: 0.75rem;
 }
 
 @keyframes like {

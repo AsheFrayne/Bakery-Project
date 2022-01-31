@@ -63,6 +63,7 @@
                     <i class="far fa-comment hover"></i>
                   </button>
                 </div>
+                <span class="heart-number">999,999 likes</span>
             </div>
             <form class="" action="includes/review.inc.php" method="POST">
                 <div class="modal-comment-box">
