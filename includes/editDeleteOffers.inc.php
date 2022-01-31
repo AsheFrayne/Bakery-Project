@@ -69,14 +69,20 @@ if (isset($_POST["submit"])) {
 }elseif (isset($_POST["delete"])) {
   $productsID = $_POST['productsID'];
 
+  $sql = "DELETE FROM heart WHERE productsID='$productsID';";
+  mysqli_query($conn, $sql);
+
+  $sql = "DELETE FROM reviews WHERE productsID='$productsID';";
+  mysqli_query($conn, $sql);
+
   $sql = "DELETE FROM products WHERE productsID='$productsID';";
   mysqli_query($conn, $sql);
 
   $check = "SELECT * FROM products WHERE productsID = '$productsID';";
   $result = mysqli_query($conn, $check);
   if (!$products = mysqli_fetch_assoc($result)) {
-    header('location: ../offers.php?modal=1&productID='.$productsID.'&delete=success');
+    header('location: ../offers.php?delete=success');
   }else{
-    header('location: ../offers.php?modal=1&productID='.$productsID.'&delete=failed');
+    header('location: ../offers.php?delete=failed');
   }
 }
