@@ -66,6 +66,9 @@
       if ($_SESSION["usersType"] == 'admin') {
             include "admin_modal.php";
         }
+        else {
+            include "modal.php";
+        }
     } else {
         include "modal.php";
     }
