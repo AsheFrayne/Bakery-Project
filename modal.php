@@ -66,7 +66,6 @@
             <input type="hidden" value="<?php echo $_SESSION["usersName"]; ?>" name="usersName">
             <button class="heart-button" type="submit" name="heart">
               <?php
-<<<<<<< HEAD
                   $productID = $_GET['productID'];
                   $result = mysqli_query($conn, "SELECT * FROM reviews WHERE productsID = '$productID';");
                     while ($reviews = mysqli_fetch_assoc($result)) {
@@ -147,7 +146,7 @@
                     <i class="far fa-comment hover"></i>
                   </button>
                 </div>
-                <span class="heart-number"><?php echo $countheart;?>likes</span>
+                <span class="heart-number"><?php echo $countheart;?>like/s</span>
             </div>
             <form class="" action="includes/review.inc.php" method="POST">
                 <div class="modal-comment-box">
@@ -166,36 +165,6 @@
                         ?>
                 </div>
             </form>
-=======
-              $usersName = $_SESSION['usersName'];
-              $res = mysqli_query($conn, "SELECT * FROM heart WHERE productsID = '$productID' AND usersName = '$usersName';");
-              if ($heart = mysqli_fetch_assoc($res)) {
-                echo '<i class="fas fa-heart hover"></i>';
-              } else {
-                echo '<i class="far fa-heart hover"></i>';
-              }
-              ?>
-            </button>
-          </form>
-          <button>
-            <i class="far fa-comment hover"></i>
-          </button>
-        </div>
-        <span class="heart-number"><?php echo $countheart; ?> like/s</span>
-      </div>
-      <form class="" action="includes/review.inc.php" method="POST">
-        <div class="modal-comment-box">
-          <input id="productsID" type="hidden" value="<?php echo $_GET['productID']; ?>" name="productsID">
-          <?php
-          if (isset($_SESSION['usersName'])) {
-            echo '<input type="hidden" name="userID" value="' . $_SESSION['usersName'] . '">';
-          } else {
-            echo '<input type="hidden" name="userID" value="Guest">';
-          }
-          ?>
-          <input type="text" placeholder="Add a comment..." name="comment">
-          <button class="hover" type="submit" name="post">Post</button>
->>>>>>> b02622975fd0969bf9b9263cc947f11f8af05dfa
         </div>
       </form>
     </div>
