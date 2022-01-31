@@ -32,6 +32,11 @@ include 'session.php';
     <div class="item-section">
         <div class="item-header">
             <div class="item-title">
+              <?php
+                if ($_SESSION['usersType'] == 'admin') {
+                  echo '<a href="addOffers.php">Add Offers</a>';
+                }
+              ?>
                 <h1>Products</h1>
             </div>
         </div>

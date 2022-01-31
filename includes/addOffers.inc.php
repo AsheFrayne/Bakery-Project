@@ -3,7 +3,7 @@ if (isset($_POST["submit"])) {
   $filename = $_FILES['productsFilename']['name'];
   $date = date("m/d/Y");
   $description = $_POST['productsDescription'];
-  $prize = $_POST['productsPrize'];
+  $prize = $_POST['productsPrice'];
   $productsName = $_POST['productsName'];
   $adminID = $_GET['admin'];
 
@@ -11,7 +11,7 @@ if (isset($_POST["submit"])) {
   include 'dbh.inc.php';
   include 'functions.inc.php';
 
-  $sql = "INSERT INTO products (productsFilename, productsPrize, productsDescription, productsDate, adminID, productsName) VALUES ('$filename', '$prize', '$description', '$date', '$adminID', '$productsName')";
+  $sql = "INSERT INTO products (productsFilename, productsPrice, productsDescription, productsDate, productsName, usersID) VALUES ('$filename', '$prize', '$description', '$date', '$productsName', '$adminID')";
   mysqli_query($conn, $sql);
   header("location: ../offers.php?addProduct=success&admin=true");
 }

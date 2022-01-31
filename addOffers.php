@@ -22,7 +22,7 @@ include 'session.php';
 
   <h2>Add a Product</h2>
   <main>
-    <form action="includes/addOffers.inc.php?admin=<?php echo $_SESSION['adminID'] ?>" method="post" enctype="multipart/form-data">
+    <form action="includes/addOffers.inc.php?admin=<?php echo $_SESSION['usersID'] ?>" method="post" enctype="multipart/form-data">
       <div class="product-img">
         <label for="file-upload" class="img-upload">
           <i class="fas fa-camera"></i>
@@ -33,7 +33,7 @@ include 'session.php';
       <h3>Add photo</h3>
       <div class="input-fields">
         <input type="text" name="productsName" placeholder="Product name">
-        <input type="text" name="productsPrize" placeholder="Price">
+        <input type="text" name="productsPrice" placeholder="Price">
         <textarea name="productsDescription" cols="30" rows="10" placeholder="Describe the product!"></textarea>
         <button type="submit" name="submit">Submit</button>
       </div>
