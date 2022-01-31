@@ -55,12 +55,16 @@
                     ?>
             </div>
             <div class="modal-description-container">
-                <p class="modal-description"></p><br>
-                <p class="modal-price"></p><br>
-                <button class="heart-button" type="button">
-                    <i class="far fa-heart hover"></i>
-                </button>
-                <i class="far fa-comment hover"></i>
+                <p class="modal-description"></p>
+                <p class="modal-price"></p>
+                <div class="description-buttons">
+                  <button class="heart-button" type="button">
+                      <i class="far fa-heart hover"></i>
+                  </button>
+                  <button>
+                    <i class="far fa-comment hover"></i>
+                  </button>
+                </div>
             </div>
             <form class="" action="includes/review.inc.php" method="POST">
                 <div class="modal-comment-box">

@@ -104,7 +104,7 @@ if (isset($_GET['modal'])) {
     modalTitle.innerHTML = localStorage.getItem('title');
     modalDescription.innerHTML = localStorage.getItem('description');
     modalPrice.innerHTML = localStorage.getItem('price');
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
     </script>";
   }
 }

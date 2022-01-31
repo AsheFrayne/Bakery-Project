@@ -125,6 +125,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
     z-index: 999;
@@ -140,20 +142,20 @@ body {
 .modal-content {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: 75%;
     margin: auto;
 }
 
 .modal-img-container {
-    aspect-ratio: 3/4;
+    display: flex;
     height: 100%;
     background-color: black;
 }
 
 .modal-img {
-    width: 100%;
-    height: 100%;
+    align-items: center;
     margin: auto;
 }
 
@@ -161,8 +163,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    width: 100%;
-    max-height: 100%;
+    height: 100%;
     background-color: white;
 }
 
@@ -174,7 +175,7 @@ body {
 .modal-comments {
     padding: 1rem;
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .comment {
@@ -227,6 +228,9 @@ body {
 }
 
 .modal-description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.825rem;
     border-top: 1px solid rgb(214, 214, 214);
     padding: 1rem;
 }
@@ -266,7 +270,7 @@ body {
     padding: 0.825rem 0 0.825rem 0;
 }
 
-.heart-button {
+.description-buttons button {
     padding: 0;
     border: none;
     background: none;
@@ -302,8 +306,63 @@ body {
     }
 }
 
-@media screen and (min-width: 760px) {}
+@media screen and (max-width: 1024px) {
+    .modal-content {
+        height: 62.5%;
+    }
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    .modal-description-container p {
+        font-size: 0.625rem;
+    }
+    .modal-description-container i {
+        font-size: 1.125rem;
+    }
+    .modal-comment-box input {
+        padding: 0.5rem 0 0.5rem 1rem;
+    }
+    .modal-comment-box button {
+        padding: 0.5rem 0 0.5rem 1rem;
+    }
+}
 
-@media screen and (min-width: 1200px) {}
+@media screen and (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        height: 80%;
+    }
+    .modal-img-container {
+        width: 100%;
+    }
+    .modal-review {
+        max-width: 100%;
+        width: 100%;
+    }
+    .modal-title-container {
+        padding: 0.5rem;
+    }
+    .modal-description-container {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+}
 
-@media (max-width: 400px) {}
+@media screen and (max-width: 425px) {
+    .modal-comment-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-comment-box input {
+        width: 100%;
+    }
+     ::-webkit-input-placeholder {
+        text-align: center;
+    }
+     :-moz-placeholder {
+        text-align: center;
+    }
+    .modal-comment-box button {
+        width: 100%;
+    }
+}
