@@ -1,4 +1,4 @@
-<!-- Modal start -->
+<!-- Admin Modal start -->
 <div class="modal">
     <div class="modal-exit hover">
         <i class="fa fa-times" style="color: white"></i>
@@ -47,4 +47,4 @@
     </div>
 </div>
 
-<!-- Modal end -->
+<!-- Admin Modal end -->
