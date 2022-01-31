@@ -18,7 +18,7 @@ const uname = document.querySelector(".uname");
 
 
 
-editButton.addEventListener("click", e =>{
+editButton.addEventListener("click", e => {
     textBox.removeAttribute('readonly');
     textArea.removeAttribute('readonly');
     textBox.style.borderBottom = '1px gray solid';
@@ -27,115 +27,112 @@ editButton.addEventListener("click", e =>{
     editButton.style.display = 'none';
     dateBox.style.display = "none";
 
-    hover.onmouseover = () =>{
+    hover.onmouseover = () => {
         hover.classList.toggle("hover-pic");
     }
 });
 
 
-delBtn.addEventListener("click", ()=>{
+delBtn.addEventListener("click", () => {
     modalBg.classList.add("bg-active");
 });
-cancelBtn.addEventListener("click", ()=>{
+cancelBtn.addEventListener("click", () => {
     modalBg.classList.remove("bg-active");
 })
 
 container.addEventListener('click', menu);
 
-function menu(e){
+function menu(e) {
     const item = e.target;
-    
-    if(item.classList[0]=== "menu"){
+
+    if (item.classList[0] === "menu") {
         delBtn.classList.toggle("clicked");
-    }else if(item.classList[0]!="menu" && delBtn.classList.contains("clicked")){
+    } else if (item.classList[0] != "menu" && delBtn.classList.contains("clicked")) {
         delBtn.classList.toggle("clicked");
     }
 }
 
 // Validation
-doneButton.onclick = () =>{
+doneButton.onclick = () => {
     const passwordValue = password.value;
     const confirmPassword = cPassword.value;
     const unameValue = uname.value;
 
-    if(unameValue === '') {
+    if (unameValue === '') {
         warning.classList.add("show");
         warning.classList.remove("hide");
         warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Provide new Username";
-		e.preventDefault();
-		
-	} else if(unameValue.length < 5){
-        warning.classList.add("show");
-        warning.classList.remove("hide");
-        warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Username is too short";
-		e.preventDefault();
-	}
-    
-    if(passwordValue === '') {
-        warning.classList.add("show");
-        warning.classList.remove("hide");
-        warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Provide Password below";
-		e.preventDefault();
-	} else if(passwordValue.length < 8){
-        warning.classList.add("show");
-        warning.classList.remove("hide");
-        warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Password is too short";
-		e.preventDefault();
-	}else if(/[^0-9a-zA-Z]/.test(passwordValue)){
-        warning.classList.add("show");
-        warning.classList.remove("hide");
-        warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Password contains symbols";
-		e.preventDefault();
-	}else if(passwordValue !== confirmPassword) {
-        warning.classList.add("show");
-        warning.classList.remove("hide");
-        warning.classList.add("showAlert");
-        setTimeout(function(){
-        warning.classList.remove("show");
-        warning.classList.add("hide");
-      },3000);
-		msg.innerHTML = "Password doesn't not match";
-		e.preventDefault();
-	} else if(unameValue == unameValue){
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Provide new Username";
+        e.preventDefault();
 
-		textBox.setAttribute("readonly","readonly");
-        textArea.setAttribute("readonly","readonly");
+    } else if (unameValue.length < 5) {
+        warning.classList.add("show");
+        warning.classList.remove("hide");
+        warning.classList.add("showAlert");
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Username is too short";
+        e.preventDefault();
+    }
+
+    if (passwordValue === '') {
+        warning.classList.add("show");
+        warning.classList.remove("hide");
+        warning.classList.add("showAlert");
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Provide Password below";
+        e.preventDefault();
+    } else if (passwordValue.length < 8) {
+        warning.classList.add("show");
+        warning.classList.remove("hide");
+        warning.classList.add("showAlert");
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Password is too short";
+        e.preventDefault();
+    } else if (/[^0-9a-zA-Z]/.test(passwordValue)) {
+        warning.classList.add("show");
+        warning.classList.remove("hide");
+        warning.classList.add("showAlert");
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Password contains symbols";
+        e.preventDefault();
+    } else if (passwordValue !== confirmPassword) {
+        warning.classList.add("show");
+        warning.classList.remove("hide");
+        warning.classList.add("showAlert");
+        setTimeout(function() {
+            warning.classList.remove("show");
+            warning.classList.add("hide");
+        }, 3000);
+        msg.innerHTML = "Password doesn't not match";
+        e.preventDefault();
+    } else if (unameValue == unameValue) {
+
+        textBox.setAttribute("readonly", "readonly");
+        textArea.setAttribute("readonly", "readonly");
         textBox.style.removeProperty('background color');
         textBox.style.removeProperty('border-bottom');
         pwbox.style.display = "none";
         doneButton.style.display = "none";
         editButton.style.display = 'block';
         dateBox.style.display = "flex";
-	}
+    }
 
-    
-    
+
+
 }
-
-  
-

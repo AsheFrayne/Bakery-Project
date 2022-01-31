@@ -167,13 +167,38 @@ body {
 }
 
 .modal-img-container {
+    position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     background-color: black;
 }
 
-.modal-img {
+.offer-delete {
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.offer-delete i {
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0;
+    color: red;
+}
+
+.offer-upload {
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.modal-img {
     margin: auto;
 }
 
@@ -212,6 +237,7 @@ body {
 .modal-title,
 .modal-description,
 .modal-price {
+    width: 100%;
     word-break: break-word;
 }
 
@@ -292,6 +318,10 @@ body {
     color: rgb(2, 184, 2);
 }
 
+.description-buttons {
+    display: flex;
+}
+
 .description-buttons i {
     font-size: 1.375rem;
     margin-right: 0.5rem;
@@ -323,6 +353,10 @@ body {
     padding: 0;
     border: none;
     background: none;
+}
+
+.heart-button .fas {
+    color: red;
 }
 
 .heart-number {
