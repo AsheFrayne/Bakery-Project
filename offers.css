@@ -199,9 +199,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+}
+
+.offer-submit {
+    position: absolute;
+    border: none;
+    outline: none;
+    bottom: 0%;
+    right: 0%;
+    background: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.offer-submit i {
+    color: rgb(2, 184, 2);
 }
 
 .modal-img {
+    height: 100%;
     margin: auto;
 }
 

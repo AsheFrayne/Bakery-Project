@@ -10,6 +10,7 @@
                 <img class="modal-img" src="" alt="">
             </label>
             <input id="offer-img" type="file" style="display: none;">
+            <button class="offer-submit hover" type="submit" name="submit" style="display: none"><i class="fas fa-check"></i></button>
         </div>
         <div class="modal-review">
             <div class="modal-title-container admin-modal-title-container">

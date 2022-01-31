@@ -61,12 +61,6 @@ window.onload = function() {
         }
     }
 
-    window.onclick = (e) => {
-        if (modal.contains(e.target) && !modalImgContainer.contains(e.target) && !modalReview.contains(e.target)) {
-            modal.style.display = 'none';
-        }
-    }
-
     const comment = document.querySelectorAll('.comment');
 
     comment.forEach(comment => {
@@ -98,6 +92,17 @@ window.onload = function() {
     if (userComment != null) {
         userComment.onclick = () => {
             commentBox.focus();
+        }
+    }
+
+    const fileUpload = document.querySelector("#file-upload");
+    const fileImg = document.querySelector(".file-img");
+
+    if (fileUpload != null) {
+        fileUpload.onchange = () => {
+            console.log(URL.createObjectURL(fileUpload.files[0]));
+            fileImg.src = URL.createObjectURL(fileUpload.files[0]);
+            fileImg.style.opacity = 100;
         }
     }
 }

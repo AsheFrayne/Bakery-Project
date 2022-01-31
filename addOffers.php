@@ -1,6 +1,3 @@
-<?php
-include 'session.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +22,9 @@ include 'session.php';
     <form action="includes/addOffers.inc.php?admin=<?php echo $_SESSION['usersID'] ?>" method="post" enctype="multipart/form-data">
       <div class="product-img">
         <label for="file-upload" class="img-upload">
-          <i class="fas fa-camera"></i>
-          Upload Image
+          <img class="file-img" src="" alt="" style="opacity: 0;">
         </label>
-        <input id="file-upload" type="file" name="productsFilename">
+        <input id="file-upload" accept=".jpg, .jpeg, .png" type="file" name="productsFilename">
       </div>
       <h3>Add photo</h3>
       <div class="input-fields">
@@ -54,7 +50,6 @@ include 'session.php';
       </div>
     </div>
   </footer>
-
 </body>
-
+<script src="script.js"></script>
 </html>
