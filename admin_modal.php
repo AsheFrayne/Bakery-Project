@@ -11,6 +11,10 @@
             </label>
             <form class="" action="includes/editDeleteOffers.inc.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="productsID" value="<?php echo $_GET['productID']; ?>">
+            <!-- palagay ung values dito -->
+            <input type="hidden" name="productsDescription" value="">
+            <input type="hidden" name="productsName" value="">
+            <input type="hidden" name="productsPrice" value="">
             <input id="offer-img" type="file" style="display: none;" name="filename">
             <button class="offer-submit hover" type="submit" name="submit" style="display: none"><i class="fas fa-check"></i></button>
         </div>

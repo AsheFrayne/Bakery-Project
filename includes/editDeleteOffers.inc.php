@@ -21,9 +21,17 @@ if (isset($_POST["submit"])) {
   }
 
 }elseif (isset($_POST["title"])) {
-  // code...
+  $productsName = $_POST['productsName'];
+  $productsID = $_POST['productsID'];
+
 }elseif (isset($_POST["description"])) {
-  // code...
+  $productsName = $_POST['productsName'];
+  $productsID = $_POST['productsID'];
+
+}elseif (isset($_POST["price"])) {
+  $productsName = $_POST['productsName'];
+  $productsID = $_POST['productsID'];
+
 }elseif (isset($_POST["price"])) {
   // code...
 }
