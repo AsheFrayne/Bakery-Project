@@ -40,10 +40,6 @@ a {
     z-index: 1;
 }
 
-.navbarContainer .navmenu a {
-    color: white;
-}
-
 .navbar-scroll {
     transition: background 100ms ease-in-out;
     background: white;
@@ -69,6 +65,7 @@ a {
 }
 
 .navmenu a {
+    color: white;
     margin-right: 24px;
 }
 
@@ -137,43 +134,33 @@ video {
 .bttm-home {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    padding: 3rem 5rem;
+    margin: auto;
+    max-width: 70%;
+    margin-top: 3rem;
+    gap: 3rem;
 }
 
 .box {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffc107;
-    ;
-    margin-bottom: 100px;
+    background: white;
 }
 
 .imgbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    width: 500px;
+    height: 500px;
 }
 
 .imgbox img {
-    padding: 0;
     height: 100%;
-    width: 300px;
+    margin: auto;
 }
 
 .boxtext {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5rem;
-}
-
-.boxtext p {
-    color: white;
+    color: black;
+    margin: 3rem;
 }
 
 @media (min-width: 769px) {
@@ -182,7 +169,17 @@ video {
     }
 }
 
+@media (max-width: 1024px) {
+    .boxtext {
+        font-size: 0.825rem;
+        margin: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .navbarContainer {
+        background-color: white
+    }
     .navmenu {
         margin: 0;
         width: 50%;
@@ -197,6 +194,7 @@ video {
         border-bottom-right-radius: 10px;
     }
     .navmenu a {
+        color: black;
         margin: 6px 0;
     }
     .dropdown {
@@ -205,32 +203,6 @@ video {
     }
     .overlay {
         font-size: 2rem;
-    }
-    .overlay-img {
-        width: 30%;
-        height: auto;
-        margin-right: 20px;
-    }
-    .imgbox img {
-        padding: 0;
-        height: 100%;
-        width: 100%;
-    }
-    .boxtext {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-    }
-    .boxtext p {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 375px) {
-    .overlay {
-        font-size: 1.5rem;
-        flex-direction: column;
     }
     .overlay-img {
         width: 30%;
@@ -239,63 +211,29 @@ video {
     }
     .box {
         flex-direction: column;
+        align-items: center;
+    }
+    .imgbox {
+        width: inherit;
     }
     .imgbox img {
-        padding: 0;
-        height: 50%;
         width: 100%;
     }
     .boxtext {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-    }
-    .boxtext p {
-        font-size: 12px;
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 768px) {
-    .navbarContainer {
-        background: white;
-    }
-    .navmenu {
-        margin: 0;
-        width: 50%;
-        background-color: white;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        top: 78px;
-        right: 0px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-    .navmenu a {
-        margin: 6px 0;
-    }
-    .navbarContainer .navmenu a {
-        color: black;
-    }
-    .dropdown {
-        display: block;
-        margin-left: 60%;
-    }
-    .overlay {
-        font-size: 2rem;
-    }
-    .overlay-img {
-        width: 30%;
-        height: auto;
-        margin-right: 20px;
+@media (max-width: 425px) {
+    .imgbox {
+        height: 350px;
     }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 375px) {
     .overlay {
         font-size: 1.5rem;
+        flex-direction: column;
     }
     .overlay-img {
         width: 30%;

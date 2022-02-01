@@ -1,6 +1,3 @@
-<?php
-include_once 'session.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +16,6 @@ include_once 'session.php';
   <?php
   include 'header.php';
   ?>
-
-
   <main>
     <h1>Sign up</h1>
 
@@ -138,5 +133,6 @@ include_once 'session.php';
   </footer>
 </body>
 <script src="./alert.js"></script>
+<script src="script.js"></script>
 
 </html>

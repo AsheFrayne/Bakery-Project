@@ -194,3 +194,9 @@ button:hover {
     font-size: 22px;
     line-height: 40px;
 }
+
+@media (max-width: 425px) {
+    form {
+        min-width: 100%;
+    }
+}

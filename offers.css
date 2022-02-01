@@ -430,17 +430,20 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-    .modal-content {
-        height: 62.5%;
-    }
     .modal-title {
         font-size: 1.25rem;
     }
+    .modal-comments {
+        min-height: 200px;
+    }
     .modal-description-container p {
-        font-size: 0.625rem;
+        font-size: 0.875rem;
     }
     .modal-description-container i {
         font-size: 1.125rem;
+    }
+    .modal-description-container span {
+        font-size: 0.75rem;
     }
     .modal-comment-box input {
         padding: 0.5rem 0 0.5rem 1rem;
@@ -451,9 +454,12 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .modal {
+        padding: 2.5rem;
+    }
     .modal-content {
         flex-direction: column;
-        height: 80%;
+        height: fit-content;
     }
     .modal-img-container {
         width: 100%;
@@ -462,12 +468,24 @@ body {
         max-width: 100%;
         width: 100%;
     }
+    .modal-comments {
+        min-height: 150px;
+    }
     .modal-title-container {
         padding: 0.5rem;
     }
     .modal-description-container {
-        gap: 0.5rem;
+        gap: 0.175rem;
         padding: 0.5rem;
+    }
+    .modal-description-container p {
+        font-size: 0.75rem;
+    }
+    .modal-description-container i {
+        font-size: 1rem;
+    }
+    .modal-description-container span {
+        font-size: 0.75rem;
     }
 }
 

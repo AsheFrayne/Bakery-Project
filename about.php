@@ -57,5 +57,5 @@
     </footer>
 </body>
 <script src="about.js"></script>
-
+<script src="script.js"></script>
 </html>

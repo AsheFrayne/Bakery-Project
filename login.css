@@ -11,7 +11,7 @@ body {
 }
 
 main {
-    margin: 100px 0 100px 0;
+    margin: 95px 0 100px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,4 +63,10 @@ button:hover {
 
 p {
     color: red;
+}
+
+@media (max-width: 375px) {
+    form {
+        padding: 40px;
+    }
 }

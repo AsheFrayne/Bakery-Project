@@ -71,7 +71,7 @@ include 'session.php';
                 <img src="img/box1.jpg">
             </div>
             <div class="boxtext">
-                <p>Lorem ipsum dolor sit amet, co nsectetur adipiscing elit. Sed libero urna, cursus in hendrerit sed, pretium in diam. Nulla lobortis turpis vel neque fringilla, non faucibus diam fringilla. Curabitur eleifend nisi id venenatis eleifend. Vestibulum semper euismod augue sollicitudin egestas. Vestibulum vitae purus tincidunt, eleifend ipsum in, placerat tellus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, placeat!</p>
             </div>
         </section>
         <section class="box">
@@ -79,7 +79,7 @@ include 'session.php';
                 <img src="img/box2.jpg">
             </div>
             <div class="boxtext">
-                <p>Lorem ipsum dolor sit amet, co nsectetur adipiscing elit. Sed libero urna, cursus in hendrerit sed, pretium in diam. Nulla lobortis turpis vel neque fringilla, non faucibus diam fringilla. Curabitur eleifend nisi id venenatis eleifend. Vestibulum semper euismod augue sollicitudin egestas. Vestibulum vitae purus tincidunt, eleifend ipsum in, placerat tellus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, exercitationem vel!</p>
             </div>
         </section>
     </div>

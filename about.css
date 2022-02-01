@@ -11,7 +11,14 @@ main {
     flex-direction: column;
     background-color: white;
     height: 100%;
-    margin: 10% 20% 0 20%;
+    margin: 125px 20% 0 20%;
+}
+
+.about-btn {
+    border-radius: 25px 25px 0 0;
+    border-color: #ffc107;
+    border-style: solid;
+    border-width: 2px 2px 0 2px;
 }
 
 .about-con {
@@ -29,7 +36,7 @@ main {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 5px 5px 0 0;
+    border-radius: 20px 20px 0 0;
     cursor: pointer;
 }
 
@@ -38,6 +45,10 @@ main {
     color: white;
     background-color: #ffc107;
     transition: 0.3s;
+}
+
+#map iframe {
+    border-bottom-left-radius: 25px;
 }
 
 .contacts {
@@ -129,4 +140,51 @@ a {
 
 .not-active {
     display: none;
+}
+
+@media (max-width: 1024px) {
+    .contacts-con {
+        flex-direction: column;
+    }
+    main {
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+    }
+    #map {
+        width: 100%;
+    }
+    .contacts-list {
+        width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #map iframe {
+        width: 100%;
+        border-bottom-left-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+    }
+    .about-con {
+        box-shadow: 0px 7.5px 7.5px 0px rgb(0 0 0 / 75%);
+    }
+    .text-field {
+        margin: 7.5% 20%;
+    }
+    .text-field p {
+        font-size: 0.825rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .text-field {
+        margin: 5% 10%;
+    }
+    .text-field p {
+        font-size: 0.75rem;
+    }
 }
