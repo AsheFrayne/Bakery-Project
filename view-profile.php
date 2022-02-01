@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -17,10 +17,12 @@
     include 'header.php';
     require_once 'includes/dbh.inc.php';
     if (isset($_GET['userName'])) {
+      $visit = true;
       $usersID = $_GET['userName'];
       $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
       $user = mysqli_fetch_assoc($result);
     } else {
+      $visit = false;
       $usersID = $_SESSION["usersID"];
       $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
       $user = mysqli_fetch_assoc($result);
@@ -84,11 +86,14 @@
       <div class="description-box">
 
         <textarea name="description" class="description" cols="30" rows="10" placeholder="Let me describe you!" readonly><?php echo $user["description"]; ?></textarea>
-        <div class="buttons"><button class='edit-btn' type="button">Edit</button>
-          <button class="cancel-btn">Cancel</button>
-          <button type="submit" class="done-btn" name="upload"> Done</button>
-        </div>
-
+        <?php
+        if (!$visit) {
+          echo '  <div class="buttons"><button class="edit-btn" type="button">Edit</button>
+                    <button class="cancel-btn">Cancel</button>
+                    <button type="submit" class="done-btn" name="upload"> Done</button>
+                  </div>';
+        }
+         ?>
         </form>
         <!-- form end ................................................... -->
       </div>

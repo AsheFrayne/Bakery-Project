@@ -54,7 +54,10 @@
         }
       }
       ?>
+      <p>No account yet?</p>
+      <a href="signup.php">Create account</a><br/>
       <button class=' submit' type="submit" name="submit">LOGIN</button>
+
 
     </form>
   </main>
