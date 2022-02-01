@@ -14,27 +14,27 @@
 
 <body>
   <?php
-    include 'header.php';
-    require_once 'includes/dbh.inc.php';
-    if (isset($_GET['userName'])) {
-      $visit = true;
-      $usersID = $_GET['userName'];
-      $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
-      $user = mysqli_fetch_assoc($result);
-    } else {
-      $visit = false;
-      $usersID = $_SESSION["usersID"];
-      $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
-      $user = mysqli_fetch_assoc($result);
-    }
+  include 'header.php';
+  require_once 'includes/dbh.inc.php';
+  if (isset($_GET['userName'])) {
+    $visit = true;
+    $usersID = $_GET['userName'];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
+    $user = mysqli_fetch_assoc($result);
+  } else {
+    $visit = false;
+    $usersID = $_SESSION["usersID"];
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
+    $user = mysqli_fetch_assoc($result);
+  }
   ?>
   <?php
-    if (!isset($_GET['userName'])) {
-      $usersName = $_SESSION["usersName"];
-      $usersID = $_SESSION["usersID"];
-      $usersPwd = $_SESSION["usersPwd"];
-      $usersEmail = $_SESSION["usersEmail"];
-    }
+  if (!isset($_GET['userName'])) {
+    $usersName = $_SESSION["usersName"];
+    $usersID = $_SESSION["usersID"];
+    $usersPwd = $_SESSION["usersPwd"];
+    $usersEmail = $_SESSION["usersEmail"];
+  }
   ?>
   <div class="modal-bg">
     <div class="modal">
@@ -93,7 +93,7 @@
                     <button type="submit" class="done-btn" name="upload"> Done</button>
                   </div>';
         }
-         ?>
+        ?>
         </form>
         <!-- form end ................................................... -->
       </div>
@@ -113,5 +113,6 @@
   </footer>
 </body>
 <script src="./view-profile.js"></script>
+<script src="script.js"></script>
 
 </html>
