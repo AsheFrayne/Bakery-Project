@@ -3,7 +3,7 @@ session_start();
 ?>
 <div class="navbarContainer">
   <div class="navbar">
-    <a href="./index.html">
+    <a href="./index.php">
       <img src="img/newlogobg.png" alt="Arki's Bakery Logo">
     </a>
     <button class="dropdown">
