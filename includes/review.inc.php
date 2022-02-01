@@ -8,9 +8,13 @@ if (isset($_POST['post'])) {
 
   require "dbh.inc.php";
 
-  $sql = "INSERT INTO reviews (reviewsCom, reviewsDate, usersName, productsID) VALUES ('$comment', '$date', '$userID', '$productsID');";
-   mysqli_query($conn, $sql);
-  header("location: ../offers.php?modal=1&productID=".$productsID."&addComment=success");
+  if($comment != '') {
+    $sql = "INSERT INTO reviews (reviewsCom, reviewsDate, usersName, productsID) VALUES ('$comment', '$date', '$userID', '$productsID');";
+     mysqli_query($conn, $sql);
+    header("location: ../offers.php?modal=1&productID=".$productsID."&addComment=success");
+  } else {
+    header("location: ../offers.php?modal=1&productID=".$productsID."&addComment=failed");
+  }
 
 }
 else{

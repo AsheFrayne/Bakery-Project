@@ -34,6 +34,7 @@
                             <div class="comment-content">';
                       echo    '<a href="view-profile.php?userName='.$reviews["usersName"].'"><span class="name-comment">'.$reviews["usersName"].'</span></a>';
                       echo '    <span class="text-comment">'.$reviews["reviewsCom"].'</span>
+                                <span class="date-comment">'.$reviews["reviewsDate"].'</span>
                             </div>';
                       if(isset($_SESSION["usersName"])){
                         if ($_SESSION["usersName"] == $reviews["usersName"]) {
