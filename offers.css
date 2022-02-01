@@ -233,11 +233,13 @@ body {
 .date-comment {
     color: gray;
     font-size: 0.5rem;
+    margin-top: 0.375rem;
 }
 
 .modal-review {
     display: flex;
     flex-direction: column;
+    min-width: 350px;
     max-width: 500px;
     height: 100%;
     background-color: white;
@@ -290,6 +292,11 @@ body {
     margin-bottom: 1rem;
 }
 
+.img-comment {
+    display: flex;
+    align-items: center;
+}
+
 .img-comment img {
     width: 2rem;
     height: 2rem;
@@ -298,6 +305,8 @@ body {
 }
 
 .comment-content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
@@ -452,13 +461,16 @@ body {
 @media screen and (max-width: 768px) {
     .modal-content {
         flex-direction: column;
+        overflow: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     .modal-img-container {
         width: 100%;
-        min-height: 0;
         height: initial;
     }
     .modal-review {
+        min-width: 0;
         max-width: 100%;
         width: 100%;
     }
