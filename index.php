@@ -71,7 +71,7 @@ include 'session.php';
                 <img src="img/box1.jpg">
             </div>
             <div class="boxtext">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, placeat!</p>
+                <p>We plan the cakes that precisely suit your decision whatever event it’s. We are at your administration for a few years, however concoct a wide scope of cakes and pastries.</p>
             </div>
         </section>
         <section class="box">
@@ -79,7 +79,7 @@ include 'session.php';
                 <img src="img/box2.jpg">
             </div>
             <div class="boxtext">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, exercitationem vel!</p>
+                <p>Our crisp, inventive and enticing cakes draw in individuals. ‘Organization Name’ gets ready extreme cakes with icing of feelings and love over them. We have an assortment of cake plans and attempt to concoct new thoughts unfailingly</p>
             </div>
         </section>
     </div>
