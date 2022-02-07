@@ -108,6 +108,7 @@ INSERT INTO `reviews` (`reviewsID`, `reviewsCom`, `reviewsDate`, `productsID`, `
 (67, 'GORGEOUSSSSS!!', '02/01/2022', 11, 'tiffanygo24'),
 (68, 'LOVE THIS!', '02/01/2022', 4, 'tiffanygo24'),
 (69, 'Yummy!!!!!', '02/01/2022', 12, 'jepoy'),
+(70, 'nasan ka na jepoy dizon', '02/01/2022', 12, 'Superhuman'),
 (71, 'WANNA TRY THIS TOO! <3', '02/01/2022', 5, 'tiffanygo24'),
 (72, 'YUMMYYYY! :)', '02/01/2022', 6, 'tiffanygo24'),
 (73, 'MY FAVE CAKE!', '02/01/2022', 7, 'tiffanygo24'),
