@@ -7,12 +7,12 @@
     <div class="modal-content">
         <div class="modal-img-container">
             <label class="offer-upload hover" for="offer-img">
-                <?php 
+                <?php
                     $productID = $_GET['productID'];
                     $check = "SELECT * FROM products WHERE productsID = '$productID';";
                     $result = mysqli_query($conn, $check);
                     $products = mysqli_fetch_assoc($result);
-                    
+
                     echo '<img class="modal-img" src="img/Products/'.$products['productsFilename'].'" alt="">'
                 ?>
             </label>
@@ -40,7 +40,6 @@
                 <?php
                 $productID = $_GET['productID'];
                 $result = mysqli_query($conn, "SELECT * FROM reviews WHERE productsID = '$productID';");
-                if ($reviews = mysqli_fetch_assoc($result)) {
                     while ($reviews = mysqli_fetch_assoc($result)) {
                         if (empty($reviews["reviewsCom"])) {
                             continue;
@@ -55,7 +54,6 @@
                             </div>';
                         echo  '</div>';
                     }
-                }
                 ?>
             </div>
             <?php
