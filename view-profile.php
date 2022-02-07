@@ -22,10 +22,15 @@
     $result = mysqli_query($conn, "SELECT * FROM users WHERE usersName = '$usersID';");
     $user = mysqli_fetch_assoc($result);
   } else {
-    $visit = false;
-    $usersID = $_SESSION["usersID"];
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
-    $user = mysqli_fetch_assoc($result);
+    if (isset($_SESSION["usersID"])) {
+      $visit = false;
+      $usersID = $_SESSION["usersID"];
+      $result = mysqli_query($conn, "SELECT * FROM users WHERE usersID = '$usersID';");
+      $user = mysqli_fetch_assoc($result);
+    }
+    else{
+      header('location: index.php');
+    }
   }
   ?>
   <?php
