@@ -214,8 +214,7 @@ i {
     display: block;
 }
 
-.done-btn,
-.cancel-btn {
+.done-btn {
     display: none;
 }
 
@@ -278,7 +277,6 @@ i {
 }
 
 .yes-btn {
-    border-right: #a7a4a4 1px solid !important;
     color: red;
 }
 

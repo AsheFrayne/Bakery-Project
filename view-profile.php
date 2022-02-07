@@ -94,7 +94,6 @@
         <?php
         if (!$visit) {
           echo '  <div class="buttons"><button class="edit-btn" type="button">Edit</button>
-                    <button class="cancel-btn">Cancel</button>
                     <button type="submit" class="done-btn" name="upload"> Done</button>
                   </div>';
         }
