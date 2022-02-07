@@ -102,20 +102,12 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`reviewsID`, `reviewsCom`, `reviewsDate`, `productsID`, `usersName`) VALUES
-<<<<<<< HEAD
-=======
-(47, 'mag show yannnnn', '01/30/2022', 1, 'admin'),
->>>>>>> e028fef6eafd1b25d4cbdd3a0a21a10ab0c48630
 (63, 'I like to try this one', '01/31/2022', 6, 'reydan10'),
 (65, 'Wow malungay pandesal I want to try this.PS. already tried it and it is super good like me', '02/01/2022', 4, 'Superhuman'),
 (66, 'WOW!', '02/01/2022', 4, 'jepoy'),
 (67, 'GORGEOUSSSSS!!', '02/01/2022', 11, 'tiffanygo24'),
 (68, 'LOVE THIS!', '02/01/2022', 4, 'tiffanygo24'),
 (69, 'Yummy!!!!!', '02/01/2022', 12, 'jepoy'),
-<<<<<<< HEAD
-=======
-(70, 'nasan ka na jepoy dizon', '02/01/2022', 12, 'Superhuman'),
->>>>>>> e028fef6eafd1b25d4cbdd3a0a21a10ab0c48630
 (71, 'WANNA TRY THIS TOO! <3', '02/01/2022', 5, 'tiffanygo24'),
 (72, 'YUMMYYYY! :)', '02/01/2022', 6, 'tiffanygo24'),
 (73, 'MY FAVE CAKE!', '02/01/2022', 7, 'tiffanygo24'),
